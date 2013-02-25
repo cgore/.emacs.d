@@ -41,6 +41,9 @@
 (setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 
+;;; 80-wide for M-q.
+(setq-default fill-column 80)
+
 ;;; SLIME setup.
 (setq inferior-lisp-program "/usr/bin/sbcl") ; I like SBCL, and this is where it lives.
 (add-to-list 'load-path "/home/chris/slime/") ; This is my SLIME directory.
