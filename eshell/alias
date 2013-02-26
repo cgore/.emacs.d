@@ -1,0 +1,14 @@
+alias l ls -lh $*
+
+alias gf git fetch $*
+alias gfa git fetch --all $*
+alias gp git pull $*
+alias gP git push $*
+alias gC git commit -m $*
+alias gpr git pull --rebase $*
+alias g? git status $*
+alias glog git log $*
+alias g- git diff $*
+alias g-h git diff HEAD $*
+alias g+ git add $*
+alias gM git merge --no-ff $*
