@@ -81,7 +81,9 @@
 			     :weight normal
 			     :height 98
 			     :width normal
-			     :background "white"
-			     :foreground "black"
 			     :foundry "bitstream"
 			     :family "Bitstream Vera Sans Mono"))))))
+
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-resolve)
