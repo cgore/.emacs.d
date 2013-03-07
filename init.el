@@ -87,7 +87,7 @@
 			   :family "Bitstream Vera Sans Mono")))))
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-resolve))
+  (color-theme-deep-blue))
 
 
 ;;; Ruby stuff
