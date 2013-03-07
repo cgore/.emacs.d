@@ -32,6 +32,8 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+(add-to-list 'load-path "~/.emacs.d/third-party/")
+
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
 
@@ -64,26 +66,29 @@
  '(size-indication-mode t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
-(if window-system ; Only if we are in a GUI.
-    (custom-set-faces
-     ;; custom-set-faces was added by Custom.
-     ;; If you edit it by hand, you could mess it up, so be careful.
-     ;; Your init file should contain only one such instance.
-     ;; If there is more than one, they won't work right.
-     '(default ((t (:inherit nil
-			     :stipple nil
-			     :inverse-video nil
-			     :box nil
-			     :strike-through nil
-			     :overline nil
-			     :underline nil
-			     :slant normal
-			     :weight normal
-			     :height 98
-			     :width normal
-			     :foundry "bitstream"
-			     :family "Bitstream Vera Sans Mono"))))))
+(when window-system ; Only if we are in a GUI.
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(default ((t (:inherit nil
+			   :stipple nil
+			   :inverse-video nil
+			   :box nil
+			   :strike-through nil
+			   :overline nil
+			   :underline nil
+			   :slant normal
+			   :weight normal
+			   :height 98
+			   :width normal
+			   :foundry "bitstream"
+			   :family "Bitstream Vera Sans Mono")))))
+  (require 'color-theme)
+  (color-theme-initialize)
+  (color-theme-resolve))
 
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-resolve)
+
+;;; Ruby stuff
+(require 'yari) ; ri interface
