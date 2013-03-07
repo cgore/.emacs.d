@@ -92,3 +92,10 @@
 
 ;;; Ruby stuff
 (require 'yari) ; ri interface
+
+;;; ERC: Emacs IRC
+(setq erc-log-channels-directory "~/.emacs.d/erc/log/"
+      erc-save-buffer-on-part t
+      erc-save-queries-on-quit t
+      erc-log-write-after-send t
+      erc-log-write-after-insert t)
