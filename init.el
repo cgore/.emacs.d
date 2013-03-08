@@ -87,14 +87,14 @@
 			   :family "Bitstream Vera Sans Mono")))))
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-classic))
+  (color-theme-tty-dark))
 
 ;;; Multi-Term
 (require 'multi-term)
 (setq multi-term-program "zsh")
 (custom-set-variables
- '(term-default-bg-color "#2F4F4F")
- '(term-default-fg-color "#FAEBD7"))
+ '(term-default-bg-color "#000000")
+ '(term-default-fg-color "#F0F0F0"))
 
 (defun bash ()
   (interactive)
