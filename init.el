@@ -87,8 +87,44 @@
 			   :family "Bitstream Vera Sans Mono")))))
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-deep-blue))
+  (color-theme-aliceblue))
 
+;;; Multi-Term
+(require 'multi-term)
+(setq multi-term-program "zsh")
+(custom-set-variables
+ '(term-default-bg-color "#F0F8FF")
+ '(term-default-fg-color "#528B8B"))
+
+(defun bash ()
+  (interactive)
+  (let ((multi-term-program "bash")
+	(multi-term-buffer-name "bash"))
+    (multi-term)))
+
+(defun zsh ()
+  (interactive)
+  (let ((multi-term-program "zsh")
+	(multi-term-buffer-name "zsh"))
+    (multi-term)))
+
+(defun irb ()
+  (interactive)
+  (let ((multi-term-program "irb")
+	(multi-term-buffer-name "irb"))
+    (multi-term)))
+
+(defun python ()
+  (interactive)
+  (let ((multi-term-program "python")
+	(multi-term-buffer-name "python"))
+    (multi-term)))
+
+(defun sbcl ()
+  (interactive)
+  (let ((multi-term-program "sbcl")
+	(multi-term-buffer-name "sbcl"))
+    (multi-term)))
 
 ;;; Ruby stuff
 (require 'yari) ; ri interface
