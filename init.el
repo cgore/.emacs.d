@@ -37,6 +37,13 @@
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
 
+(setq visible-bell t)
+(set-foreground-color "white")
+(set-background-color "black")
+(setq require-final-newline t)
+(setq next-line-add-newlines nil)
+(display-time)
+
 ;;; Smooth scrolling
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ; three lines at a time
 (setq mouse-wheel-progressive-speed nil) ; don't accelerate scrolling
