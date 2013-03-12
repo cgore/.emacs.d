@@ -32,7 +32,9 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
-(add-to-list 'load-path "~/.emacs.d/third-party/")
+(let ((third-party "~/.emacs.d/third-party/"))
+  (add-to-list 'load-path third-party)
+  (add-to-list 'load-path (concat third-party "haml-mode")))
 
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
@@ -142,3 +144,5 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t)
+
+(require 'haml-mode)
