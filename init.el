@@ -32,12 +32,18 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+
 (let ((third-party "~/.emacs.d/third-party/"))
   (add-to-list 'load-path third-party)
-  (add-to-list 'load-path (concat third-party "haml-mode")))
+  (mapcar #'(lambda (path)
+	      (add-to-list 'load-path (concat third-party path)))
+	  '("haml-mode"
+	    "rails-reloaded")))
+
 
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
+
 
 (setq visible-bell t)
 (set-foreground-color "white")
@@ -46,14 +52,17 @@
 (setq next-line-add-newlines nil)
 (display-time)
 
+
 ;;; Smooth scrolling
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ; three lines at a time
 (setq mouse-wheel-progressive-speed nil) ; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
 (setq scroll-step 1) ; keyboard scroll one line at a time
 
+
 ;;; 80-wide for M-q.
 (setq-default fill-column 80)
+
 
 ;;; SLIME setup.
 (setq inferior-lisp-program "/usr/bin/sbcl") ; I like SBCL, and this is where it lives.
@@ -74,6 +83,7 @@
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+
 
 (when window-system ; Only if we are in a GUI.
   (custom-set-faces
@@ -97,6 +107,7 @@
   (require 'color-theme)
   (color-theme-initialize)
   (color-theme-subtle-hacker))
+
 
 ;;; Multi-Term
 (require 'multi-term)
@@ -129,14 +140,20 @@
 	(multi-term-buffer-name "python"))
     (multi-term)))
 
+
 (defun sbcl ()
   (interactive)
   (let ((multi-term-program "sbcl")
 	(multi-term-buffer-name "sbcl"))
     (multi-term)))
 
+
 ;;; Ruby stuff
+(require 'ruby-mode)
 (require 'yari) ; ri interface
+(require 'haml-mode)
+(require 'rails-autoload)
+
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
@@ -145,4 +162,3 @@
       erc-log-write-after-send t
       erc-log-write-after-insert t)
 
-(require 'haml-mode)

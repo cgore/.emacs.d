@@ -1,3 +1,6 @@
 [submodule "third-party/haml-mode"]
 	path = third-party/haml-mode
 	url = https://github.com/nex3/haml-mode.git
+[submodule "third-party/rails-reloaded"]
+	path = third-party/rails-reloaded
+	url = https://github.com/dima-exe/emacs-rails-reloaded.git
