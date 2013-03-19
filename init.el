@@ -38,6 +38,7 @@
   (mapcar #'(lambda (path)
 	      (add-to-list 'load-path (concat third-party path)))
 	  '("haml-mode"
+	    "org-mode"
 	    "rails-reloaded")))
 
 
@@ -112,6 +113,9 @@
 ;;; Multi-Term
 (require 'multi-term)
 (setq multi-term-program "zsh")
+;; TO DO: How do I look up the colors from the color theme directly?  I should
+;; automate this somehow.  Multi-Term should probably be made aware of the color
+;; theme if the library is present, assuming I can't already have it do that.
 (custom-set-variables
  '(term-default-bg-color "#2F4F4F")
  '(term-default-fg-color "#959882"))
@@ -163,3 +167,10 @@
       erc-log-write-after-send t
       erc-log-write-after-insert t)
 
+
+;;; Org Mode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)

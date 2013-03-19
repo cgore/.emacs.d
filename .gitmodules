@@ -4,3 +4,6 @@
 [submodule "third-party/rails-reloaded"]
 	path = third-party/rails-reloaded
 	url = https://github.com/dima-exe/emacs-rails-reloaded.git
+[submodule "third-party/org-mode"]
+	path = third-party/org-mode
+	url = git://orgmode.org/org-mode.git
