@@ -47,8 +47,6 @@
 
 
 (setq visible-bell t)
-;(set-foreground-color "white")
-;(set-background-color "black")
 (setq require-final-newline t)
 (setq next-line-add-newlines nil)
 (display-time)
@@ -104,13 +102,11 @@
 			   :height 98
 			   :width normal
 			   :foundry "bitstream"
-			   :family "Bitstream Vera Sans Mono"))))))
-
-;;; Color Themes.
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-subtle-hacker)
-
+			   :family "Bitstream Vera Sans Mono")))))
+  ;;; Color Themes.
+  (require 'color-theme)
+  (color-theme-initialize)
+  (color-theme-subtle-hacker))
 
 ;;; Multi-Term
 (require 'multi-term)
@@ -118,9 +114,10 @@
 ;; TO DO: How do I look up the colors from the color theme directly?  I should
 ;; automate this somehow.  Multi-Term should probably be made aware of the color
 ;; theme if the library is present, assuming I can't already have it do that.
-(custom-set-variables
- '(term-default-bg-color "#2F4F4F")
- '(term-default-fg-color "#959882"))
+(when window-system
+  (custom-set-variables
+   '(term-default-bg-color "#2F4F4F")
+   '(term-default-fg-color "#959882")))
 
 (defun bash ()
   (interactive)
