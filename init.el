@@ -104,10 +104,12 @@
 			   :height 98
 			   :width normal
 			   :foundry "bitstream"
-			   :family "Bitstream Vera Sans Mono")))))
-  (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-subtle-hacker))
+			   :family "Bitstream Vera Sans Mono"))))))
+
+;;; Color Themes.
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-subtle-hacker))
 
 
 ;;; Multi-Term
