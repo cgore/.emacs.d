@@ -47,8 +47,8 @@
 
 
 (setq visible-bell t)
-(set-foreground-color "white")
-(set-background-color "black")
+;(set-foreground-color "white")
+;(set-background-color "black")
 (setq require-final-newline t)
 (setq next-line-add-newlines nil)
 (display-time)
