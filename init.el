@@ -165,7 +165,7 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t)
-
+(load "~/.emacs.d/ercpass")
 
 ;;; Org Mode
 (require 'org-install)
