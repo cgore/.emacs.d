@@ -38,6 +38,7 @@
   (mapcar #'(lambda (path)
 	      (add-to-list 'load-path (concat third-party path)))
 	  '("haml-mode"
+	    "inf-ruby"
 	    "org-mode"
 	    "rails-reloaded")))
 
