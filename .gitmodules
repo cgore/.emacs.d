@@ -7,3 +7,6 @@
 [submodule "third-party/org-mode"]
 	path = third-party/org-mode
 	url = git://orgmode.org/org-mode.git
+[submodule "third-party/inf-ruby"]
+	path = third-party/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby
