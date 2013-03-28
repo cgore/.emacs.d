@@ -177,3 +177,6 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+;;; Sunrise Commander - A Norton Commander clone
+(require 'sunrise-commander)
