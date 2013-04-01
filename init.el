@@ -183,7 +183,15 @@
 ;;; Sunrise Commander - A Norton Commander clone
 (require 'sunrise-commander)
 
-;;; W3M shortcuts
+;;; W3M stuff.
+(setq browse-url-browser-function 'w3m-browse-url)
+(global-set-key "\C-xm" 'browse-url-at-point)
+(setq w3m-coding-system 'utf-8
+      w3m-file-coding-system 'utf-8
+      w3m-file-name-coding-system 'utf-8
+      w3m-input-coding-system 'utf-8
+      w3m-output-coding-system 'utf-8
+      w3m-terminal-coding-system 'utf-8)
 (defun drudge ()
   (interactive)
   (w3m-goto-url "http://www.drudgereport.com"))

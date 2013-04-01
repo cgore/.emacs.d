@@ -1,5 +1,11 @@
 * Emacs
+
 ** Org Mode
-*** Main Website: [[http://orgmode.org/][orgmode.org]]
+
+*** Main Website
+
+[[http://orgmode.org/][orgmode.org]]
+
 *** Manual
-**** [[file:downloads/org.pdf][Local PDF copy]]
+
+[[file:downloads/org.pdf][Local PDF copy]]
