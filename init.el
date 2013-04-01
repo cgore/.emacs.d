@@ -174,9 +174,25 @@
 ;;; Org Mode
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 (setq org-log-done t)
 
 ;;; Sunrise Commander - A Norton Commander clone
 (require 'sunrise-commander)
+
+;;; W3M shortcuts
+(defun drudge ()
+  (interactive)
+  (w3m-goto-url "http://www.drudgereport.com"))
+(defun github ()
+  (interactive)
+  (w3m-goto-url "http://www.github.com"))
+(defun google ()
+  (interactive)
+  (w3m-goto-url "http://www.google.com"))
+(defun hacker-news ()
+  (interactive)
+  (w3m-goto-url "http://news.ycombinator.com"))
