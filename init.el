@@ -42,14 +42,13 @@
 	    "org-mode"
 	    "rails-reloaded")))
 
-
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
 
-
-(setq visible-bell t)
-(setq require-final-newline t)
-(setq next-line-add-newlines nil)
+(setq indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
+      visible-bell t
+      require-final-newline t
+      next-line-add-newlines nil)
 (display-time)
 
 
