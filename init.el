@@ -42,6 +42,8 @@
 	    "org-mode"
 	    "rails-reloaded")))
 
+(setq tramp-default-method "ssh")
+
 (setq default-directory "/home/chris")
 (set-frame-font "Bitstream Vera Sans Mono")
 
@@ -200,6 +202,6 @@
 (defun google ()
   (interactive)
   (w3m-goto-url "http://www.google.com"))
-(defun hacker-news ()
+(defun emacs-wiki ()
   (interactive)
-  (w3m-goto-url "http://news.ycombinator.com"))
+  (w3m-goto-url "http://emacswiki.org"))
