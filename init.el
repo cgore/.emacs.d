@@ -166,7 +166,6 @@
 
 (defun python ()
   (interactive)
-GlamEbr7
   (let ((multi-term-program "python")
 	(multi-term-buffer-name "python"))
     (multi-term)))
