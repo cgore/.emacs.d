@@ -189,6 +189,8 @@ GlamEbr7
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
       erc-nick "cgore"
+      erc-user-full-name "Christopher Mark Gore"
+      erc-email-userid "cgore@cgore.com"
       erc-save-buffer-on-part t
       erc-save-queries-on-quit t
       erc-log-write-after-send t
