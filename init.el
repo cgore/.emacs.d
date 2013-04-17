@@ -67,7 +67,7 @@
 
 ;;; SLIME setup.
 (setq inferior-lisp-program "/usr/bin/sbcl") ; I like SBCL, and this is where it lives.
-(add-to-list 'load-path "/home/chris/slime/") ; This is my SLIME directory.
+(add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 (require 'slime-autoloads)
 (slime-setup)
 
@@ -122,7 +122,29 @@
 (when window-system
   (custom-set-variables
    '(term-default-bg-color "#2F4F4F")
-   '(term-default-fg-color "#959882")))
+   '(term-default-fg-color "#959882")
+   '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
+			   ("C-p" . previous-line)
+			   ("C-n" . next-line)
+			   ("C-s" . isearch-forward)
+			   ("C-r" . isearch-backward)
+			   ("C-m" . term-send-raw)
+			   ("M-f" . term-send-forward-word)
+			   ("M-b" . term-send-backward-word)
+			   ("M-o" . term-send-backspace)
+			   ("M-p" . term-send-up)
+			   ("M-n" . term-send-down)
+			   ("M-M" . term-send-forward-kill-word)
+			   ("M-N" . term-send-backward-kill-word)
+			   ("M-r" . term-send-reverse-search-history)
+			   ("M-," . term-send-input)
+			   ("M-." . comint-dynamic-complete)
+			   ;; These were defined in term but undefined by multi-term.
+			   ;; I want them back.
+			   ;;     -- cgore.
+			   ("C-c C-j" . term-line-mode)
+			   ("C-c C-k" . term-char-mode)))))
+
 
 (defun bash ()
   (interactive)
@@ -144,6 +166,7 @@
 
 (defun python ()
   (interactive)
+GlamEbr7
   (let ((multi-term-program "python")
 	(multi-term-buffer-name "python"))
     (multi-term)))
