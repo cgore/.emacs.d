@@ -232,3 +232,6 @@
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
+
+;;; Git
+(add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
