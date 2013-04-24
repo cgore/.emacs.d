@@ -229,3 +229,6 @@
 (defun emacs-wiki ()
   (interactive)
   (w3m-goto-url "http://emacswiki.org"))
+
+;;; TeX and LaTeX
+(add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
