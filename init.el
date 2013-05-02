@@ -145,17 +145,10 @@
 			   ("C-c C-j" . term-line-mode)
 			   ("C-c C-k" . term-char-mode)))))
 
-
 (defun bash ()
   (interactive)
   (let ((multi-term-program "bash")
 	(multi-term-buffer-name "bash"))
-    (multi-term)))
-
-(defun zsh ()
-  (interactive)
-  (let ((multi-term-program "zsh")
-	(multi-term-buffer-name "zsh"))
     (multi-term)))
 
 (defun irb ()
@@ -170,13 +163,24 @@
 	(multi-term-buffer-name "python"))
     (multi-term)))
 
-
 (defun sbcl ()
   (interactive)
   (let ((multi-term-program "sbcl")
 	(multi-term-buffer-name "sbcl"))
     (multi-term)))
 
+(defun tig ()
+  (interactive)
+  (let ((multi-term-program "tig")
+	(multi-term-program-switches "-a")
+	(multi-term-buffer-name "tig"))
+    (multi-term)))
+
+(defun zsh ()
+  (interactive)
+  (let ((multi-term-program "zsh")
+	(multi-term-buffer-name "zsh"))
+    (multi-term)))
 
 ;;; Ruby stuff
 (require 'ruby-mode)
