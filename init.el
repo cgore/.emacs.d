@@ -45,7 +45,6 @@
 (setq tramp-default-method "ssh")
 
 (setq default-directory "/home/chris")
-(set-frame-font "Bitstream Vera Sans Mono")
 
 (setq indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
       visible-bell t
@@ -96,18 +95,17 @@
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(default ((t (:inherit nil
-			   :stipple nil
-			   :inverse-video nil
-			   :box nil
-			   :strike-through nil
-			   :overline nil
-			   :underline nil
-			   :slant normal
-			   :weight normal
-			   :height 98
-			   :width normal
-			   :foundry "bitstream"
-			   :family "Bitstream Vera Sans Mono")))))
+		  :stipple nil
+		  :inverse-video nil
+		  :box nil
+		  :strike-through nil
+		  :overline nil
+		  :underline nil
+		  :slant normal
+		  :weight normal
+		  :height 110
+		  :width normal
+		  :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
