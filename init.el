@@ -238,10 +238,20 @@
 ;;; Git
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
 
-;;; Greek Letters: M-g ...
+;;; Greek Letters and Glyphs: M-g ...
 (global-set-key (kbd "M-g a") "α")                                     
 (global-set-key (kbd "M-g b") "β")
 (global-set-key (kbd "M-g g") "γ")
 (global-set-key (kbd "M-g d") "δ")
+; ...
 (global-set-key (kbd "M-g l") "λ")
+; ...
 (global-set-key (kbd "M-g o") "ω")
+
+(global-set-key (kbd "M-g ->") "→")
+(global-set-key (kbd "M-g <-") "←")
+(global-set-key (kbd "M-g =>") "⇒")
+(global-set-key (kbd "M-g <=") "⇐")
+(global-set-key (kbd "M-g inf") "∞")
+
+(global-set-key (kbd "M-g :)") "☻")
