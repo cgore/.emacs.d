@@ -42,14 +42,26 @@
 	    "org-mode"
 	    "rails-reloaded")))
 
-(setq tramp-default-method "ssh")
 
-(setq default-directory "/home/chris")
+(setq tramp-default-method
+      "ssh"
 
-(setq indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
-      visible-bell t
-      require-final-newline t
-      next-line-add-newlines nil)
+      default-directory
+      "/home/chris"
+
+      indent-tabs-mode
+      nil ; Don't mix tabs and spaces, that is stupid.
+      
+      visible-bell
+      t
+
+      require-final-newline
+      t
+
+      next-line-add-newlines
+      nil)
+
+(menu-bar-mode -1)
 (display-time)
 
 
@@ -85,7 +97,6 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
 
-
 (when window-system ; Only if we are in a GUI.
   (set-foreground-color "white")
   (set-background-color "black")
@@ -110,6 +121,7 @@
   (require 'color-theme)
   (color-theme-initialize)
   (color-theme-subtle-hacker))
+
 
 ;;; Multi-Term
 (require 'multi-term)
@@ -198,27 +210,35 @@
       erc-log-write-after-insert t)
 (load "~/.emacs.d/ercpass")
 
+
 ;;; Org Mode
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
 (setq org-log-done t)
+
 
 ;;; Sunrise Commander - A Norton Commander clone
 (require 'sunrise-commander)
 
-;;; W3M stuff.
+
+;;; Web stuff.
 (setq browse-url-browser-function 'w3m-browse-url)
-(global-set-key "\C-xm" 'browse-url-at-point)
+(global-set-key (kbd "<f6> w") 'browse-url-at-point)
 (setq w3m-coding-system 'utf-8
       w3m-file-coding-system 'utf-8
       w3m-file-name-coding-system 'utf-8
       w3m-input-coding-system 'utf-8
       w3m-output-coding-system 'utf-8
       w3m-terminal-coding-system 'utf-8)
+(defun browse-url-at-point-firefox ()
+  (interactive)
+  (let ((browse-url-browser-function 'browse-url-firefox))
+    (browse-url-at-point)))
+(global-set-key (kbd "<f6> f") 'browse-url-at-point-firefox)
 (defun drudge ()
   (interactive)
   (w3m-goto-url "http://www.drudgereport.com"))
@@ -228,30 +248,41 @@
 (defun google ()
   (interactive)
   (w3m-goto-url "http://www.google.com"))
+(global-set-key (kbd "<f6> g")
+		(lambda ()
+		  (interactive)
+		  (browse-url-firefox "http://www.google.com")))
 (defun emacs-wiki ()
   (interactive)
   (w3m-goto-url "http://emacswiki.org"))
 
+
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
+
 
 ;;; Git
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
 
-;;; Greek Letters and Glyphs: M-g ...
-(global-set-key (kbd "M-g a") "α")                                     
-(global-set-key (kbd "M-g b") "β")
-(global-set-key (kbd "M-g g") "γ")
-(global-set-key (kbd "M-g d") "δ")
-; ...
-(global-set-key (kbd "M-g l") "λ")
-; ...
-(global-set-key (kbd "M-g o") "ω")
 
-(global-set-key (kbd "M-g ->") "→")
-(global-set-key (kbd "M-g <-") "←")
-(global-set-key (kbd "M-g =>") "⇒")
-(global-set-key (kbd "M-g <=") "⇐")
-(global-set-key (kbd "M-g inf") "∞")
+;;; Greek Letters and Glyphs.
+(global-set-key (kbd "<f9> a") "α")                                     
+(global-set-key (kbd "<f9> b") "β")
+(global-set-key (kbd "<f9> g") "γ")
+(global-set-key (kbd "<f9> d") "δ")
+; ...
+(global-set-key (kbd "<f9> l") "λ")
+; ...
+(global-set-key (kbd "<f9> o") "ω")
 
-(global-set-key (kbd "M-g :)") "☻")
+(global-set-key (kbd "<f9> ->") "→")
+(global-set-key (kbd "<f9> <-") "←")
+(global-set-key (kbd "<f9> =>") "⇒")
+(global-set-key (kbd "<f9> <=") "⇐")
+(global-set-key (kbd "<f9> inf") "∞")
+
+(global-set-key (kbd "<f9> :)") "☻")
+
+
+;;; Buffers
+(global-set-key (kbd "<f2> r") 'rename-buffer)
