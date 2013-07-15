@@ -61,7 +61,6 @@
       next-line-add-newlines
       nil)
 
-(menu-bar-mode -1)
 (display-time)
 
 
@@ -289,3 +288,4 @@
 
 ;;; Buffers
 (global-set-key (kbd "<f2> r") 'rename-buffer)
+(put 'downcase-region 'disabled nil)
