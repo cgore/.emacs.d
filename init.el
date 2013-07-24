@@ -74,6 +74,9 @@
 ;;; 80-wide for M-q.
 (setq-default fill-column 80)
 
+;;; 80-wide for man pages
+(setenv "MANWIDTH" "80")
+
 ;;; C code setup.
 (setq-default c-default-style "linux"
 	      c-basic-offset 4)
