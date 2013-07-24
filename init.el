@@ -41,49 +41,31 @@
 	    "inf-ruby"
 	    "org-mode"
 	    "rails-reloaded")))
+(add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
+(setq-default c-basic-offset 4
+	      c-default-style "linux"
+	      fill-column 80) ; 80-wide for M-q.
 
-(setq tramp-default-method
-      "ssh"
-
-      default-directory
-      "/home/chris"
-
-      indent-tabs-mode
-      nil ; Don't mix tabs and spaces, that is stupid.
-      
-      visible-bell
-      t
-
-      require-final-newline
-      t
-
-      next-line-add-newlines
-      nil)
+(setq compilation-scroll-output t
+      default-directory "/home/chris"
+      indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
+      inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL, and this is where it lives.
+      mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
+      mouse-wheel-follow-mouse t ; scroll window under mouse
+      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
+      next-line-add-newlines nil
+      require-final-newline t
+      scroll-step 1 ; keyboard scroll one line at a time
+      tramp-default-method "ssh"
+      visible-bell t)
 
 (display-time)
-
-
-;;; Smooth scrolling
-(setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ; three lines at a time
-(setq mouse-wheel-progressive-speed nil) ; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ; scroll window under mouse
-(setq scroll-step 1) ; keyboard scroll one line at a time
-
-
-;;; 80-wide for M-q.
-(setq-default fill-column 80)
 
 ;;; 80-wide for man pages
 (setenv "MANWIDTH" "80")
 
-;;; C code setup.
-(setq-default c-default-style "linux"
-	      c-basic-offset 4)
-
 ;;; SLIME setup.
-(setq inferior-lisp-program "/usr/bin/sbcl") ; I like SBCL, and this is where it lives.
-(add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 (require 'slime-autoloads)
 (slime-setup)
 
