@@ -274,3 +274,4 @@
 ;;; Buffers
 (global-set-key (kbd "<f2> r") 'rename-buffer)
 (put 'downcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
