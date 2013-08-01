@@ -252,6 +252,9 @@
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
 
 
+(global-set-key (kbd "<XF86Back>") 'previous-buffer)
+(global-set-key (kbd "<XF86Forward>") 'next-buffer)
+
 ;;; Greek Letters and Glyphs.
 (global-set-key (kbd "<f9> a") "α")                                     
 (global-set-key (kbd "<f9> b") "β")
