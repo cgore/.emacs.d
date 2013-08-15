@@ -32,6 +32,7 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+(server-start)
 
 (let ((third-party "~/.emacs.d/third-party/"))
   (add-to-list 'load-path third-party)
