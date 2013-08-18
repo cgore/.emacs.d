@@ -1,0 +1,4 @@
+#! /bin/bash
+
+apt-get install emacs slime slime-doc sbcl sbcl-doc sbcl-source cl-swank \
+	 emacs-goodies-el emacs-goodies-extra-el emacs23-el magit git-el w3m-el
