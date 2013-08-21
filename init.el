@@ -279,3 +279,8 @@
 (global-set-key (kbd "<f2> r") 'rename-buffer)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+
+;;; GPG stuff.
+(require 'epa-file)
+;; With this, you can find-file something.gpg and it will just work.
+(epa-file-enable)
