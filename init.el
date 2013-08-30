@@ -61,7 +61,9 @@
       tramp-default-method "ssh"
       visible-bell t)
 
+;;; Toolbar setup
 (display-time)
+(column-number-mode 1)
 
 ;;; 80-wide for man pages
 (setenv "MANWIDTH" "80")
