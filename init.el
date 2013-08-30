@@ -110,7 +110,7 @@
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-deep-blue))
+  (color-theme-tty-dark))
 
 
 ;;; Multi-Term
@@ -121,7 +121,7 @@
 ;; theme if the library is present, assuming I can't already have it do that.
 (when window-system
   (custom-set-variables
-   '(term-default-bg-color "#102E4E")
+   '(term-default-bg-color "#000000")
    '(term-default-fg-color "#EEEEEE")
    '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
 			   ("C-p" . previous-line)
