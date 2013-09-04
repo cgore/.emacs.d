@@ -37,16 +37,16 @@
 (let ((third-party "~/.emacs.d/third-party/"))
   (add-to-list 'load-path third-party)
   (mapcar #'(lambda (path)
-	      (add-to-list 'load-path (concat third-party path)))
-	  '("haml-mode"
-	    "inf-ruby"
-	    "org-mode"
-	    "rails-reloaded")))
+              (add-to-list 'load-path (concat third-party path)))
+          '("haml-mode"
+            "inf-ruby"
+            "org-mode"
+            "rails-reloaded")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
 (setq-default c-basic-offset 4
-	      c-default-style "linux"
-	      fill-column 80) ; 80-wide for M-q.
+              c-default-style "linux"
+              fill-column 80) ; 80-wide for M-q.
 
 (setq compilation-scroll-output t
       default-directory "/home/chris"
@@ -60,6 +60,7 @@
       scroll-step 1 ; keyboard scroll one line at a time
       tramp-default-method "ssh"
       visible-bell t)
+(setq-default indent-tabs-mode nil)
 
 ;;; Toolbar setup
 (display-time)
@@ -98,17 +99,17 @@
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(default ((t (:inherit nil
-		  :stipple nil
-		  :inverse-video nil
-		  :box nil
-		  :strike-through nil
-		  :overline nil
-		  :underline nil
-		  :slant normal
-		  :weight normal
-		  :height 120
-		  :width normal
-		  :family "Droid Sans Mono")))))
+                  :stipple nil
+                  :inverse-video nil
+                  :box nil
+                  :strike-through nil
+                  :overline nil
+                  :underline nil
+                  :slant normal
+                  :weight normal
+                  :height 120
+                  :width normal
+                  :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
@@ -126,62 +127,61 @@
    '(term-default-bg-color "#000000")
    '(term-default-fg-color "#EEEEEE")
    '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
-			   ("C-p" . previous-line)
-			   ("C-n" . next-line)
-			   ("C-s" . isearch-forward)
-			   ("C-r" . isearch-backward)
-			   ("C-m" . term-send-raw)
-			   ("M-f" . term-send-forward-word)
-			   ("M-b" . term-send-backward-word)
-			   ("M-o" . term-send-backspace)
-			   ("M-p" . term-send-up)
-			   ("M-n" . term-send-down)
-			   ("M-M" . term-send-forward-kill-word)
-			   ("M-N" . term-send-backward-kill-word)
-			   ("M-r" . term-send-reverse-search-history)
-			   ("M-," . term-send-input)
-			   ("M-." . comint-dynamic-complete)
-			   ;; These were defined in term but undefined by multi-term.
-			   ;; I want them back.
-			   ;;     -- cgore.
-			   ("C-c C-j" . term-line-mode)
-			   ("C-c C-k" . term-char-mode)))))
+                           ("C-p" . previous-line)
+                           ("C-n" . next-line)
+                           ("C-s" . isearch-forward)
+                           ("C-r" . isearch-backward)
+                           ("C-m" . term-send-raw)
+                           ("M-f" . term-send-forward-word)
+                           ("M-b" . term-send-backward-word)
+                           ("M-o" . term-send-backspace)
+                           ("M-p" . term-send-up)
+                           ("M-n" . term-send-down)
+                           ("M-M" . term-send-forward-kill-word)
+                           ("M-N" . term-send-backward-kill-word)
+                           ("M-r" . term-send-reverse-search-history)
+                           ("M-," . term-send-input)
+                           ("M-." . comint-dynamic-complete)
+                           ;; These were defined in term but undefined by multi-term.
+                           ;; I want them back.
+                           ("C-c C-j" . term-line-mode)
+                           ("C-c C-k" . term-char-mode)))))
 
 (defun bash ()
   (interactive)
   (let ((multi-term-program "bash")
-	(multi-term-buffer-name "bash"))
+        (multi-term-buffer-name "bash"))
     (multi-term)))
 
 (defun irb ()
   (interactive)
   (let ((multi-term-program "irb")
-	(multi-term-buffer-name "irb"))
+        (multi-term-buffer-name "irb"))
     (multi-term)))
 
 (defun python ()
   (interactive)
   (let ((multi-term-program "python")
-	(multi-term-buffer-name "python"))
+        (multi-term-buffer-name "python"))
     (multi-term)))
 
 (defun sbcl ()
   (interactive)
   (let ((multi-term-program "sbcl")
-	(multi-term-buffer-name "sbcl"))
+        (multi-term-buffer-name "sbcl"))
     (multi-term)))
 
 (defun tig ()
   (interactive)
   (let ((multi-term-program "tig")
-	(multi-term-program-switches "-a")
-	(multi-term-buffer-name "tig"))
+        (multi-term-program-switches "-a")
+        (multi-term-buffer-name "tig"))
     (multi-term)))
 
 (defun zsh ()
   (interactive)
   (let ((multi-term-program "zsh")
-	(multi-term-buffer-name "zsh"))
+        (multi-term-buffer-name "zsh"))
     (multi-term)))
 
 ;;; Ruby stuff
@@ -241,9 +241,9 @@
   (interactive)
   (w3m-goto-url "http://www.google.com"))
 (global-set-key (kbd "<f6> g")
-		(lambda ()
-		  (interactive)
-		  (browse-url-firefox "http://www.google.com")))
+                (lambda ()
+                  (interactive)
+                  (browse-url-firefox "http://www.google.com")))
 (defun emacs-wiki ()
   (interactive)
   (w3m-goto-url "http://emacswiki.org"))
