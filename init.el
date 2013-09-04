@@ -81,6 +81,8 @@
  '(display-time-mode t)
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil)
+ '(menu-bar-mode nil)
+ '(scroll-bar-mode nil)
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
  '(size-indication-mode t)
@@ -104,7 +106,7 @@
 		  :underline nil
 		  :slant normal
 		  :weight normal
-		  :height 110
+		  :height 120
 		  :width normal
 		  :family "Droid Sans Mono")))))
   ;;; Color Themes.
