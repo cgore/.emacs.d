@@ -261,7 +261,7 @@
 (global-set-key (kbd "<XF86Forward>") 'next-buffer)
 
 ;;; Greek Letters and Glyphs.
-(global-set-key (kbd "<f9> a") "α")                                     
+(global-set-key (kbd "<f9> a") "α")
 (global-set-key (kbd "<f9> b") "β")
 (global-set-key (kbd "<f9> g") "γ")
 (global-set-key (kbd "<f9> d") "δ")
@@ -288,3 +288,9 @@
 (require 'epa-file)
 ;; With this, you can find-file something.gpg and it will just work.
 (epa-file-enable)
+
+;;; Whitespace mode
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing)
+      whitespace-line-column 80)
+(global-whitespace-mode t)
