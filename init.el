@@ -293,4 +293,9 @@
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing)
       whitespace-line-column 80)
-(global-whitespace-mode t)
+(global-whitespace-mode nil)
+(mapcar (lambda (mode-hook)
+          (add-hook mode-hook 'whitespace-mode))
+        '(c-mode-hook
+          python-mode-hook
+          ruby-mode-hook))
