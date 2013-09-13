@@ -297,5 +297,6 @@
 (mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
         '(c-mode-hook
+          lisp-mode-hook
           python-mode-hook
           ruby-mode-hook))
