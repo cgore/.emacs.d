@@ -115,10 +115,12 @@
   (color-theme-initialize)
   (color-theme-tty-dark))
 
-
 ;;; Multi-Term
 (require 'multi-term)
 (setq multi-term-program "zsh")
+(defun term-send-escape ()
+  (interactive)
+  (term-send-raw-string "\e"))
 ;; TO DO: How do I look up the colors from the color theme directly?  I should
 ;; automate this somehow.  Multi-Term should probably be made aware of the color
 ;; theme if the library is present, assuming I can't already have it do that.
@@ -145,7 +147,8 @@
                            ;; These were defined in term but undefined by multi-term.
                            ;; I want them back.
                            ("C-c C-j" . term-line-mode)
-                           ("C-c C-k" . term-char-mode)))))
+                           ("C-c C-k" . term-char-mode)
+                           ("C-c C-e" . term-send-escape)))))
 
 (defun bash ()
   (interactive)
