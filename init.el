@@ -192,7 +192,7 @@
 (require 'yari) ; ri interface
 (require 'haml-mode)
 (require 'rails-autoload)
-
+(require 'inf-ruby)
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
