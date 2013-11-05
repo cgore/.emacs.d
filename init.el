@@ -303,3 +303,4 @@
           lisp-mode-hook
           python-mode-hook
           ruby-mode-hook))
+(put 'scroll-left 'disabled nil)
