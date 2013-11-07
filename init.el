@@ -61,6 +61,7 @@
       tramp-default-method "ssh"
       visible-bell t)
 (setq-default indent-tabs-mode nil)
+(put 'scroll-left 'disabled nil)
 
 ;;; Toolbar setup
 (display-time)
@@ -203,6 +204,13 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t)
+(setq erc-prompt
+      (lambda ()
+        (erc-propertize (if (and (boundp 'erc-default-recipients)
+                                 (erc-default-target))
+                          (concat (erc-default-target) ">")
+                          (concat "ERC>"))
+                        'read-only t 'rear-nonsticky t 'front-nonsticky t)))
 (load "~/.emacs.d/ercpass")
 
 
