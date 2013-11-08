@@ -38,9 +38,11 @@
   (add-to-list 'load-path third-party)
   (mapcar #'(lambda (path)
               (add-to-list 'load-path (concat third-party path)))
-          '("haml-mode"
+          '("emacs-soap-client"
+            "haml-mode"
             "inf-ruby"
-            "org-mode"
+            "org-mode/lisp"
+            "org-jira"
             "rails-reloaded")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
@@ -88,7 +90,8 @@
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(jiralib-url "http://dev-task"))
 
 
 (when window-system ; Only if we are in a GUI.
@@ -216,6 +219,7 @@
 
 ;;; Org Mode
 (require 'org-install)
+(require 'org)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c c") 'org-capture)
@@ -311,4 +315,9 @@
           lisp-mode-hook
           python-mode-hook
           ruby-mode-hook))
-(put 'scroll-left 'disabled nil)
+
+
+;;; Org Jira
+(when (string= system-name "abaddon")
+  (setq jirilib-url "http://dev-task/")
+  (require 'org-jira))

@@ -10,3 +10,12 @@
 [submodule "third-party/inf-ruby"]
 	path = third-party/inf-ruby
 	url = https://github.com/nonsequitur/inf-ruby
+[submodule "third-party/org-jira"]
+	path = third-party/org-jira
+	url = git@github.com:baohaojun/org-jira.git
+[submodule "third-party/emacs-soap-client"]
+	path = third-party/emacs-soap-client
+	url = git@github.com:cgore/emacs-soap-client.git
+[submodule "tools/fast-export"]
+	path = tools/fast-export
+	url = git://repo.or.cz/fast-export.git
