@@ -191,6 +191,14 @@
         (multi-term-buffer-name "zsh"))
     (multi-term)))
 
+(defun ssh (ssh-to)
+  (interactive "sSSH to: ")
+  (let ((multi-term-program "ssh")
+        (multi-term-buffer-name ssh-to)
+        (multi-term-program-switches ssh-to))
+    (multi-term)))
+(global-set-key (kbd "<f6> s") 'ssh)
+
 ;;; Ruby stuff
 (require 'ruby-mode)
 (require 'yari) ; ri interface
