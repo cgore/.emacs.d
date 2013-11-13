@@ -83,7 +83,6 @@
 (require 'slime-autoloads)
 (slime-setup)
 
-
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -97,11 +96,20 @@
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
  '(size-indication-mode t)
+ '(socks-server '("default" "localhost" 9999 5))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(jiralib-url "http://dev-task")
  '(woman-fill-column (half-monitor-width))
  '(woman-fill-frame t)
  '(woman-bold-headings t))
+
+(when (abaddon?)
+ (setq socks-noproxy '("localhost"
+                       "chat"
+                       "dev-task"
+                       "dev-wiki"))
+ (require 'socks)
+ (setq erc-server-connect-function 'socks-open-network-stream))
 
 
 (when window-system ; Only if we are in a GUI.
