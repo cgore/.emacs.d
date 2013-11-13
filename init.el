@@ -106,8 +106,6 @@
 
 (when window-system ; Only if we are in a GUI.
   (setenv "TERM" "xterm-color")
-  (set-foreground-color "white")
-  (set-background-color "black")
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
@@ -136,13 +134,11 @@
 (defun term-send-escape ()
   (interactive)
   (term-send-raw-string "\e"))
-;; TO DO: How do I look up the colors from the color theme directly?  I should
-;; automate this somehow.  Multi-Term should probably be made aware of the color
-;; theme if the library is present, assuming I can't already have it do that.
+
 (when window-system
   (custom-set-variables
-   '(term-default-bg-color "#000000")
-   '(term-default-fg-color "#EEEEEE")
+   '(term-default-bg-color (face-background 'default))
+   '(term-default-fg-color (face-foreground 'default))
    '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
                            ("C-p" . previous-line)
                            ("C-n" . next-line)
