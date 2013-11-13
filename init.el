@@ -214,6 +214,13 @@
     (multi-term)))
 (global-set-key (kbd "<f6> s") 'ssh)
 
+(defun ri (query)
+  (interactive "sRI Query: ")
+  (let ((multi-term-program "ri")
+        (multi-term-buffer-name (concat "ri " query))
+        (multi-term-program-switches query))
+    (multi-term)))
+
 ;;; Ruby stuff
 (require 'ruby-mode)
 (require 'yari) ; ri interface
