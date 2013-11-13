@@ -46,6 +46,9 @@
             "rails-reloaded")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
+(defun abaddon? ()
+  (string= system-name "abaddon"))
+
 (setq-default c-basic-offset 4
               c-default-style "linux"
               fill-column 80) ; 80-wide for M-q.
@@ -215,6 +218,8 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t)
+(when (abaddon?)
+  (setq erc-fill-column 93))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
@@ -326,6 +331,6 @@
 
 
 ;;; Org Jira
-(when (string= system-name "abaddon")
+(when (abaddon?)
   (setq jirilib-url "http://dev-task/")
   (require 'org-jira))
