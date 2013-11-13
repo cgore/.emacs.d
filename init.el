@@ -49,6 +49,11 @@
 (defun abaddon? ()
   (string= system-name "abaddon"))
 
+(defun half-monitor-width ()
+  (if (abaddon?)
+    93
+    80))
+
 (setq-default c-basic-offset 4
               c-default-style "linux"
               fill-column 80) ; 80-wide for M-q.
@@ -72,8 +77,7 @@
 (display-time)
 (column-number-mode 1)
 
-;;; 80-wide for man pages
-(setenv "MANWIDTH" "80")
+(setenv "MANWIDTH" (number-to-string (half-monitor-width)))
 
 ;;; SLIME setup.
 (require 'slime-autoloads)
@@ -94,10 +98,14 @@
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- '(jiralib-url "http://dev-task"))
+ '(jiralib-url "http://dev-task")
+ '(woman-fill-column (half-monitor-width))
+ '(woman-fill-frame t)
+ '(woman-bold-headings t))
 
 
 (when window-system ; Only if we are in a GUI.
+  (setenv "TERM" "xterm-color")
   (set-foreground-color "white")
   (set-background-color "black")
   (custom-set-faces
@@ -217,9 +225,8 @@
       erc-save-buffer-on-part t
       erc-save-queries-on-quit t
       erc-log-write-after-send t
-      erc-log-write-after-insert t)
-(when (abaddon?)
-  (setq erc-fill-column 93))
+      erc-log-write-after-insert t
+      erc-fill-column (half-monitor-width))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
