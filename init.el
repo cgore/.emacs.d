@@ -238,7 +238,10 @@
                           (concat (erc-default-target) ">")
                           (concat "ERC>"))
                         'read-only t 'rear-nonsticky t 'front-nonsticky t)))
-(load "~/.emacs.d/ercpass")
+(require 'erc-services)
+(erc-services-mode 1)
+(setq erc-prompt-for-nickserv-password nil)
+(load "~/.emacs.d/ercpass") ; Set your erc-nickserv-passwords in there.
 
 
 ;;; Org Mode
