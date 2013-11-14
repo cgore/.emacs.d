@@ -52,7 +52,7 @@
   (string= system-name "habakkuk"))
 
 (defun half-monitor-width ()
-  (cond ((abaddon?)  93)
+  (cond ((abaddon?)  92)
         ((habakkuk?) 94)
         (t           80)))
 
