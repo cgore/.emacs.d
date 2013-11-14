@@ -227,6 +227,7 @@
 (require 'haml-mode)
 (require 'rails-autoload)
 (require 'inf-ruby)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
@@ -309,15 +310,20 @@
 (global-set-key (kbd "<XF86Back>") 'previous-buffer)
 (global-set-key (kbd "<XF86Forward>") 'next-buffer)
 
-;;; Greek Letters and Glyphs.
-(global-set-key (kbd "<f9> a") "α")
-(global-set-key (kbd "<f9> b") "β")
-(global-set-key (kbd "<f9> g") "γ")
-(global-set-key (kbd "<f9> d") "δ")
-; ...
-(global-set-key (kbd "<f9> l") "λ")
-; ...
-(global-set-key (kbd "<f9> o") "ω")
+
+;;; Odd letters and glyphs.
+(defun french-input ()
+  (set-input-method "french-prefix"))
+(defun greek-input ()
+  (set-input-method "greek"))
+(defun ucs-input ()
+  (set-input-method "ucs"))
+(defun tex-input ()
+  (set-input-method "TeX"))
+(global-set-key (kbd "<f9> f") 'french-input)
+(global-set-key (kbd "<f9> g") 'greek-input)
+(global-set-key (kbd "<f9> t") 'tex-input)
+(global-set-key (kbd "<f9> u") 'ucs-input)
 
 (global-set-key (kbd "<f9> ->") "→")
 (global-set-key (kbd "<f9> <-") "←")
