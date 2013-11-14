@@ -48,11 +48,13 @@
 
 (defun abaddon? ()
   (string= system-name "abaddon"))
+(defun habakkuk? ()
+  (string= system-name "habakkuk"))
 
 (defun half-monitor-width ()
-  (if (abaddon?)
-    93
-    80))
+  (cond ((abaddon?)  93)
+        ((habakkuk?) 94)
+        (t           80)))
 
 (setq-default c-basic-offset 4
               c-default-style "linux"
@@ -114,6 +116,9 @@
 
 (when window-system ; Only if we are in a GUI.
   (setenv "TERM" "xterm-color")
+  (when (habakkuk?)
+    (set-foreground-color "white")
+    (set-background-color "black"))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
