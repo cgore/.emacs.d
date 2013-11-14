@@ -313,12 +313,16 @@
 
 ;;; Odd letters and glyphs.
 (defun french-input ()
+  (interactive)
   (set-input-method "french-prefix"))
 (defun greek-input ()
+  (interactive)
   (set-input-method "greek"))
 (defun ucs-input ()
+  (interactive)
   (set-input-method "ucs"))
 (defun tex-input ()
+  (interactive)
   (set-input-method "TeX"))
 (global-set-key (kbd "<f9> f") 'french-input)
 (global-set-key (kbd "<f9> g") 'greek-input)
