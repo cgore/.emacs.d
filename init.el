@@ -217,6 +217,7 @@
   (let ((multi-term-program "zsh")
         (multi-term-buffer-name "zsh"))
     (multi-term)))
+(global-set-key (kbd "<f2> z") 'zsh)
 
 (defun ssh (ssh-to)
   (interactive "sSSH to: ")
