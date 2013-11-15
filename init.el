@@ -210,6 +210,7 @@
         (multi-term-program-switches "-a")
         (multi-term-buffer-name "tig"))
     (multi-term)))
+(global-set-key (kbd "<f2> t") 'tig)
 
 (defun zsh ()
   (interactive)
