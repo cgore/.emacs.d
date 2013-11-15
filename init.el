@@ -186,6 +186,7 @@
         (multi-term-buffer-name "bash"))
     (multi-term)))
 
+;;; Normally you should just use inf-ruby.
 (defun irb ()
   (interactive)
   (let ((multi-term-program "irb")
@@ -198,6 +199,7 @@
         (multi-term-buffer-name "python"))
     (multi-term)))
 
+;;; Normally you should just use SLIME.
 (defun sbcl ()
   (interactive)
   (let ((multi-term-program "sbcl")
