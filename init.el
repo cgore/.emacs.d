@@ -46,10 +46,16 @@
             "rails-reloaded")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
-(defun abaddon? ()
+(defun abaddon? () ; work
   (string= system-name "abaddon"))
-(defun habakkuk? ()
+(defun corinth? () ; laptop
+  (string= system-name "corinth"))
+(defun ezekiel? () ; California
+  (string= system-name "ezekiel"))
+(defun habakkuk? () ; home
   (string= system-name "habakkuk"))
+(defun naaman? () ; Atlanta
+  (string= system-name "naaman"))
 
 (defun half-monitor-width ()
   (cond ((abaddon?)  92)
