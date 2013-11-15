@@ -261,7 +261,11 @@
 (require 'erc-services)
 (erc-services-mode 1)
 (setq erc-prompt-for-nickserv-password nil)
-(load "~/.emacs.d/ercpass") ; Set your erc-nickserv-passwords in there.
+
+;; Set your erc-nickserv-passwords in this file.  Example:
+;;(setq erc-nickserv-passwords
+;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
+(load "~/.emacs.d/ercpass")
 
 
 ;;; Org Mode
