@@ -46,6 +46,9 @@
             "rails-reloaded")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
+(require 'ido)
+(ido-mode t)
+
 (defun abaddon? () ; work
   (string= system-name "abaddon"))
 (defun corinth? () ; laptop
