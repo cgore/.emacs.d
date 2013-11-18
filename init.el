@@ -253,7 +253,11 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t
-      erc-fill-column (half-monitor-width))
+      erc-fill-column (half-monitor-width)
+      erc-autojoin-channels-alist '(("chat"
+                                     "#chat" "#slamr-dev")
+                                    ("irc.freenode.net"
+                                     "#ruby" "#lisp")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
