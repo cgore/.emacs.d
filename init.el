@@ -62,7 +62,7 @@
 
 (defun half-monitor-width ()
   (cond ((abaddon?)  92)
-        ((habakkuk?) 94)
+        ((habakkuk?) 92)
         (t           80)))
 
 (setq-default c-basic-offset 4
@@ -259,7 +259,7 @@
       erc-fill-column (half-monitor-width)
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
-                                    ("irc.freenode.net"
+                                    (freenode
                                      "#ruby" "#lisp")))
 (setq erc-prompt
       (lambda ()
