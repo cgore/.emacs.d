@@ -394,7 +394,11 @@
           ruby-mode-hook))
 
 
-;;; Org Jira
+;;; Atlassian stuff
 (when (abaddon?)
   (setq jirilib-url "http://dev-task/")
-  (require 'org-jira))
+  (require 'org-jira)
+  (global-set-key (kbd "<f5> j")
+                  (icurry 'w3m-browse-url "http://dev-task"))
+  (global-set-key (kbd "<f5> w")
+                  (icurry 'w3m-browse-url "http://dev-wiki")))
