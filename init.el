@@ -75,8 +75,8 @@
   (string= system-name "naaman"))
 
 (defun half-monitor-width ()
-  (cond ((abaddon?)  92)
-        ((habakkuk?) 92)
+  (cond ((abaddon?)  100)
+        ((habakkuk?) 100)
         (t           80)))
 
 (setq-default c-basic-offset 4
@@ -276,7 +276,7 @@
       erc-fill-column (half-monitor-width)
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
-                                    (freenode
+                                    ("irc.freenode.net"
                                      "#ruby" "#lisp")))
 (setq erc-prompt
       (lambda ()
@@ -383,7 +383,7 @@
 ;;; Whitespace mode
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing)
-      whitespace-line-column 80)
+      whitespace-line-column 81)
 (global-whitespace-mode nil)
 (mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
