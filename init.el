@@ -32,13 +32,15 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+
 (server-start)
 
 (let ((third-party "~/.emacs.d/third-party/"))
   (add-to-list 'load-path third-party)
   (mapcar #'(lambda (path)
               (add-to-list 'load-path (concat third-party path)))
-          '("emacs-soap-client"
+          '("curry-gist"
+            "emacs-soap-client"
             "haml-mode"
             "inf-ruby"
             "org-mode/lisp"
@@ -46,6 +48,17 @@
             "rails-reloaded"
             "scss-mode")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
+
+(defsubst icurry (function &rest arguments)
+  (lexical-let ((function function)
+                (arguments arguments))
+    (lambda (&rest more)
+      (interactive)
+      (apply function (append arguments more)))))
+
+;;; color these functions like keywords
+(font-lock-add-keywords 'emacs-lisp-mode
+                        '(("(\\(icurry\\)[ \t\n\r]" 1 font-lock-keyword-face)))
 
 (require 'ido)
 (ido-mode t)
@@ -322,13 +335,13 @@
   (interactive)
   (w3m-goto-url "http://www.google.com"))
 (global-set-key (kbd "<f6> g")
-                (lambda ()
-                  (interactive)
-                  (browse-url-firefox "http://www.google.com")))
+                (curry 'browse-url-firefox "http://www.google.com"))
+;                (lambda ()
+;                  (interactive)
+;                  (browse-url-firefox "http://www.google.com")))
 (defun emacs-wiki ()
   (interactive)
   (w3m-goto-url "http://emacswiki.org"))
-
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
