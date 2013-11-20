@@ -138,7 +138,6 @@
 
 
 (when window-system ; Only if we are in a GUI.
-  (setenv "TERM" "xterm-color")
   (when (habakkuk?)
     (set-foreground-color "white")
     (set-background-color "black"))
@@ -156,7 +155,7 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 120
+                  :height 115
                   :width normal
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
