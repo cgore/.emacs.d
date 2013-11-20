@@ -19,3 +19,6 @@
 [submodule "tools/fast-export"]
 	path = tools/fast-export
 	url = git://repo.or.cz/fast-export.git
+[submodule "third-party/scss-mode"]
+	path = third-party/scss-mode
+	url = git@github.com:antonj/scss-mode.git

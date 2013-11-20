@@ -43,7 +43,8 @@
             "inf-ruby"
             "org-mode/lisp"
             "org-jira"
-            "rails-reloaded")))
+            "rails-reloaded"
+            "scss-mode")))
 (add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
 
 (require 'ido)
@@ -239,13 +240,17 @@
         (multi-term-program-switches query))
     (multi-term)))
 
-;;; Ruby stuff
+;;; Ruby
 (require 'ruby-mode)
 (require 'yari) ; ri interface
-(require 'haml-mode)
-(require 'rails-autoload)
 (require 'inf-ruby)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+
+;;; Ruby on Rails
+(require 'haml-mode)
+(require 'rails-autoload)
+(setq scss-compile-at-save nil)
+(require 'scss-mode)
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
