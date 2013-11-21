@@ -347,7 +347,7 @@
 ;;; Odd letters and glyphs.
 (defun french-input ()
   (interactive)
-  (set-input-method "french-prefix"))
+  (set-input-method "french-postfix"))
 (defun greek-input ()
   (interactive)
   (set-input-method "greek"))
