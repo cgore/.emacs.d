@@ -257,6 +257,7 @@
 (require 'yari) ; ri interface
 (require 'inf-ruby)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 
 ;;; Ruby on Rails
 (require 'haml-mode)
