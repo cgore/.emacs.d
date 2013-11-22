@@ -328,9 +328,12 @@
 (global-set-key (kbd "<f6> f") 'browse-url-at-point-firefox)
 (global-set-key (kbd "<f6> g")
                 (icurry 'browse-url-firefox "http://www.google.com"))
-(defun emacs-wiki ()
-  (interactive)
-  (w3m-goto-url "http://emacswiki.org"))
+
+
+;;; ThinkingBicycle.com stuff.
+(global-set-key (kbd "<f6> t")
+                (icurry 'w3m-browse-url "http://thinkingbicycle.com"))
+
 
 
 ;;; TeX and LaTeX
