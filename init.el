@@ -270,6 +270,10 @@
       erc-nick "cgore"
       erc-user-full-name "Christopher Mark Gore"
       erc-email-userid "cgore@cgore.com"
+      erc-interpret-mirc-color t
+      erc-kill-buffer-on-part t
+      erc-kill-queries-on-quit t
+      erc-kill-server-buffer-on-quit t
       erc-save-buffer-on-part t
       erc-save-queries-on-quit t
       erc-log-write-after-send t
