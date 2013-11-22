@@ -345,6 +345,14 @@
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/read_laters"))
 (global-set-key (kbd "<f7> s")
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/received_shares"))
+(global-set-key (kbd "<f7> S")
+                (icurry 'w3m-browse-url "http://thinkingbicycle.com/keywords/search"))
+(global-set-key (kbd "<f7> +")
+                (lambda ()
+                  (interactive)
+                  (when (string= major-mode "w3m-mode")
+                    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet?uri="
+                                            (w3m-print-current-url))))))
 
 
 ;;; TeX and LaTeX
