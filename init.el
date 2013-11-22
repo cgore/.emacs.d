@@ -411,10 +411,11 @@
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs lines-tail trailing)
       whitespace-line-column 81)
-(global-whitespace-mode nil)
+(global-whitespace-mode 0)
 (mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
         '(c-mode-hook
+          emacs-lisp-mode-hook
           lisp-mode-hook
           python-mode-hook
           ruby-mode-hook))
