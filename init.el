@@ -335,8 +335,10 @@
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com"))
 (global-set-key (kbd "<f7> b")
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/bookmarks"))
-
-
+(global-set-key (kbd "<f7> l")
+                (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/read_laters"))
+(global-set-key (kbd "<f7> s")
+                (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/received_shares"))
 
 
 ;;; TeX and LaTeX
