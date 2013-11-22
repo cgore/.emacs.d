@@ -339,8 +339,10 @@
 
 ;;; Git
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
+(global-set-key (kbd "<f2> g") 'magit-status)
 
 
+;;; Buffer navigation.
 (global-set-key (kbd "<XF86Back>") 'previous-buffer)
 (global-set-key (kbd "<XF86Forward>") 'next-buffer)
 
