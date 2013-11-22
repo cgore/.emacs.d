@@ -331,9 +331,9 @@
 
 
 ;;; ThinkingBicycle.com stuff.
-(global-set-key (kbd "<f6> t")
+(global-set-key (kbd "<f7> <f7>")
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com"))
-(global-set-key (kbd "<f6> b")
+(global-set-key (kbd "<f7> b")
                 (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/bookmarks"))
 
 
