@@ -283,7 +283,7 @@
       erc-fill-column (half-monitor-width)
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
-                                    ("irc.freenode.net"
+                                    ("freenode.net"
                                      "#ruby" "#rails" "#lisp" "#jesus")))
 (setq erc-prompt
       (lambda ()
