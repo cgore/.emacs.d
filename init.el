@@ -337,23 +337,31 @@
 
 
 ;;; ThinkingBicycle.com stuff.
-(global-set-key (kbd "<f7> <f7>")
-                (icurry 'w3m-browse-url "http://thinkingbicycle.com"))
-(global-set-key (kbd "<f7> b")
-                (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/bookmarks"))
-(global-set-key (kbd "<f7> l")
-                (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/read_laters"))
-(global-set-key (kbd "<f7> s")
-                (icurry 'w3m-browse-url "http://thinkingbicycle.com/users/received_shares"))
-(global-set-key (kbd "<f7> S")
-                (icurry 'w3m-browse-url "http://thinkingbicycle.com/keywords/search"))
-(global-set-key (kbd "<f7> +")
-                (lambda ()
-                  (interactive)
-                  (when (string= major-mode "w3m-mode")
-                    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet?uri="
-                                            (w3m-print-current-url))))))
-
+(defun thinking-bicycle ()
+  (interactive)
+  (browse-url "http://thinkingbicycle.com"))
+(defun thinking-bicycle-bookmarks ()
+  (interactive)
+  (browse-url "http://thinkingbicycle.com/users/bookmarks"))
+(defun thinking-bicycle-read-laters ()
+  (browse-url "http://thinkingbicycle.com/users/read_laters"))
+(defun thinking-bicycle-received-shares ()
+  (browse-url "http://thinkingbicycle.com/users/received_shares"))
+(defun thinking-bicycle-search ()
+  (icurry 'w3m-browse-url "http://thinkingbicycle.com/keywords/search"))
+(defun thinking-bicycle-advanced-search ()
+  (icurry 'w3m-browse-url "http://thinkingbicycle.com/keywords/advanced_search"))
+(defun thinking-bicycle-add-uri ()
+  (interactive)
+  (when (string= major-mode "w3m-mode")
+    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet?uri="
+                            (w3m-print-current-url)))))
+(global-set-key (kbd "<f7> <f7>") 'thinking-bicycle)
+(global-set-key (kbd "<f7> b")    'thinking-bicycle-bookmarks)
+(global-set-key (kbd "<f7> l")    'thinking-bicycle-read-laters)
+(global-set-key (kbd "<f7> s")    'thinking-bicycle-received-shares)
+(global-set-key (kbd "<f7> S")    'thinking-bicycle-search)
+(global-set-key (kbd "<f7> +")    'thinking-bicycle-add-uri)
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
