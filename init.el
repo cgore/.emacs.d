@@ -325,6 +325,8 @@
       w3m-output-coding-system 'utf-8
       w3m-terminal-coding-system 'utf-8
       w3m-use-cookies t)
+(add-hook 'w3m-mode (lambda ()
+                      (blink-cursor-mode 0)))
 (defun browse-url-at-point-firefox ()
   (interactive)
   (let ((browse-url-browser-function 'browse-url-firefox))
