@@ -75,7 +75,7 @@
   (string= system-name "naaman"))
 
 (defun fixed-buffer-width ()
-  (cond ((not window-system) 80)
+  (cond ((not window-system) 78)
         ((abaddon?)  100)
         ((habakkuk?) 100)
         (t           80)))
