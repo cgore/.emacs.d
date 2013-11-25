@@ -76,9 +76,9 @@
 
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
-        ((abaddon?)  100)
-        ((habakkuk?) 100)
-        (t           80)))
+        ((abaddon?)          100)
+        ((habakkuk?)         100)
+        (t                   80)))
 
 (setq-default c-basic-offset 4
               c-default-style "linux"
