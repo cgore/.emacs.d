@@ -74,8 +74,9 @@
 (defun naaman? () ; Atlanta
   (string= system-name "naaman"))
 
-(defun half-monitor-width ()
-  (cond ((abaddon?)  100)
+(defun fixed-buffer-width ()
+  (cond ((not window-system) 80)
+        ((abaddon?)  100)
         ((habakkuk?) 100)
         (t           80)))
 
@@ -104,7 +105,7 @@
 
 (blink-cursor-mode 0)
 
-(setenv "MANWIDTH" (number-to-string (half-monitor-width)))
+(setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
 (require 'slime-autoloads)
@@ -126,7 +127,7 @@
  '(socks-server '("default" "localhost" 9999 5))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(jiralib-url "http://dev-task")
- '(woman-fill-column (half-monitor-width))
+ '(woman-fill-column (fixed-buffer-width))
  '(woman-fill-frame t)
  '(woman-bold-headings t))
 
@@ -280,7 +281,7 @@
       erc-save-queries-on-quit t
       erc-log-write-after-send t
       erc-log-write-after-insert t
-      erc-fill-column (half-monitor-width)
+      erc-fill-column (fixed-buffer-width)
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
