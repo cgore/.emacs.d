@@ -43,6 +43,7 @@
             "emacs-soap-client"
             "haml-mode"
             "inf-ruby"
+            "json-mode"
             "org-mode/lisp"
             "org-jira"
             "rails-reloaded"
@@ -255,18 +256,28 @@
         (multi-term-program-switches query))
     (multi-term)))
 
+
+;;; JavaScript and JSON
+(require 'json-mode)
+
+
 ;;; Ruby
 (require 'ruby-mode)
 (require 'yari) ; ri interface
 (require 'inf-ruby)
+(require 'ruby-block)
+(ruby-block-mode t)
+(setq ruby-block-highlight-toggle 'overlay)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+
 
 ;;; Ruby on Rails
 (require 'haml-mode)
 (require 'rails-autoload)
 (setq scss-compile-at-save nil)
 (require 'scss-mode)
+
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"

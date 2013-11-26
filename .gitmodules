@@ -22,3 +22,6 @@
 [submodule "third-party/scss-mode"]
 	path = third-party/scss-mode
 	url = git@github.com:antonj/scss-mode.git
+[submodule "third-party/json-mode"]
+	path = third-party/json-mode
+	url = git@github.com:joshwnj/json-mode.git
