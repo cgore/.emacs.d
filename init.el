@@ -180,7 +180,7 @@
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-dark-laptop))
+  (color-theme-subtle-hacker))
 
 ;;; Multi-Term
 (require 'multi-term)
