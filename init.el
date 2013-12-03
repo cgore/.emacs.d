@@ -449,6 +449,11 @@
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+
+;;; Rectangles
+(global-set-key (kbd "C-x r I") 'string-insert-rectangle)
+
+
 ;;; GPG stuff.
 (require 'epa-file)
 ;; With this, you can find-file something.gpg and it will just work.
