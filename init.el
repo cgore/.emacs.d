@@ -48,7 +48,7 @@
             "org-jira"
             "rails-reloaded"
             "scss-mode")))
-(add-to-list 'load-path "/home/chris/programming/lisp/slime/") ; This is my SLIME directory.
+(add-to-list 'load-path "~/programming/lisp/slime/") ; This is my SLIME directory.
 
 (defsubst icurry (function &rest arguments)
   (lexical-let ((function function)
@@ -87,7 +87,7 @@
               fill-column 80) ; 80-wide for M-q.
 
 (setq compilation-scroll-output t
-      default-directory "/home/chris"
+      default-directory "~"
       indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
       inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL, and this is where it lives.
       mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
