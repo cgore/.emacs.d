@@ -256,12 +256,20 @@
     (multi-term)))
 (global-set-key (kbd "<f2> z") 'zsh)
 
+(defun su ()
+  (interactive)
+  (let ((multi-term-program "su")
+        (multi-term-buffer-name "su")
+        (multi-term-program-switches "--login"))
+    (multi-term)))
+(global-set-key (kbd "<f6> r") 'su)
+
 (defun ssh (ssh-to)
   (interactive "sSSH to: ")
   (let ((multi-term-program "ssh")
         (multi-term-buffer-name ssh-to)
         (multi-term-program-switches ssh-to))
-    (multi-term)))
+    (multi-term))
 (global-set-key (kbd "<f6> s") 'ssh)
 
 (defun ri (query)
@@ -269,7 +277,7 @@
   (let ((multi-term-program "ri")
         (multi-term-buffer-name (concat "ri " query))
         (multi-term-program-switches query))
-    (multi-term)))
+    (multi-term))
 
 
 ;;; JavaScript and JSON
