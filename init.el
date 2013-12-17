@@ -180,7 +180,7 @@
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-subtle-hacker))
+  (color-theme-charcoal-black))
 
 ;;; Multi-Term
 (require 'multi-term)
