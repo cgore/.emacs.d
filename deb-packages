@@ -1,4 +1,5 @@
 #! /bin/bash
 
-apt-get install emacs slime sbcl sbcl-doc sbcl-source cl-swank emacs-goodies-el \
-                emacs-goodies-extra-el emacs23-el magit git-el w3m-el
+apt-get install emacs24 slime sbcl sbcl-doc sbcl-source cl-swank emacs-goodies-el \
+                emacs-goodies-extra-el magit git-el w3m-el \
+		emacs24-common emacs24-common-non-dfsg emacs24-el
