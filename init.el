@@ -319,7 +319,7 @@
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
-                                     "#ruby" "#rails" "#lisp" "#jesus")))
+                                     "#emacs" "#jesus" "#lisp" "#rails" "#ruby")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
