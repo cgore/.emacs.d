@@ -330,6 +330,8 @@
 (require 'erc-services)
 (erc-services-mode 1)
 (setq erc-prompt-for-nickserv-password nil)
+(add-to-list 'erc-modules 'log)
+(erc-update-modules)
 
 ;; Set your erc-nickserv-passwords in this file.  Example:
 ;;(setq erc-nickserv-passwords
