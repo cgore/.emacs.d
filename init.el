@@ -48,7 +48,6 @@
             "org-jira"
             "rails-reloaded"
             "scss-mode")))
-(add-to-list 'load-path "~/programming/lisp/slime/") ; This is my SLIME directory.
 
 (defsubst icurry (function &rest arguments)
   (lexical-let ((function function)
@@ -63,6 +62,11 @@
 
 (require 'ido)
 (ido-mode t)
+
+(defun cygwin? ()
+  (eq system-type 'cygwin))
+(defun linux? ()
+  (eq system-type 'gnu/linux))
 
 (defun abaddon? () ; work
   (string= system-name "abaddon"))
@@ -110,8 +114,10 @@
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
-(require 'slime-autoloads)
-(slime-setup)
+(when (linux?)
+  (add-to-list 'load-path "~/programming/lisp/slime/") ; This is my SLIME directory.
+  (require 'slime-autoloads)
+  (slime-setup))
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -141,7 +147,7 @@
  (require 'socks)
  (setq erc-server-connect-function 'socks-open-network-stream))
 
-(when window-system ; Only if we are in a GUI.
+(when (and window-system (linux?))
   (when (or (abaddon?)
             (corinth?)
             (habakkuk?))
@@ -281,13 +287,15 @@
 
 
 ;;; JavaScript and JSON
-(require 'json-mode)
+(when (linux?)
+  (require 'json-mode))
 
 
 ;;; Ruby
 (require 'ruby-mode)
 (require 'yari) ; ri interface
-(require 'inf-ruby)
+(when (linux?)
+  (require 'inf-ruby))
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle 'overlay)
@@ -296,10 +304,11 @@
 
 
 ;;; Ruby on Rails
-(require 'haml-mode)
-(require 'rails-autoload)
-(setq scss-compile-at-save nil)
-(require 'scss-mode)
+(when (linux?)
+  (require 'haml-mode)
+  (require 'rails-autoload)
+  (setq scss-compile-at-save nil)
+  (require 'scss-mode))
 
 
 ;;; ERC: Emacs IRC
@@ -336,7 +345,8 @@
 ;; Set your erc-nickserv-passwords in this file.  Example:
 ;;(setq erc-nickserv-passwords
 ;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
-(load "~/.emacs.d/ercpass")
+(when (or (habakkuk?) (abaddon?))
+  (load "~/.emacs.d/ercpass"))
 
 
 ;;; Org Mode

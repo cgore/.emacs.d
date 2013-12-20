@@ -7,6 +7,8 @@ auto-save-list
 ercpass
 tramp
 erc/log/
-
 third-party/emacs-soap-client.hg
 /url/cookies
+eshell/history
+eshell/lastdir
+elpa/
