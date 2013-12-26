@@ -382,37 +382,7 @@
 (global-set-key (kbd "<f6> g")
                 (icurry 'browse-url-firefox "http://www.google.com"))
 
-
-;;; ThinkingBicycle.com stuff.
-(defun thinking-bicycle ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com"))
-(defun thinking-bicycle-bookmarks ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com/users/bookmarks"))
-(defun thinking-bicycle-read-laters ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com/users/read_laters"))
-(defun thinking-bicycle-received-shares ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com/users/received_shares"))
-(defun thinking-bicycle-search ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com/keywords/search"))
-(defun thinking-bicycle-advanced-search ()
-  (interactive)
-  (browse-url "http://thinkingbicycle.com/keywords/advanced_search"))
-(defun thinking-bicycle-add-uri ()
-  (interactive)
-  (when (string= major-mode "w3m-mode")
-    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet?uri="
-                            (w3m-print-current-url)))))
-(global-set-key (kbd "<f7> <f7>") 'thinking-bicycle)
-(global-set-key (kbd "<f7> b")    'thinking-bicycle-bookmarks)
-(global-set-key (kbd "<f7> l")    'thinking-bicycle-read-laters)
-(global-set-key (kbd "<f7> s")    'thinking-bicycle-received-shares)
-(global-set-key (kbd "<f7> S")    'thinking-bicycle-search)
-(global-set-key (kbd "<f7> +")    'thinking-bicycle-add-uri)
+(load "~/.emacs.d/thinking-bicycle.el")
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
