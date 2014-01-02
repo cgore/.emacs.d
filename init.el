@@ -1,4 +1,4 @@
-;;;; Copyright © 2013, Christopher Mark Gore,
+;;;; Copyright © 2013-2014, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -47,6 +47,7 @@
             "org-mode/lisp"
             "org-jira"
             "rails-reloaded"
+            "ruby-electric"
             "scss-mode")))
 
 (defsubst icurry (function &rest arguments)
@@ -292,6 +293,7 @@
 
 
 ;;; Ruby
+(require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
 (when (linux?)
