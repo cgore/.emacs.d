@@ -187,7 +187,7 @@
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-charcoal-black))
+  (color-theme-deep-blue))
 
 ;;; Multi-Term
 (require 'multi-term)
