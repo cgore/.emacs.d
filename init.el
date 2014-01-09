@@ -473,3 +473,13 @@
                   (icurry 'w3m-browse-url "http://dev-task"))
   (global-set-key (kbd "<f5> w")
                   (icurry 'w3m-browse-url "http://dev-wiki")))
+
+;;; Spell Checking
+(add-hook 'latex-mode-hook 'flyspell-mode)
+(mapcar #'(lambda (mode-hook)
+            (add-hook mode-hook 'flyspell-prog-mode))
+        '(c-mode-hook
+          c++-mode-hook
+          lisp-mode-hook
+          python-mode-hook
+          ruby-mode-hook))
