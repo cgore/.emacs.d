@@ -94,7 +94,7 @@
 (setq compilation-scroll-output t
       default-directory "~"
       indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
-      inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL, and this is where it lives.
+      inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL
       mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
       mouse-wheel-follow-mouse t ; scroll window under mouse
       mouse-wheel-progressive-speed nil ; don't accelerate scrolling
@@ -116,7 +116,7 @@
 
 ;;; SLIME setup.
 (when (linux?)
-  (add-to-list 'load-path "~/programming/lisp/slime/") ; This is my SLIME directory.
+  (add-to-list 'load-path "~/programming/lisp/slime/") ; My SLIME directory.
   (require 'slime-autoloads)
   (slime-setup))
 
@@ -154,36 +154,19 @@
             (habakkuk?))
     (set-foreground-color "white")
     (set-background-color "black"))
-  (cond ((corinth?)
-         (custom-set-faces
-          '(default ((t (:inherit nil
-                         :stipple nil
-                         :inverse-video nil
-                         :box nil
-                         :strike-through nil
-                         :overline nil
-                         :underline nil
-                         :slant normal
-                         :weight normal
-                         :height 100
-                         :width normal
-                         :family "Droid Sans Mono"))))))
-        ((or (abaddon?)
-             (habakkuk?)
-             t)
-         (custom-set-faces
-          '(default ((t (:inherit nil
-                         :stipple nil
-                         :inverse-video nil
-                         :box nil
-                         :strike-through nil
-                         :overline nil
-                         :underline nil
-                         :slant normal
-                         :weight normal
-                         :height 115
-                         :width normal
-                         :family "Droid Sans Mono")))))))
+  (custom-set-faces
+   '(default ((t (:inherit nil
+                  :stipple nil
+                  :inverse-video nil
+                  :box nil
+                  :strike-through nil
+                  :overline nil
+                  :underline nil
+                  :slant normal
+                  :weight normal
+                  :height 100
+                  :width normal
+                  :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
@@ -216,8 +199,8 @@
                            ("M-r" . term-send-reverse-search-history)
                            ("M-," . term-send-input)
                            ("M-." . comint-dynamic-complete)
-                           ;; These were defined in term but undefined by multi-term.
-                           ;; I want them back.
+                           ;; These were defined in term but undefined by
+                           ;; multi-term.  I want them back.
                            ("C-c C-j" . term-line-mode)
                            ("C-c C-k" . term-char-mode)
                            ("C-c C-e" . term-send-escape)))))
@@ -330,7 +313,8 @@
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
-                                     "#emacs" "#jesus" "#lisp" "#rails" "#ruby")))
+                                     "#emacs" "#jesus" "#lisp" "#rails"
+                                     "#ruby")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
