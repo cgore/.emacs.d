@@ -443,6 +443,7 @@
 (mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
         '(c-mode-hook
+          c++-mode-hook
           emacs-lisp-mode-hook
           lisp-mode-hook
           python-mode-hook
@@ -459,11 +460,16 @@
                   (icurry 'w3m-browse-url "http://dev-wiki")))
 
 ;;; Spell Checking
-(add-hook 'latex-mode-hook 'flyspell-mode)
+(mapcar #'(lambda (mode-hook)
+            (add-hook mode-hook 'flyspell-mode))
+        '(latex-mode-hook
+          org-mode-hoook))
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-prog-mode))
         '(c-mode-hook
           c++-mode-hook
+          emacs-lisp-mode-hook
           lisp-mode-hook
+          org-mode-hook
           python-mode-hook
           ruby-mode-hook))
