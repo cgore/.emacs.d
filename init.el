@@ -50,16 +50,7 @@
             "ruby-electric"
             "scss-mode")))
 
-(defsubst icurry (function &rest arguments)
-  (lexical-let ((function function)
-                (arguments arguments))
-    (lambda (&rest more)
-      (interactive)
-      (apply function (append arguments more)))))
-
-;;; color these functions like keywords
-(font-lock-add-keywords 'emacs-lisp-mode
-                        '(("(\\(icurry\\)[ \t\n\r]" 1 font-lock-keyword-face)))
+(load "~/.emacs.d/utilities.el")
 
 (require 'ido)
 (ido-mode t)
