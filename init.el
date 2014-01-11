@@ -344,6 +344,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (setq org-log-done t)
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 
 ;;; Sunrise Commander - A Norton Commander clone
