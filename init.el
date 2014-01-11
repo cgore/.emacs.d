@@ -463,6 +463,7 @@
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-mode))
         '(latex-mode-hook
+          magit-log-edit-mode-hook
           org-mode-hoook))
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-prog-mode))
