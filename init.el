@@ -143,8 +143,8 @@
   (when (or (abaddon?)
             (corinth?)
             (habakkuk?))
-    (set-foreground-color "white")
-    (set-background-color "black"))
+    (set-foreground-color "black")
+    (set-background-color "white"))
   (custom-set-faces
    '(default ((t (:inherit nil
                   :stipple nil
@@ -155,13 +155,13 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 100
+                  :height 120
                   :width normal
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-marine))
+  (color-theme-gtk-ide))
 
 ;;; Multi-Term
 (require 'multi-term)
