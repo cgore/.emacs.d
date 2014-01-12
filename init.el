@@ -161,7 +161,7 @@
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-deep-blue))
+  (color-theme-marine))
 
 ;;; Multi-Term
 (require 'multi-term)
