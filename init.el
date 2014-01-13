@@ -155,13 +155,13 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 120
+                  :height 115
                   :width normal
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
   (color-theme-initialize)
-  (color-theme-gtk-ide))
+  (color-theme-charcoal-black))
 
 ;;; Multi-Term
 (require 'multi-term)
