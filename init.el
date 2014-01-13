@@ -198,14 +198,14 @@
                            ("C-c C-e" . term-send-escape)))))
 
 (defun dark-colors ()
+  (interactive)
   (when (and window-system (linux?))
-    (interactive)
     (color-theme-charcoal-black)
     (reset-term-colors)))
 
 (defun light-colors ()
+  (interactive)
   (when (and window-system (linux?))
-    (interactive)
     (color-theme-gtk-ide)
     (reset-term-colors)))
 
