@@ -140,11 +140,6 @@
  (setq erc-server-connect-function 'socks-open-network-stream))
 
 (when (and window-system (linux?))
-  (when (or (abaddon?)
-            (corinth?)
-            (habakkuk?))
-    (set-foreground-color "black")
-    (set-background-color "white"))
   (custom-set-faces
    '(default ((t (:inherit nil
                   :stipple nil
@@ -160,8 +155,7 @@
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
   (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-charcoal-black))
+  (color-theme-initialize))
 
 ;;; Multi-Term
 (require 'multi-term)
@@ -170,10 +164,17 @@
   (interactive)
   (term-send-raw-string "\e"))
 
-(when window-system
+(defun reset-term-colors ()
+  (interactive)
+  (set-foreground-color (face-foreground 'default))
+  (set-background-color (face-background 'default))
   (custom-set-variables
    '(term-default-bg-color (face-background 'default))
-   '(term-default-fg-color (face-foreground 'default))
+   '(term-default-fg-color (face-foreground 'default))))
+
+(when window-system
+  (reset-term-colors)
+  (custom-set-variables
    '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
                            ("C-p" . previous-line)
                            ("C-n" . next-line)
@@ -195,6 +196,20 @@
                            ("C-c C-j" . term-line-mode)
                            ("C-c C-k" . term-char-mode)
                            ("C-c C-e" . term-send-escape)))))
+
+(defun dark-colors ()
+  (when (and window-system (linux?))
+    (interactive)
+    (color-theme-charcoal-black)
+    (reset-term-colors)))
+
+(defun light-colors ()
+  (when (and window-system (linux?))
+    (interactive)
+    (color-theme-gtk-ide)
+    (reset-term-colors)))
+
+(dark-colors)
 
 (defun bash ()
   (interactive)
