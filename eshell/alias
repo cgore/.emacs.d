@@ -1,6 +1,8 @@
 alias l ls -lh $*
 alias rspec rspec -c $*
 
+alias d dired $1
+
 alias gf git fetch $*
 alias gfa git fetch --all $*
 alias gp git pull $*
