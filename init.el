@@ -151,7 +151,7 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 120
+                  :height 110
                   :width normal
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
