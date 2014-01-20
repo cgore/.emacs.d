@@ -151,7 +151,7 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 115
+                  :height 120
                   :width normal
                   :family "Droid Sans Mono")))))
   ;;; Color Themes.
@@ -210,7 +210,7 @@
     (color-theme-gtk-ide)
     (reset-term-colors)))
 
-(dark-colors)
+(light-colors)
 
 (defun bash ()
   (interactive)
