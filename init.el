@@ -293,7 +293,8 @@
 (setq ruby-block-highlight-toggle 'overlay)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-
+(setq ruby-deep-arglist nil)
+(setq ruby-deep-indent-paren nil)
 
 ;;; Ruby on Rails
 (when (linux?)
