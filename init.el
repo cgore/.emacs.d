@@ -445,8 +445,7 @@
 
 ;;; Whitespace mode
 (require 'whitespace)
-(setq whitespace-style '(face empty tabs lines-tail trailing)
-      whitespace-line-column 81)
+(setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode 0)
 (mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
