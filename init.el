@@ -210,7 +210,7 @@
     (color-theme-gtk-ide)
     (reset-term-colors)))
 
-(light-colors)
+(dark-colors)
 
 (defun bash ()
   (interactive)
@@ -517,5 +517,9 @@
 (autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
 (autoload 'maxima "maxima" "Maxima interaction" t)
 (autoload 'imath-mode "imath" "Imath mode for math formula input" t)
-(setq imaxima-use-maxima-mode-flag t)
+(setq imaxima-use-maxima-mode-flag t
+      imaxima-pt-size 12
+      imaxima-fnt-size "large"
+      imaxima-max-scale nil
+      imaxima-linearize-flag nil)
 (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
