@@ -509,6 +509,7 @@
           emacs-lisp-mode-hook
           lisp-mode-hook
           org-mode-hook
+          php-mode-hook
           python-mode-hook
           ruby-mode-hook))
 
