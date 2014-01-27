@@ -46,6 +46,7 @@
             "json-mode"
             "org-mode/lisp"
             "org-jira"
+            "php-mode"
             "rails-reloaded"
             "ruby-electric"
             "scss-mode")))
@@ -523,3 +524,7 @@
       imaxima-max-scale nil
       imaxima-linearize-flag nil)
 (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
+
+
+;;; PHP
+(require 'php-mode)

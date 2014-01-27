@@ -28,3 +28,6 @@
 [submodule "third-party/ruby-electric"]
 	path = third-party/ruby-electric
 	url = git@github.com:qoobaa/ruby-electric.git
+[submodule "third-party/php-mode"]
+	path = third-party/php-mode
+	url = git@github.com:ejmr/php-mode.git
