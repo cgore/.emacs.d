@@ -322,8 +322,7 @@
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
-                                     "#emacs" "#jesus" "#lisp" "#rails"
-                                     "#ruby")))
+                                     "#jesus" "#lisp" "#ruby")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
@@ -525,6 +524,7 @@
       imaxima-max-scale nil
       imaxima-linearize-flag nil)
 (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
+(global-set-key (kbd "<XF86Calculator>") 'maxima)
 
 
 ;;; PHP
