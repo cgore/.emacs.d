@@ -1,33 +1,12 @@
-[submodule "third-party/haml-mode"]
-	path = third-party/haml-mode
-	url = https://github.com/nex3/haml-mode.git
 [submodule "third-party/rails-reloaded"]
 	path = third-party/rails-reloaded
 	url = https://github.com/dima-exe/emacs-rails-reloaded.git
-[submodule "third-party/org-mode"]
-	path = third-party/org-mode
-	url = git://orgmode.org/org-mode.git
-[submodule "third-party/inf-ruby"]
-	path = third-party/inf-ruby
-	url = https://github.com/nonsequitur/inf-ruby
-[submodule "third-party/org-jira"]
-	path = third-party/org-jira
-	url = git@github.com:baohaojun/org-jira.git
 [submodule "third-party/emacs-soap-client"]
 	path = third-party/emacs-soap-client
 	url = git@github.com:cgore/emacs-soap-client.git
 [submodule "tools/fast-export"]
 	path = tools/fast-export
 	url = git://repo.or.cz/fast-export.git
-[submodule "third-party/scss-mode"]
-	path = third-party/scss-mode
-	url = git@github.com:antonj/scss-mode.git
-[submodule "third-party/json-mode"]
-	path = third-party/json-mode
-	url = git@github.com:joshwnj/json-mode.git
 [submodule "third-party/ruby-electric"]
 	path = third-party/ruby-electric
 	url = git@github.com:qoobaa/ruby-electric.git
-[submodule "third-party/php-mode"]
-	path = third-party/php-mode
-	url = git@github.com:ejmr/php-mode.git

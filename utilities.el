@@ -44,3 +44,6 @@
 (font-lock-add-keywords 'emacs-lisp-mode
                         '(("(\\(icurry\\)[ \t\n\r]" 1 font-lock-keyword-face)))
 
+(defun package-install? (package-name)
+  (when (not (package-installed-p package-name))
+    (package-install package-name)))

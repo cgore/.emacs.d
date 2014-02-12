@@ -41,17 +41,15 @@
               (add-to-list 'load-path (concat third-party path)))
           '("curry-gist"
             "emacs-soap-client"
-            "haml-mode"
-            "inf-ruby"
-            "json-mode"
-            "org-mode/lisp"
-            "org-jira"
-            "php-mode"
             "rails-reloaded"
-            "ruby-electric"
-            "scss-mode")))
+            "ruby-electric")))
 
 (load "~/.emacs.d/utilities.el")
+
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 (require 'ido)
 (ido-mode t)
@@ -128,7 +126,6 @@
  '(size-indication-mode t)
  '(socks-server '("default" "localhost" 9999 5))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- '(jiralib-url "http://dev-task")
  '(woman-fill-column (fixed-buffer-width))
  '(woman-fill-frame t)
  '(woman-bold-headings t))
@@ -219,13 +216,6 @@
         (multi-term-buffer-name "bash"))
     (multi-term)))
 
-;;; Normally you should just use inf-ruby.
-(defun irb ()
-  (interactive)
-  (let ((multi-term-program "irb")
-        (multi-term-buffer-name "irb"))
-    (multi-term)))
-
 (defun python ()
   (interactive)
   (let ((multi-term-program "python")
@@ -280,6 +270,7 @@
 
 ;;; JavaScript and JSON
 (when (linux?)
+  (package-install? 'json-mode)
   (require 'json-mode))
 
 
@@ -288,6 +279,7 @@
 (require 'ruby-mode)
 (require 'yari) ; ri interface
 (when (linux?)
+  (package-install? 'inf-ruby)
   (require 'inf-ruby))
 (require 'ruby-block)
 (ruby-block-mode t)
@@ -299,9 +291,11 @@
 
 ;;; Ruby on Rails
 (when (linux?)
+  (package-install? 'haml-mode)
   (require 'haml-mode)
   (require 'rails-autoload)
   (setq scss-compile-at-save nil)
+  (package-install? 'scss-mode)
   (require 'scss-mode))
 
 
@@ -344,6 +338,7 @@
 
 
 ;;; Org Mode
+(package-install? 'org)
 (require 'org-install)
 (require 'org)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -486,15 +481,6 @@
 (defun eshell/git-experimental-here ()
   (eshell/git-branch-here "experimental"))
 
-;;; Atlassian stuff
-(when (abaddon?)
-  (setq jirilib-url "http://dev-task/")
-  (require 'org-jira)
-  (global-set-key (kbd "<f5> j")
-                  (icurry 'w3m-browse-url "http://dev-task"))
-  (global-set-key (kbd "<f5> w")
-                  (icurry 'w3m-browse-url "http://dev-wiki")))
-
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-mode))
@@ -528,4 +514,16 @@
 
 
 ;;; PHP
+(package-install? 'php-mode)
 (require 'php-mode)
+
+
+;;; Clojure
+(dolist (p '(starter-kit
+             starter-kit-lisp
+             starter-kit-bindings
+             starter-kit-eshell
+             clojure-mode
+             clojure-test-mode
+             cider))
+  (package-install? p))
