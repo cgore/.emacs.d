@@ -277,11 +277,13 @@
 ;;; Ruby
 (package-install? 'inf-ruby)
 (package-install? 'robe)
+(package-install? 'rspec-mode)
 (require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
 (require 'inf-ruby)
 (require 'ruby-block)
+(require 'rspec-mode)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle 'overlay)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
@@ -289,6 +291,7 @@
 (setq ruby-deep-arglist nil)
 (setq ruby-deep-indent-paren nil)
 (add-hook 'ruby-mode-hook 'robe-mode)
+(setq rspec-use-rake-when-possible nil)
 
 ;;; Ruby on Rails
 (when (linux?)
