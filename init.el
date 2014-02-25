@@ -274,6 +274,13 @@
   (require 'json-mode))
 
 
+;;; Projectile
+(package-install? 'projectile)
+(projectile-global-mode)
+(setq projectile-enable-caching t
+      projectile-switch-project-action 'projectile-dired
+      projectile-use-git-grep t)
+
 ;;; Ruby
 (package-install? 'inf-ruby)
 (package-install? 'robe)
