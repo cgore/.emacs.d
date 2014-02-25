@@ -275,12 +275,12 @@
 
 
 ;;; Ruby
+(package-install? 'inf-ruby)
+(package-install? 'robe)
 (require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
-(when (linux?)
-  (package-install? 'inf-ruby)
-  (require 'inf-ruby))
+(require 'inf-ruby)
 (require 'ruby-block)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle 'overlay)
@@ -288,6 +288,7 @@
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (setq ruby-deep-arglist nil)
 (setq ruby-deep-indent-paren nil)
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 ;;; Ruby on Rails
 (when (linux?)
