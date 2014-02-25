@@ -538,3 +538,8 @@
              clojure-test-mode
              cider))
   (package-install? p))
+
+;;; Ace Jump Mode
+(package-install? 'ace-jump-mode)
+(global-set-key (kbd "C-'") 'ace-jump-mode)
+(global-set-key (kbd "C-M-'") 'ace-jump-mode-pop-mark)
