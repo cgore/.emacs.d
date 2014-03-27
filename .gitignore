@@ -12,3 +12,7 @@ third-party/emacs-soap-client.hg
 eshell/history
 eshell/lastdir
 elpa/
+.smex-items
+places
+projectile.cache
+projectile-bookmarks.eld
