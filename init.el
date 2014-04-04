@@ -49,6 +49,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 (package-initialize)
 
 (require 'ido)
@@ -87,8 +89,7 @@
       inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL
       mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
       mouse-wheel-follow-mouse t ; scroll window under mouse
-      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
-      next-line-add-newlines nil
+      mouse-wheel-progressive-speed nil ; don't accelerate scrolling      next-line-add-newlines nil
       require-final-newline t
       scroll-step 1 ; keyboard scroll one line at a time
       tramp-default-method "ssh"
@@ -285,6 +286,7 @@
 (package-install? 'inf-ruby)
 (package-install? 'robe)
 (package-install? 'rspec-mode)
+(package-install? 'ruby-electric)
 (require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
