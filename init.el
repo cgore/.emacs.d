@@ -58,12 +58,14 @@
 
 (defun cygwin? ()
   (eq system-type 'cygwin))
+(defun darwin? ()
+  (eq system-type 'darwin))
 (defun linux? ()
   (eq system-type 'gnu/linux))
-
-(defun abaddon? () ; work
+                                        ;
+(defun abaddon? () ; Old Camber workstation          ;
   (string= system-name "abaddon"))
-(defun corinth? () ; laptop
+(defun corinth? () ; Samsung RV510 laptop (2012)
   (string= system-name "corinth"))
 (defun ezekiel? () ; California
   (string= system-name "ezekiel"))
@@ -71,13 +73,16 @@
   (string= system-name "habakkuk"))
 (defun naaman? () ; Atlanta
   (string= system-name "naaman"))
+(defun nephesh? () ; MacBook Pro 15" (2014)
+  (string= system-name "nephesh"))
 
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
         ((abaddon?)          100)
         ((corinth?)          80)
         ((habakkuk?)         100)
-        (t                   80)))
+        ((nephesh?)          78)
+        (t                   78)))
 
 (setq-default c-basic-offset 4
               c-default-style "linux"
@@ -89,7 +94,8 @@
       inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL
       mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
       mouse-wheel-follow-mouse t ; scroll window under mouse
-      mouse-wheel-progressive-speed nil ; don't accelerate scrolling      next-line-add-newlines nil
+      mouse-wheel-progressive-speed nil ; don't accelerate scrolling
+      next-line-add-newlines nil
       require-final-newline t
       scroll-step 1 ; keyboard scroll one line at a time
       tramp-default-method "ssh"
@@ -131,31 +137,25 @@
  '(woman-fill-frame t)
  '(woman-bold-headings t))
 
-(when (abaddon?)
- (setq socks-noproxy '("localhost"
-                       "chat"
-                       "dev-task"
-                       "dev-wiki"))
- (require 'socks)
- (setq erc-server-connect-function 'socks-open-network-stream))
-
 (when (and window-system (linux?))
   (custom-set-faces
    '(default ((t (:inherit nil
-                  :stipple nil
-                  :inverse-video nil
-                  :box nil
-                  :strike-through nil
-                  :overline nil
-                  :underline nil
-                  :slant normal
-                  :weight normal
-                  :height 100
-                  :width normal
-                  :family "Droid Sans Mono")))))
-  ;;; Color Themes.
-  (require 'color-theme)
-  (color-theme-initialize))
+                           :stipple nil
+                           :inverse-video nil
+                           :box nil
+                           :strike-through nil
+                           :overline nil
+                           :underline nil
+                           :slant normal
+                           :weight normal
+                           :height 100
+                           :width normal
+                           :family "Droid Sans Mono"))))))
+
+;;; Color Themes.
+(package-install? 'color-theme)
+(require 'color-theme)
+(color-theme-initialize)
 
 ;;; Multi-Term
 (require 'multi-term)
@@ -199,13 +199,13 @@
 
 (defun dark-colors ()
   (interactive)
-  (when (and window-system (linux?))
+  (when (and window-system (or (darwin?) (linux?)))
     (color-theme-charcoal-black)
     (reset-term-colors)))
 
 (defun light-colors ()
   (interactive)
-  (when (and window-system (linux?))
+  (when (and window-system (or (darwin?) (linux?)))
     (color-theme-gtk-ide)
     (reset-term-colors)))
 
@@ -346,7 +346,7 @@
 ;; Set your erc-nickserv-passwords in this file.  Example:
 ;;(setq erc-nickserv-passwords
 ;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
-(when (or (habakkuk?) (abaddon?))
+(when (or (habakkuk?) (nephesh?))
   (load "~/.emacs.d/ercpass"))
 
 
@@ -465,6 +465,9 @@
           python-mode-hook
           ruby-mode-hook))
 
+(setq eshell-path-env (concat "/usr/local/bin" ":"
+                              eshell-path-env))
+
 ;;; Eshell Functions
 
 ;; Taken from <http://www.emacswiki.org/emacs/EshellFunctions>
@@ -499,7 +502,7 @@
             (add-hook mode-hook 'flyspell-mode))
         '(latex-mode-hook
           magit-log-edit-mode-hook
-          org-mode-hoook))
+          org-mode-hook))
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-prog-mode))
         '(c-mode-hook
