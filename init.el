@@ -286,7 +286,7 @@
 (when (or (linux?) (darwin?))
   (package-install? 'json-mode)
   (require 'json-mode))
-
+(setq js-indent-level 2)
 
 ;;; Projectile
 (package-install? 'projectile)
