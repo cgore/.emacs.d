@@ -35,6 +35,19 @@
 
 (server-start)
 
+(setq programming-mode-hooks-list
+      '(c-mode-hook
+          clojure-mode-hook
+          clojure-test-mode-hook
+          c++-mode-hook
+          emacs-lisp-mode-hook
+          javascript-mode-hook
+          lisp-mode-hook
+          org-mode-hook
+          php-mode-hook
+          python-mode-hook
+          ruby-mode-hook))
+
 (let ((third-party "~/.emacs.d/third-party/"))
   (add-to-list 'load-path third-party)
   (mapcar #'(lambda (path)
@@ -270,7 +283,7 @@
 
 
 ;;; JavaScript and JSON
-(when (linux?)
+(when (or (linux?) (darwin?))
   (package-install? 'json-mode)
   (require 'json-mode))
 
@@ -505,23 +518,11 @@
           org-mode-hook))
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-prog-mode))
-        '(c-mode-hook
-          clojure-mode-hook
-          clojure-test-mode-hook
-          c++-mode-hook
-          emacs-lisp-mode-hook
-          lisp-mode-hook
-          org-mode-hook
-          php-mode-hook
-          python-mode-hook
-          ruby-mode-hook))
+        programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'linum-mode))
-        '(clojure-mode-hook
-          clojure-test-mode-hook
-          ruby-mode-hook
-          ))
+        programming-mode-hooks-list)
 
 ;;; Maxima
 (add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
