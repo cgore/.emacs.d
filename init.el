@@ -35,6 +35,20 @@
 
 (server-start)
 
+(setenv "PATH"
+        (concat
+         (expand-file-name "~/bin") ":"
+         "/usr/local/bin:"
+         "/usr/local/sbin:"
+         (expand-file-name "~/.rvm/bin") ":"
+         (expand-file-name "~/.rvm/sbin") ":"
+         "/usr/texbin:"
+         "/usr/bin:"
+         "/usr/sbin:"
+         "/bin:"
+         "/sbin:"
+         (getenv "PATH")))
+
 (setq programming-mode-hooks-list
       '(c-mode-hook
           clojure-mode-hook
