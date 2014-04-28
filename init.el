@@ -118,7 +118,7 @@
 (setq compilation-scroll-output t
       default-directory "~"
       indent-tabs-mode nil ; Don't mix tabs and spaces, that is stupid.
-      inferior-lisp-program "/usr/bin/sbcl" ; I like SBCL
+
       mouse-wheel-scroll-amount '(3 ((shift) . 3)) ; three lines at a time
       mouse-wheel-follow-mouse t ; scroll window under mouse
       mouse-wheel-progressive-speed nil ; don't accelerate scrolling
@@ -139,6 +139,8 @@
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
+(cond ((darwin?) (setq inferior-lisp-program "/usr/local/bin/sbcl"))
+      ((linux?)  (setq inferior-lisp-program "/usr/bin/sbcl")))
 (when (linux?)
   (add-to-list 'load-path "~/programming/lisp/slime/") ; My SLIME directory.
   (require 'slime-autoloads)
@@ -179,11 +181,6 @@
                            :width normal
                            :family "Droid Sans Mono"))))))
 
-;;; Color Themes.
-(package-install? 'color-theme)
-(require 'color-theme)
-(color-theme-initialize)
-
 ;;; Multi-Term
 (require 'multi-term)
 (setq multi-term-program "zsh")
@@ -223,20 +220,6 @@
                            ("C-c C-j" . term-line-mode)
                            ("C-c C-k" . term-char-mode)
                            ("C-c C-e" . term-send-escape)))))
-
-(defun dark-colors ()
-  (interactive)
-  (when (and window-system (or (darwin?) (linux?)))
-    (color-theme-charcoal-black)
-    (reset-term-colors)))
-
-(defun light-colors ()
-  (interactive)
-  (when (and window-system (or (darwin?) (linux?)))
-    (color-theme-gtk-ide)
-    (reset-term-colors)))
-
-(dark-colors)
 
 (defun bash ()
   (interactive)
