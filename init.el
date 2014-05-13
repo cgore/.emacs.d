@@ -166,20 +166,20 @@
  '(woman-fill-frame t)
  '(woman-bold-headings t))
 
-(when (and window-system (linux?))
+(when window-system
   (custom-set-faces
    '(default ((t (:inherit nil
-                           :stipple nil
-                           :inverse-video nil
-                           :box nil
-                           :strike-through nil
-                           :overline nil
-                           :underline nil
-                           :slant normal
-                           :weight normal
-                           :height 100
-                           :width normal
-                           :family "Droid Sans Mono"))))))
+                  :stipple nil
+                  :inverse-video nil
+                  :box nil
+                  :strike-through nil
+                  :overline nil
+                  :underline nil
+                  :slant normal
+                  :weight normal
+                  :height 140
+                  :width normal
+                  :family "Monaco"))))))
 
 ;;; Multi-Term
 (require 'multi-term)
