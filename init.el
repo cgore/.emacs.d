@@ -108,8 +108,13 @@
         ((abaddon?)          100)
         ((corinth?)          80)
         ((habakkuk?)         100)
-        ((nephesh?)          78)
+        ((nephesh?)          100)
+        (window-system       100)
         (t                   78)))
+
+(when window-system
+  (setq default-frame-alist `((width  . ,(fixed-buffer-width))
+                              (height . 40))))
 
 (setq-default c-basic-offset 4
               c-default-style "linux"
@@ -164,7 +169,7 @@
  '(size-indication-mode t)
  '(socks-server '("default" "localhost" 9999 5))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- '(woman-fill-column (fixed-buffer-width))
+ `(woman-fill-column ,(fixed-buffer-width))
  '(woman-fill-frame t)
  '(woman-bold-headings t))
 
@@ -179,7 +184,7 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 140
+                  :height 160
                   :width normal
                   :family "Monaco"))))))
 
