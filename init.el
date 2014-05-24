@@ -126,14 +126,12 @@
       require-final-newline t
       scroll-step 1 ; keyboard scroll one line at a time
       tramp-default-method "ssh"
-      visible-bell t
-      fill-column 80)
+      visible-bell t)
 (setq-default indent-tabs-mode nil)
 (put 'scroll-left 'disabled nil)
 
-(load-theme 'tango-dark t)
-
 ;;; Toolbar setup
+(display-time)
 (column-number-mode 1)
 
 (blink-cursor-mode 0)
@@ -190,7 +188,7 @@
   (interactive)
   (term-send-raw-string "\e"))
 
-(defun reset-term-colors (
+(defun reset-term-colors ()
   (interactive)
   (set-foreground-color (face-foreground 'default))
   (set-background-color (face-background 'default))
@@ -266,7 +264,7 @@
 (global-set-key (kbd "<f6> r") 'su)
 
 (defun ssh (ssh-to)
-  (interactive "sSSH to: "
+  (interactive "sSSH to: ")
   (let ((multi-term-program "ssh")
         (multi-term-buffer-name ssh-to)
         (multi-term-program-switches ssh-to))
@@ -318,7 +316,7 @@
 (when (linux?)
   (package-install? 'haml-mode)
   (require 'haml-mode)
-  (require 'rails-autoload
+  (require 'rails-autoload)
   (setq scss-compile-at-save nil)
   (package-install? 'scss-mode)
   (require 'scss-mode))
@@ -392,7 +390,7 @@
 (defun browse-url-at-point-firefox ()
   (interactive)
   (let ((browse-url-browser-function 'browse-url-firefox))
-    (browse-url-at-point))
+    (browse-url-at-point)))
 (global-set-key (kbd "<f6> f") 'browse-url-at-point-firefox)
 (global-set-key (kbd "<f6> g")
                 (icurry 'browse-url-firefox "http://www.google.com"))
@@ -422,10 +420,10 @@
   (set-input-method "greek"))
 (defun ucs-input ()
   (interactive)
-  (set-input-method "ucs")
+  (set-input-method "ucs"))
 (defun tex-input ()
   (interactive)
-  (set-input-method "TeX")
+  (set-input-method "TeX"))
 
 (global-set-key (kbd "<f9> f") 'french-input)
 (global-set-key (kbd "<f9> g") 'greek-input)
@@ -468,7 +466,7 @@
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode 0)
-(mapcar (lambda (mode-hook
+(mapcar (lambda (mode-hook)
           (add-hook mode-hook 'whitespace-mode))
         '(c-mode-hook
           c++-mode-hook
@@ -496,7 +494,7 @@
     (mapc #'find-file (mapcar #'expand-file-name (eshell-flatten-list (reverse args))))))
 
 (defun format-commands (&rest commands)
-  (mapcar (lambda (command
+  (mapcar (lambda (command)
             (shell-command (apply 'format command)))
           commands))
 
@@ -555,5 +553,5 @@
 
 ;;; Ace Jump Mode
 (package-install? 'ace-jump-mode)
-(global-set-key (kbd "C-'"
+(global-set-key (kbd "C-'") 'ace-jump-mode)
 (global-set-key (kbd "C-M-'") 'ace-jump-mode-pop-mark)
