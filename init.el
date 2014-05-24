@@ -136,6 +136,8 @@
 
 (blink-cursor-mode 0)
 
+(load-theme 'solarized-dark t)
+
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
