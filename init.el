@@ -184,7 +184,7 @@
                   :underline nil
                   :slant normal
                   :weight normal
-                  :height 160
+                  :height 140
                   :width normal
                   :family "Monaco"))))))
 
