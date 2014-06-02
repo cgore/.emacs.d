@@ -136,12 +136,13 @@
 (put 'scroll-left 'disabled nil)
 
 ;;; Toolbar setup
-(display-time)
+(when (not (darwin?))
+  (display-time))
 (column-number-mode 1)
 
 (blink-cursor-mode 0)
 
-(load-theme 'solarized-dark t)
+;(load-theme 'solarized-dark t)
 
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
@@ -154,24 +155,28 @@
   (slime-setup))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(display-time-mode t)
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("e80a0a5e1b304eb92c58d0398464cd30ccbc3622425b6ff01eea80e44ea5130e" "fc2782b33667eb932e4ffe9dac475f898bf7c656f8ba60e2276704fabb7fa63b" "ca229a0a89717c8a6fe5cd580ee2a85536fbafce6acb107d33cf38d52e2f492c" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(display-time-day-and-date t)
+ '(display-time-mode t)
  '(inhibit-startup-screen t)
- '(tool-bar-mode nil)
  '(menu-bar-mode nil)
- '(scroll-bar-mode nil)
  '(save-place t nil (saveplace))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(socks-server '("default" "localhost" 9999 5))
+ '(socks-server (quote ("default" "localhost" 9999 5)))
+ '(term-bind-key-alist (quote (("C-c C-c" . term-interrupt-subjob) ("C-p" . previous-line) ("C-n" . next-line) ("C-s" . isearch-forward) ("C-r" . isearch-backward) ("C-m" . term-send-raw) ("M-f" . term-send-forward-word) ("M-b" . term-send-backward-word) ("M-o" . term-send-backspace) ("M-p" . term-send-up) ("M-n" . term-send-down) ("M-M" . term-send-forward-kill-word) ("M-N" . term-send-backward-kill-word) ("M-r" . term-send-reverse-search-history) ("M-," . term-send-input) ("M-." . comint-dynamic-complete) ("C-c C-j" . term-line-mode) ("C-c C-k" . term-char-mode) ("C-c C-e" . term-send-escape))))
+ '(term-default-bg-color (face-background (quote default)))
+ '(term-default-fg-color (face-foreground (quote default)))
+ '(tool-bar-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
- `(woman-fill-column ,(fixed-buffer-width))
- '(woman-fill-frame t)
- '(woman-bold-headings t))
+ '(woman-bold-headings t)
+ '(woman-fill-column 100)
+ '(woman-fill-frame t))
 
 (when window-system
   (custom-set-faces
@@ -562,3 +567,9 @@
 (package-install? 'ace-jump-mode)
 (global-set-key (kbd "C-'") 'ace-jump-mode)
 (global-set-key (kbd "C-M-'") 'ace-jump-mode-pop-mark)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Monaco")))))
