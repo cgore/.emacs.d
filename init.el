@@ -33,6 +33,26 @@
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
 
+(defun cygwin? ()
+  (eq system-type 'cygwin))
+(defun darwin? ()
+  (eq system-type 'darwin))
+(defun linux? ()
+  (eq system-type 'gnu/linux))
+                                        ;
+(defun abaddon? () ; Old Camber workstation          ;
+  (string= system-name "abaddon"))
+(defun corinth? () ; Samsung RV510 laptop (2012)
+  (string= system-name "corinth"))
+(defun ezekiel? () ; California
+  (string= system-name "ezekiel"))
+(defun habakkuk? () ; home
+  (string= system-name "habakkuk"))
+(defun naaman? () ; Atlanta
+  (string= system-name "naaman"))
+(defun nephesh? () ; MacBook Pro 15" (2014)
+  (string= system-name "nephesh"))
+
 (server-start)
 
 (setenv "PATH"
@@ -54,6 +74,7 @@
           clojure-mode-hook
           clojure-test-mode-hook
           c++-mode-hook
+          coffee-mode
           emacs-lisp-mode-hook
           javascript-mode-hook
           lisp-mode-hook
@@ -82,26 +103,6 @@
 
 (require 'ido)
 (ido-mode t)
-
-(defun cygwin? ()
-  (eq system-type 'cygwin))
-(defun darwin? ()
-  (eq system-type 'darwin))
-(defun linux? ()
-  (eq system-type 'gnu/linux))
-                                        ;
-(defun abaddon? () ; Old Camber workstation          ;
-  (string= system-name "abaddon"))
-(defun corinth? () ; Samsung RV510 laptop (2012)
-  (string= system-name "corinth"))
-(defun ezekiel? () ; California
-  (string= system-name "ezekiel"))
-(defun habakkuk? () ; home
-  (string= system-name "habakkuk"))
-(defun naaman? () ; Atlanta
-  (string= system-name "naaman"))
-(defun nephesh? () ; MacBook Pro 15" (2014)
-  (string= system-name "nephesh"))
 
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
@@ -169,7 +170,25 @@
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(socks-server (quote ("default" "localhost" 9999 5)))
- '(term-bind-key-alist (quote (("C-c C-c" . term-interrupt-subjob) ("C-p" . previous-line) ("C-n" . next-line) ("C-s" . isearch-forward) ("C-r" . isearch-backward) ("C-m" . term-send-raw) ("M-f" . term-send-forward-word) ("M-b" . term-send-backward-word) ("M-o" . term-send-backspace) ("M-p" . term-send-up) ("M-n" . term-send-down) ("M-M" . term-send-forward-kill-word) ("M-N" . term-send-backward-kill-word) ("M-r" . term-send-reverse-search-history) ("M-," . term-send-input) ("M-." . comint-dynamic-complete) ("C-c C-j" . term-line-mode) ("C-c C-k" . term-char-mode) ("C-c C-e" . term-send-escape))))
+ '(term-bind-key-alist (quote (("C-c C-c" . term-interrupt-subjob)
+                               ("C-p" . previous-line)
+                               ("C-n" . next-line)
+                               ("C-s" . isearch-forward)
+                               ("C-r" . isearch-backward)
+                               ("C-m" . term-send-raw)
+                               ("M-f" . term-send-forward-word)
+                               ("M-b" . term-send-backward-word)
+                               ("M-o" . term-send-backspace)
+                               ("M-p" . term-send-up)
+                               ("M-n" . term-send-down)
+                               ("M-M" . term-send-forward-kill-word)
+                               ("M-N" . term-send-backward-kill-word)
+                               ("M-r" . term-send-reverse-search-history)
+                               ("M-," . term-send-input)
+                               ("M-." . comint-dynamic-complete)
+                               ("C-c C-j" . term-line-mode)
+                               ("C-c C-k" . term-char-mode)
+                               ("C-c C-e" . term-send-escape))))
  '(term-default-bg-color (face-background (quote default)))
  '(term-default-fg-color (face-foreground (quote default)))
  '(tool-bar-mode nil)
@@ -530,7 +549,9 @@
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
-            (add-hook mode-hook 'linum-mode))
+            (add-hook mode-hook 'linum-mode)
+            (add-hook mode-hook 'auto-complete-mode)
+            (add-hook mode-hook 'paredit-mode))
         programming-mode-hooks-list)
 
 ;;; Maxima
@@ -552,9 +573,9 @@
 (package-install? 'php-mode)
 (require 'php-mode)
 
-
 ;;; Clojure
-(dolist (p '(starter-kit
+(dolist (p '(auto-complete
+             starter-kit
              starter-kit-lisp
              starter-kit-bindings
              starter-kit-eshell
@@ -562,6 +583,14 @@
              clojure-test-mode
              cider))
   (package-install? p))
+
+;;; YAML
+(package-install? 'yaml-mode)
+(require 'yaml-mode)
+
+;;; CoffeeScript
+
+(package-install? 'coffee-mode)
 
 ;;; Ace Jump Mode
 (package-install? 'ace-jump-mode)
