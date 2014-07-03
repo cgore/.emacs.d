@@ -74,8 +74,9 @@
           clojure-mode-hook
           clojure-test-mode-hook
           c++-mode-hook
-          coffee-mode
+          coffee-mode-hook
           emacs-lisp-mode-hook
+          html-mode-hook
           javascript-mode-hook
           lisp-mode-hook
           org-mode-hook
@@ -104,6 +105,8 @@
 (require 'ido)
 (ido-mode t)
 
+(load-theme 'deeper-blue t)
+
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
         ((abaddon?)          100)
@@ -120,6 +123,8 @@
 (setq-default c-basic-offset 4
               c-default-style "linux"
               fill-column 80) ; 80-wide for M-q.
+
+(setq tab-width 2)
 
 (setq compilation-scroll-output t
       default-directory "~"
@@ -316,6 +321,15 @@
   (require 'json-mode))
 (setq js-indent-level 2)
 
+;; Ack!
+(require 'ack-and-a-half)
+(package-install? 'ack-and-a-half)
+;; Create shorter aliases
+(defalias 'ack 'ack-and-a-half)
+(defalias 'ack-same 'ack-and-a-half-same)
+(defalias 'ack-find-file 'ack-and-a-half-find-file)
+(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
+
 ;;; Projectile
 (package-install? 'projectile)
 (projectile-global-mode)
@@ -370,7 +384,7 @@
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
-                                     "#jesus" "#lisp" "#ruby")))
+                                     "#clojure" "#jesus" "#lisp" "#ruby")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
@@ -589,8 +603,8 @@
 (require 'yaml-mode)
 
 ;;; CoffeeScript
-
 (package-install? 'coffee-mode)
+(setq coffee-tab-width 2)
 
 ;;; Ace Jump Mode
 (package-install? 'ace-jump-mode)
