@@ -76,7 +76,7 @@
           c++-mode-hook
           coffee-mode-hook
           emacs-lisp-mode-hook
-          html-mode-hook
+          ; html-mode-hook
           javascript-mode-hook
           lisp-mode-hook
           org-mode-hook
@@ -96,11 +96,13 @@
 (load "~/.emacs.d/utilities.el")
 
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
+                          ("gnu" . "http://elpa.gnu.org/packages/")
+                          ("marmalade" . "http://marmalade-repo.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+(when (not package-archive-contents) (package-refresh-contents))
+(setq url-http-attempt-keepalives nil)
 
 (require 'ido)
 (ido-mode t)
@@ -153,6 +155,11 @@
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
+;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(load (expand-file-name "/Users/cgore/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+;;(setq inferior-lisp-program "sbcl")
+
 (cond ((darwin?) (setq inferior-lisp-program "/usr/local/bin/sbcl"))
       ((linux?)  (setq inferior-lisp-program "/usr/bin/sbcl")))
 (when (linux?)
@@ -317,13 +324,13 @@
 
 ;;; JavaScript and JSON
 (when (or (linux?) (darwin?))
-  (package-install? 'json-mode)
+  (require 'json-mode)
   (require 'json-mode))
 (setq js-indent-level 2)
 
 ;; Ack!
 (require 'ack-and-a-half)
-(package-install? 'ack-and-a-half)
+(require 'ack-and-a-half)
 ;; Create shorter aliases
 (defalias 'ack 'ack-and-a-half)
 (defalias 'ack-same 'ack-and-a-half-same)
@@ -331,17 +338,17 @@
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;;; Projectile
-(package-install? 'projectile)
+(require 'projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t
       projectile-switch-project-action 'projectile-dired
       projectile-use-git-grep t)
 
 ;;; Ruby
-(package-install? 'inf-ruby)
-(package-install? 'robe)
-(package-install? 'rspec-mode)
-(package-install? 'ruby-electric)
+(require 'inf-ruby)
+(require 'robe)
+(require 'rspec-mode)
+(require 'ruby-electric)
 (require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
@@ -359,11 +366,11 @@
 
 ;;; Ruby on Rails
 (when (linux?)
-  (package-install? 'haml-mode)
+  (require 'haml-mode)
   (require 'haml-mode)
   (require 'rails-autoload)
   (setq scss-compile-at-save nil)
-  (package-install? 'scss-mode)
+  (require 'scss-mode)
   (require 'scss-mode))
 
 
@@ -406,7 +413,7 @@
 
 
 ;;; Org Mode
-(package-install? 'org)
+(require 'org)
 (require 'org-install)
 (require 'org)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -568,6 +575,10 @@
             (add-hook mode-hook 'paredit-mode))
         programming-mode-hooks-list)
 
+(add-hook 'html-mode-hook 'linum-mode)
+(add-hook 'html-mode-hook 'auto-complete-mode)
+(add-hook 'html-mode-hook 'flyspell-prog-mode)
+
 ;;; Maxima
 (add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
 (autoload 'maxima-mode "maxima" "Maxima mode" t)
@@ -584,7 +595,7 @@
 
 
 ;;; PHP
-(package-install? 'php-mode)
+(require 'php-mode)
 (require 'php-mode)
 
 ;;; Clojure
@@ -596,18 +607,18 @@
              clojure-mode
              clojure-test-mode
              cider))
-  (package-install? p))
+  (require p))
 
 ;;; YAML
-(package-install? 'yaml-mode)
+(require 'yaml-mode)
 (require 'yaml-mode)
 
 ;;; CoffeeScript
-(package-install? 'coffee-mode)
+(require 'coffee-mode)
 (setq coffee-tab-width 2)
 
 ;;; Ace Jump Mode
-(package-install? 'ace-jump-mode)
+(require 'ace-jump-mode)
 (global-set-key (kbd "C-'") 'ace-jump-mode)
 (global-set-key (kbd "C-M-'") 'ace-jump-mode-pop-mark)
 (custom-set-faces
@@ -619,12 +630,11 @@
 
 
 ;;; Multiple Cursors
-(require 'multiple-cursors)
+(equire 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
 (require 'mc-extras)
 (define-key mc/keymap (kbd "C-. C-d") 'mc/remove-current-cursor)
 (define-key mc/keymap (kbd "C-. d")   'mc/remove-duplicated-cursors)
