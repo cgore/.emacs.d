@@ -69,6 +69,12 @@
          "/sbin:"
          (getenv "PATH")))
 
+(setq exec-path (append exec-path '("/usr/local/bin"
+                                    "/usr/local/sbin"
+                                    "/usr/texbin"
+                                    (expand-file-name "~/.rvm/bin")
+                                    (expand-file-name "~/.rvm/sbin"))))
+
 (setq programming-mode-hooks-list
       '(c-mode-hook
           clojure-mode-hook
@@ -96,7 +102,7 @@
 (load "~/.emacs.d/utilities.el")
 
 (require 'package)
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
+(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
                           ("gnu" . "http://elpa.gnu.org/packages/")
                           ("marmalade" . "http://marmalade-repo.org/packages/")))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -571,9 +577,14 @@
 
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'linum-mode)
-            (add-hook mode-hook 'auto-complete-mode)
-            (add-hook mode-hook 'paredit-mode))
+            (add-hook mode-hook 'auto-complete-mode))
         programming-mode-hooks-list)
+
+(mapcar #'(lambda (mode-hook)
+            (add-hook mode-hook 'paredit-mode))
+        '(clojure-mode-hook
+          emacs-lisp-mode-hook
+          lisp-mode-hook))
 
 (add-hook 'html-mode-hook 'linum-mode)
 (add-hook 'html-mode-hook 'auto-complete-mode)
@@ -630,7 +641,7 @@
 
 
 ;;; Multiple Cursors
-(equire 'multiple-cursors)
+(require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
