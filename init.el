@@ -380,7 +380,7 @@
       erc-autojoin-channels-alist '(("chat"
                                      "#chat" "#slamr-dev")
                                     ("freenode.net"
-                                     "#clojure" "#jesus" "#lisp" "#ruby")))
+                                     "#clojure" "#jesus" "#lisp")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
