@@ -628,3 +628,15 @@
 (define-key mc/keymap (kbd "C-. =")   'mc/compare-chars)
 ;;(define-key cua--rectangle-keymap (kbd "C-. C-,") 'mc/cua-rectangle-to-multiple-cursors)
 (mc/cua-rectangle-setup)
+
+
+;; Autocomplete config
+(define-key ac-completing-map [return] nil) ; no enter (1.)
+(define-key ac-completing-map "\r" nil) ; no enter (2.)
+(define-key ac-completing-map "\t" 'ac-complete) ; use tab to complete
+(put 'upcase-region 'disabled nil)
+
+(defun json-format ()
+  (interactive)
+  (save-excursion
+    (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
