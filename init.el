@@ -331,7 +331,11 @@
 (projectile-global-mode)
 (setq projectile-enable-caching t
       projectile-switch-project-action 'projectile-dired
-      projectile-use-git-grep t)
+      projectile-use-git-grep t
+      projectile-project-root-files (quote ("rebar.config" "project.clj" "pom.xml" "build.sbt" "build.gradle" "Gemfile" "requirements.txt" "package.json" "gulpfile.js" "Gruntfile.js" "bower.json" "composer.json" "Cargo.toml" "mix.exs" ".git" ".projectile_root"))
+      projectile-project-root-files-bottom-up (quote (".projectile" ".hg" ".fslckout" ".bzr" "_darcs"))
+      projectile-file-exists-remote-cache-expire (* 10 60))
+
 
 ;;; Ruby
 (require 'inf-ruby)
@@ -599,9 +603,17 @@
              starter-kit-bindings
              starter-kit-eshell
              clojure-mode
-             clojure-test-mode
-             cider))
+             cider
+             cider-test))
   (require p))
+(global-set-key (kbd "C-c M-c") 'cider-connect)
+(add-hook 'cider-mode-hook #'eldoc-mode)
+(setq nrepl-log-messages t)
+(setq nrepl-hide-special-buffers t)
+(setq cider-repl-result-prefix ";; => ")
+(setq cider-interactive-eval-result-prefix ";; -> ")
+(setq cider-repl-history-size 10000)
+(setq cider-repl-history-file "/Users/cgore/.emacs.d/cider-repl.history")
 
 ;;; YAML
 (require 'yaml-mode)
@@ -640,3 +652,6 @@
   (interactive)
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
+
+(add-to-list 'load-path "/directory/containing/neotree/")
+(require 'neotree)
