@@ -1,4 +1,4 @@
-;;;; Copyright © 2013-2014, Christopher Mark Gore,
+;;;; Copyright © 2013-2015, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -52,6 +52,8 @@
   (string= system-name "naaman"))
 (defun nephesh? () ; MacBook Pro 15" (2014)
   (string= system-name "nephesh"))
+(defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
+  (string= system-name "tcc-cgore"))
 
 (server-start)
 
@@ -82,7 +84,7 @@
           c++-mode-hook
           coffee-mode-hook
           emacs-lisp-mode-hook
-          ; html-mode-hook
+          html-mode-hook
           javascript-mode-hook
           lisp-mode-hook
           org-mode-hook
@@ -162,7 +164,9 @@
 
 ;;; SLIME setup.
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(load (expand-file-name "/Users/cgore/quicklisp/slime-helper.el"))
+(let ((fp "/Users/cgore/quicklisp/slime-helper.el"))
+  (when (file-exists-p fp)
+    (load (expand-file-name fp))))
   ;; Replace "sbcl" with the path to your implementation
 ;;(setq inferior-lisp-program "sbcl")
 
@@ -593,7 +597,6 @@
 
 
 ;;; PHP
-(require 'php-mode)
 (require 'php-mode)
 
 ;;; Clojure

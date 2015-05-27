@@ -16,3 +16,5 @@ elpa/
 places
 projectile.cache
 projectile-bookmarks.eld
+ac-comphist.dat
+ido.last
