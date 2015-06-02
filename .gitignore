@@ -4,6 +4,8 @@
 .\#*
 
 auto-save-list
+cider-repl.history
+recentf
 ercpass
 tramp
 erc/log/
