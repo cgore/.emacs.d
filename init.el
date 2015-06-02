@@ -53,7 +53,8 @@
 (defun nephesh? () ; MacBook Pro 15" (2014)
   (string= system-name "nephesh"))
 (defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
-  (string= system-name "tcc-cgore"))
+  (or (string= system-name "tcc-cgore")
+      (string= system-name "tcc-cgore.corp.climate.com")))
 
 (server-start)
 
@@ -611,12 +612,15 @@
   (require p))
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 (add-hook 'cider-mode-hook #'eldoc-mode)
-(setq nrepl-log-messages t)
-(setq nrepl-hide-special-buffers t)
+;(setq nrepl-log-messages t)
+;(setq nrepl-hide-special-buffers t)
 (setq cider-repl-result-prefix ";; => ")
 (setq cider-interactive-eval-result-prefix ";; -> ")
 (setq cider-repl-history-size 10000)
-(setq cider-repl-history-file "/Users/cgore/.emacs.d/cider-repl.history")
+(tcc-cgore?)
+(setq cider-repl-history-file (cond ((nephesh?)   "/Users/cgore/.emacs.d/cider-repl.history")
+                                    ((tcc-cgore?) "/Users/chris.gore/.emacs.d/cider-repl.history")
+                                    (t            "/home/chris/.emacs.d/cider-repl.history")))
 
 ;;; YAML
 (require 'yaml-mode)
