@@ -619,6 +619,11 @@
                                     ((tcc-cgore?) "/Users/chris.gore/.emacs.d/cider-repl.history")
                                     (t            "/home/chris/.emacs.d/cider-repl.history")))
 
+(eval-after-load 'cider
+  '(progn
+     (add-hook 'clojure-mode-hook 'cider-mode)
+     (add-hook 'cider-repl-mode-hook 'paredit-mode)))
+
 ;;; YAML
 (require 'yaml-mode)
 (require 'yaml-mode)
