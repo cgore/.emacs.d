@@ -385,9 +385,7 @@
       erc-log-write-after-send t
       erc-log-write-after-insert t
       erc-fill-column (fixed-buffer-width)
-      erc-autojoin-channels-alist '(("chat"
-                                     "#chat" "#slamr-dev")
-                                    ("freenode.net"
+      erc-autojoin-channels-alist '(("freenode.net"
                                      "#clojure" "#jesus" "#lisp")))
 (setq erc-prompt
       (lambda ()
