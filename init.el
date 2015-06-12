@@ -324,7 +324,6 @@
 
 ;; Ack!
 (require 'ack-and-a-half)
-(require 'ack-and-a-half)
 ;; Create shorter aliases
 (defalias 'ack 'ack-and-a-half)
 (defalias 'ack-same 'ack-and-a-half-same)
