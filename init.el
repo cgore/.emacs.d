@@ -451,7 +451,7 @@
 ;;; Git
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
 (global-set-key (kbd "<f2> g") 'magit-status)
-
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;;; Buffer navigation.
 (global-set-key (kbd "<XF86Back>") 'previous-buffer)
