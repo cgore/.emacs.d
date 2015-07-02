@@ -106,9 +106,10 @@
 
 (require 'package)
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                          ("gnu" . "http://elpa.gnu.org/packages/")
-                          ("marmalade" . "http://marmalade-repo.org/packages/")))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 (setq url-http-attempt-keepalives nil)
