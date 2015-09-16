@@ -387,7 +387,7 @@
       erc-log-write-after-insert t
       erc-fill-column (fixed-buffer-width)
       erc-autojoin-channels-alist '(("freenode.net"
-                                     "#clojure" "#jesus" "#lisp")))
+                                     "#clojure" "#jesus" "#lisp" "#pixie-lang")))
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
