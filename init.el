@@ -234,6 +234,10 @@
    '(term-default-bg-color (face-background 'default))
    '(term-default-fg-color (face-foreground 'default))))
 
+;; Limit the buffer for shells.
+(add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
+(setq comint-buffer-maximum-size 10000)
+
 (when window-system
   (reset-term-colors)
   (custom-set-variables
