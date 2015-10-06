@@ -596,7 +596,8 @@
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
-            (add-hook mode-hook 'paredit-mode))
+            (add-hook mode-hook 'paredit-mode)
+            (add-hook mode-hook 'rainbow-delimiters-mode))
         '(clojure-mode-hook
           emacs-lisp-mode-hook
           lisp-mode-hook))
