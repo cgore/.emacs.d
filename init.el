@@ -604,10 +604,6 @@
 
 ;;; Clojure
 (dolist (p '(auto-complete
-             starter-kit
-             starter-kit-lisp
-             starter-kit-bindings
-             starter-kit-eshell
              clojure-mode
              cider
              cider-test))
