@@ -117,7 +117,13 @@
 (require 'ido)
 (ido-mode t)
 
-(load-theme 'seti t)
+(defun dark-background ()
+  (interactive)
+  (load-theme 'seti t))
+(defun light-background ()
+  (interactive)
+  (disable-theme 'seti))
+(dark-background)
 
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
