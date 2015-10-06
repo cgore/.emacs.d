@@ -39,8 +39,8 @@
   (eq system-type 'darwin))
 (defun linux? ()
   (eq system-type 'gnu/linux))
-                                        ;
-(defun abaddon? () ; Old Camber workstation          ;
+
+(defun abaddon? () ; Old Camber workstation
   (string= system-name "abaddon"))
 (defun corinth? () ; Samsung RV510 laptop (2012)
   (string= system-name "corinth"))
@@ -447,11 +447,6 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (setq org-log-done t)
 (add-hook 'org-mode-hook 'org-indent-mode)
-
-
-;;; Sunrise Commander - A Norton Commander clone
-(require 'sunrise-commander)
-
 
 ;;; Web stuff.
 (setq browse-url-browser-function 'w3m-browse-url)
