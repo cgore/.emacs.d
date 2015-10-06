@@ -533,6 +533,7 @@
           python-mode-hook
           ruby-mode-hook))
 
+(require 'eshell)
 (setq eshell-path-env (concat "/usr/local/bin" ":"
                               eshell-path-env))
 
