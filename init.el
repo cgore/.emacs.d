@@ -602,6 +602,9 @@
           emacs-lisp-mode-hook
           lisp-mode-hook))
 
+;;; Pixie
+(add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
+
 (add-hook 'html-mode-hook 'linum-mode)
 (add-hook 'html-mode-hook 'auto-complete-mode)
 (add-hook 'html-mode-hook 'flyspell-prog-mode)
@@ -687,6 +690,7 @@
 
 (add-to-list 'load-path "/directory/containing/neotree/")
 (require 'neotree)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
