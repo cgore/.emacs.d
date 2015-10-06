@@ -228,21 +228,6 @@
  '(woman-fill-column 100)
  '(woman-fill-frame t))
 
-(when window-system
-  (custom-set-faces
-   '(default ((t (:inherit nil
-                  :stipple nil
-                  :inverse-video nil
-                  :box nil
-                  :strike-through nil
-                  :overline nil
-                  :underline nil
-                  :slant normal
-                  :weight normal
-                  :height 140
-                  :width normal
-                  :family "Monaco"))))))
-
 ;;; Multi-Term
 (require 'multi-term)
 (setq multi-term-program "zsh")
