@@ -117,7 +117,7 @@
 (require 'ido)
 (ido-mode t)
 
-(load-theme 'deeper-blue t)
+(load-theme 'seti t)
 
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
@@ -160,8 +160,6 @@
 
 (blink-cursor-mode 0)
 
-;(load-theme 'solarized-dark t)
-
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
 ;;; SLIME setup.
@@ -184,18 +182,44 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("e80a0a5e1b304eb92c58d0398464cd30ccbc3622425b6ff01eea80e44ea5130e" "fc2782b33667eb932e4ffe9dac475f898bf7c656f8ba60e2276704fabb7fa63b" "ca229a0a89717c8a6fe5cd580ee2a85536fbafce6acb107d33cf38d52e2f492c" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+ '(custom-safe-themes
+   (quote
+    ("94ba29363bfb7e06105f68d72b268f85981f7fba2ddef89331660033101eb5e5" "e80a0a5e1b304eb92c58d0398464cd30ccbc3622425b6ff01eea80e44ea5130e" "fc2782b33667eb932e4ffe9dac475f898bf7c656f8ba60e2276704fabb7fa63b" "ca229a0a89717c8a6fe5cd580ee2a85536fbafce6acb107d33cf38d52e2f492c" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(display-time-day-and-date t)
  '(display-time-mode t)
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
- '(safe-local-variable-values (quote ((encoding . utf-8) (whitespace-line-column . 80) (lexical-binding . t))))
+ '(safe-local-variable-values
+   (quote
+    ((encoding . utf-8)
+     (whitespace-line-column . 80)
+     (lexical-binding . t))))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(socks-server (quote ("default" "localhost" 9999 5)))
- '(term-bind-key-alist (quote (("C-c C-c" . term-interrupt-subjob) ("C-p" . previous-line) ("C-n" . next-line) ("C-s" . isearch-forward) ("C-r" . isearch-backward) ("C-m" . term-send-raw) ("M-f" . term-send-forward-word) ("M-b" . term-send-backward-word) ("M-o" . term-send-backspace) ("M-p" . term-send-up) ("M-n" . term-send-down) ("M-M" . term-send-forward-kill-word) ("M-N" . term-send-backward-kill-word) ("M-r" . term-send-reverse-search-history) ("M-," . term-send-input) ("M-." . comint-dynamic-complete) ("C-c C-j" . term-line-mode) ("C-c C-k" . term-char-mode) ("C-c C-e" . term-send-escape))))
+ '(term-bind-key-alist
+   (quote
+    (("C-c C-c" . term-interrupt-subjob)
+     ("C-p" . previous-line)
+     ("C-n" . next-line)
+     ("C-s" . isearch-forward)
+     ("C-r" . isearch-backward)
+     ("C-m" . term-send-raw)
+     ("M-f" . term-send-forward-word)
+     ("M-b" . term-send-backward-word)
+     ("M-o" . term-send-backspace)
+     ("M-p" . term-send-up)
+     ("M-n" . term-send-down)
+     ("M-M" . term-send-forward-kill-word)
+     ("M-N" . term-send-backward-kill-word)
+     ("M-r" . term-send-reverse-search-history)
+     ("M-," . term-send-input)
+     ("M-." . comint-dynamic-complete)
+     ("C-c C-j" . term-line-mode)
+     ("C-c C-k" . term-char-mode)
+     ("C-c C-e" . term-send-escape))))
  '(term-default-bg-color (face-background (quote default)))
  '(term-default-fg-color (face-foreground (quote default)))
  '(tool-bar-mode nil)
@@ -665,3 +689,9 @@
 
 (add-to-list 'load-path "/directory/containing/neotree/")
 (require 'neotree)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Monaco")))))
