@@ -81,7 +81,6 @@
 (setq programming-mode-hooks-list
       '(c-mode-hook
           clojure-mode-hook
-          clojure-test-mode-hook
           c++-mode-hook
           coffee-mode-hook
           emacs-lisp-mode-hook
