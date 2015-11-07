@@ -1,4 +1,4 @@
-;;;; Copyright © 2013, Christopher Mark Gore,
+;;;; Copyright © 2013 - 2015, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -62,8 +62,10 @@
 (defun thinking-bicycle-add-uri ()
   (interactive)
   (when (string= major-mode "w3m-mode")
-    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet?uri="
-                            (w3m-print-current-url)))))
+    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet"
+                            "?version=3"
+                            "&uri="   w3m-current-url
+                            "&title=" w3m-current-title))))
 
 (global-set-key (kbd "<f7> <f7>") 'thinking-bicycle)
 (global-set-key (kbd "<f7> b")    'thinking-bicycle-bookmarks)
