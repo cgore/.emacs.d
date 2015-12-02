@@ -70,13 +70,15 @@
          "/usr/sbin:"
          "/bin:"
          "/sbin:"
+         "/opt/pixie:"
          (getenv "PATH")))
 
 (setq exec-path (append exec-path '("/usr/local/bin"
                                     "/usr/local/sbin"
                                     "/usr/texbin"
                                     (expand-file-name "~/.rvm/bin")
-                                    (expand-file-name "~/.rvm/sbin"))))
+                                    (expand-file-name "~/.rvm/sbin")
+                                    "/opt/pixie")))
 
 (setq programming-mode-hooks-list
       '(c-mode-hook
