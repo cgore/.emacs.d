@@ -181,6 +181,8 @@
   (add-to-list 'load-path "~/programming/lisp/slime/") ; My SLIME directory.
   (require 'slime-autoloads)
   (slime-setup))
+(require 'slime-autoloads)
+(setq slime-contribs '(slime-fancy))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -591,7 +593,12 @@
             (add-hook mode-hook 'rainbow-delimiters-mode))
         '(clojure-mode-hook
           emacs-lisp-mode-hook
-          lisp-mode-hook))
+          eval-expression-minibuffer-setup-hook
+          ielm-mode-hook
+          lisp-mode-hook
+          lisp-interaction-mode-hook
+          slime-mode-hook
+          slime-repl-mode-hook))
 
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
