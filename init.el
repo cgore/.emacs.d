@@ -1,4 +1,4 @@
-;;;; Copyright © 2013-2015, Christopher Mark Gore,
+;;;; Copyright © 2013-2016, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -621,6 +621,11 @@
 (add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
 (global-set-key (kbd "<XF86Calculator>") 'maxima)
 
+
+;;; Markdown
+(require 'markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;;; PHP
 (require 'php-mode)
