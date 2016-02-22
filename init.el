@@ -89,6 +89,7 @@
           lisp-mode-hook
           org-mode-hook
           php-mode-hook
+          puppet-mode-hook
           python-mode-hook
           ruby-mode-hook))
 
