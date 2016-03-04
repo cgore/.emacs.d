@@ -1,4 +1,4 @@
-;;;; Copyright © 2013 - 2015, Christopher Mark Gore,
+;;;; Copyright © 2013 - 2016, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -41,6 +41,12 @@
 (defun thinking-bicycle-bookmarks ()
   (interactive)
   (browse-url "http://thinkingbicycle.com/users/bookmarks"))
+(defun thinking-bicycle-folders ()
+  (interactive)
+  (browse-url "http://thinkingbicycle.com/users/folders"))
+(defun thinking-bicycle-recent-notes ()
+  (interactive)
+  (browse-url "http://thinkingbicycle.com/users/recent_notes"))
 (defun thinking-bicycle-read-laters ()
   (interactive)
   (browse-url "http://thinkingbicycle.com/users/read_laters"))
@@ -69,6 +75,8 @@
 
 (global-set-key (kbd "<f7> <f7>") 'thinking-bicycle)
 (global-set-key (kbd "<f7> b")    'thinking-bicycle-bookmarks)
+(global-set-key (kbd "<f7> f")    'thinking-bicycle-folders)
+(global-set-key (kbd "<f7> f")    'thinking-bicycle-recent-notes)
 (global-set-key (kbd "<f7> l")    'thinking-bicycle-read-laters)
 (global-set-key (kbd "<f7> p")    'thinking-bicycle-my-posts)
 (global-set-key (kbd "<f7> P")    'thinking-bicycle-my-posts-replies)
