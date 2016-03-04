@@ -608,6 +608,13 @@
 (add-hook 'html-mode-hook 'auto-complete-mode)
 (add-hook 'html-mode-hook 'flyspell-prog-mode)
 
+
+;;; Python
+(autoload 'python-mode "python-mode" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+
+
 ;;; Maxima
 (add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
 (autoload 'maxima-mode "maxima" "Maxima mode" t)
