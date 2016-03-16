@@ -90,7 +90,6 @@
           javascript-mode-hook
           lisp-mode-hook
           org-mode-hook
-          php-mode-hook
           puppet-mode-hook
           python-mode-hook
           ruby-mode-hook))
@@ -632,13 +631,11 @@
 (global-set-key (kbd "<XF86Calculator>") 'maxima)
 
 
+
 ;;; Markdown
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;;; PHP
-(require 'php-mode)
 
 ;;; Clojure
 (dolist (p '(auto-complete
