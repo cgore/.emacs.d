@@ -200,7 +200,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(safe-local-variable-values
    (quote
     ((encoding . utf-8)
@@ -694,8 +694,10 @@
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
 
-(add-to-list 'load-path "/directory/containing/neotree/")
+
+;; Neotree - a nice directory listing panel on the left side of your Emacs.
 (require 'neotree)
+(global-set-key (kbd "<f8>") 'neotree-toggle)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
