@@ -647,7 +647,6 @@
 (setq cider-repl-result-prefix ";; => ")
 (setq cider-interactive-eval-result-prefix ";; -> ")
 (setq cider-repl-history-size 10000)
-(tcc-cgore?)
 (setq cider-repl-history-file (cond ((nephesh?)   "/Users/cgore/.emacs.d/cider-repl.history")
                                     ((tcc-cgore?) "/Users/chris.gore/.emacs.d/cider-repl.history")
                                     (t            "/home/chris/.emacs.d/cider-repl.history")))
