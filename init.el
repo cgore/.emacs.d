@@ -718,3 +718,6 @@
 
 (require 'echo-bell)
 (echo-bell-mode)
+
+(when (tcc-cgore?)
+  (load "~/.emacs.d/climate.el"))
