@@ -200,7 +200,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(safe-local-variable-values
    (quote
     ((encoding . utf-8)
@@ -388,14 +388,10 @@
 (setq rspec-use-rake-when-possible nil)
 
 ;;; Ruby on Rails
-(when (linux?)
-  (require 'haml-mode)
-  (require 'haml-mode)
-  (require 'rails-autoload)
-  (setq scss-compile-at-save nil)
-  (require 'scss-mode)
-  (require 'scss-mode))
-
+(require 'haml-mode)
+(setq scss-compile-at-save nil)
+(require 'sass-mode)
+(require 'scss-mode)
 
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
@@ -590,12 +586,14 @@
 
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'linum-mode)
-            (add-hook mode-hook 'auto-complete-mode))
+            (add-hook mode-hook 'auto-complete-mode)
+            (add-hook mode-hook 'rainbow-mode)
+            (add-hook mode-hook 'rainbow-delimiters-mode)
+            (add-hook 'html-mode-hook 'flyspell-prog-mode))
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
-            (add-hook mode-hook 'paredit-mode)
-            (add-hook mode-hook 'rainbow-delimiters-mode))
+            (add-hook mode-hook 'paredit-mode))
         '(clojure-mode-hook
           emacs-lisp-mode-hook
           eval-expression-minibuffer-setup-hook
@@ -607,11 +605,6 @@
 
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
-
-(add-hook 'html-mode-hook 'linum-mode)
-(add-hook 'html-mode-hook 'auto-complete-mode)
-(add-hook 'html-mode-hook 'flyspell-prog-mode)
-
 
 ;;; Python
 (autoload 'python-mode "python-mode" "Python Mode." t)
