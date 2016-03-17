@@ -722,3 +722,6 @@
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "Monaco")))))
   (light-background))
+
+(require 'echo-bell)
+(echo-bell-mode)
