@@ -405,10 +405,8 @@
       erc-save-buffer-on-part t
       erc-save-queries-on-quit t
       erc-log-write-after-send t
-      erc-log-write-after-insert t
-      erc-fill-column (fixed-buffer-width)
-      erc-autojoin-channels-alist '(("freenode.net"
-                                     "#clojure" "#jesus" "#lisp" "#pixie-lang")))
+      erc-log-write-after-insert t)
+
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
