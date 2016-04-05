@@ -704,7 +704,8 @@
 (defun default-font-and-theme ()
   (interactive)
   (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
                            :height 120 :width normal :family "Monaco")))))
   (dark-background))
 
@@ -713,14 +714,16 @@
 (defun present-to-everybody ()
   (interactive)
   (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
                            :height 260 :width normal :family "Monaco")))))
   (light-background))
 
 (defun google-hangouts-sucks ()
   (interactive)
   (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
                            :height 180 :width normal :family "Monaco")))))
   (light-background))
 
