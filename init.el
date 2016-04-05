@@ -701,23 +701,27 @@
 (require 'neotree)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :family "Monaco")))))
+(defun default-font-and-theme ()
+  (interactive)
+  (custom-set-faces
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+                           :height 120 :width normal :family "Monaco")))))
+  (dark-background))
+
+(default-font-and-theme)
 
 (defun present-to-everybody ()
   (interactive)
   (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 260 :width normal :family "Monaco")))))
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+                           :height 260 :width normal :family "Monaco")))))
   (light-background))
 
 (defun google-hangouts-sucks ()
   (interactive)
   (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :family "Monaco")))))
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal
+                           :height 180 :width normal :family "Monaco")))))
   (light-background))
 
 (require 'echo-bell)
