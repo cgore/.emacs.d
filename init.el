@@ -432,9 +432,9 @@
 ;; Set your erc-nickserv-passwords in this file.  Example:
 ;;(setq erc-nickserv-passwords
 ;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
-(when (or (habakkuk?) (nephesh?))
-  (load "~/.emacs.d/ercpass"))
-
+(setq ercpass-el "~/.emacs.d/ercpass.el")
+(when (file-exists-p ercpass-el)
+  (load "~/.emacs.d/ercpass.el"))
 
 ;;; Org Mode
 (require 'org)
