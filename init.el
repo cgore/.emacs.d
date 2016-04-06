@@ -395,6 +395,8 @@
 (require 'sass-mode)
 (require 'scss-mode)
 
+(require 'tls)
+
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
       erc-nick "cgore"
