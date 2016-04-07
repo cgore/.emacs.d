@@ -351,7 +351,6 @@
 
 ;;; JavaScript and JSON
 (when (or (linux?) (darwin?))
-  (require 'json-mode)
   (require 'json-mode))
 (setq js-indent-level 2)
 
