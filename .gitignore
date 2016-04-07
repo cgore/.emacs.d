@@ -7,6 +7,7 @@ auto-save-list
 cider-repl.history
 recentf
 ercpass
+ercpass.el
 tramp
 erc/log/
 third-party/emacs-soap-client.hg
