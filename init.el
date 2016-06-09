@@ -581,6 +581,11 @@
 (defun eshell/git-experimental-here ()
   (eshell/git-branch-here "experimental"))
 
+
+;;; Line Numbers
+(unless window-system ; Only when in non-GUI
+  (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
+
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-mode))
