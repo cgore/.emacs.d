@@ -58,22 +58,23 @@
 
 (server-start)
 
-(setenv "PATH"
-        (concat
-         (expand-file-name "~/bin") ":"
-         "/usr/local/bin:"
-         "/usr/local/sbin:"
-         (expand-file-name "~/.rvm/bin") ":"
-         (expand-file-name "~/.rvm/sbin") ":"
-         "/usr/texbin:"
-         "/Library/TeX/texbin:"
-         "/usr/bin:"
-         "/usr/sbin:"
-         "/bin:"
-         "/sbin:"
-         "/opt/pixie:"
-         "/opt/sbin:"
-         (getenv "PATH")))
+(when window-system
+  (setenv "PATH"
+          (concat
+           (expand-file-name "~/bin") ":"
+           "/usr/local/bin:"
+           "/usr/local/sbin:"
+           (expand-file-name "~/.rvm/bin") ":"
+           (expand-file-name "~/.rvm/sbin") ":"
+           "/usr/texbin:"
+           "/Library/TeX/texbin:"
+           "/usr/bin:"
+           "/usr/sbin:"
+           "/bin:"
+           "/sbin:"
+           "/opt/pixie:"
+           "/opt/sbin:"
+           (getenv "PATH"))))
 
 (setq exec-path (append exec-path '("/usr/local/bin"
                                     "/usr/local/sbin"
