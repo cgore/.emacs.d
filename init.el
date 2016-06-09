@@ -379,12 +379,9 @@
 (require 'robe)
 (require 'rspec-mode)
 (require 'ruby-electric)
-(require 'ruby-electric)
 (require 'ruby-mode)
 (require 'yari) ; ri interface
-(require 'inf-ruby)
 (require 'ruby-block)
-(require 'rspec-mode)
 (ruby-block-mode t)
 (setq ruby-block-highlight-toggle 'overlay)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
