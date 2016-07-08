@@ -35,41 +35,43 @@
 
 ;;; ThinkingBicycle.com stuff.
 
+(setq thinking-bicycle-url "https://thinkingbicycle.com")
 (defun thinking-bicycle ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com"))
+  (browse-url thinking-bicycle-url))
 (defun thinking-bicycle-bookmarks ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/bookmarks"))
+  (browse-url (concat thinking-bicycle-url "/users/bookmarks")))
 (defun thinking-bicycle-folders ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/folders"))
+  (browse-url (concat thinking-bicycle-url "/users/folders")))
 (defun thinking-bicycle-recent-notes ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/recent_notes"))
+  (browse-url (concat thinking-bicycle-url "/users/recent_notes")))
 (defun thinking-bicycle-read-laters ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/read_laters"))
+  (browse-url (concat thinking-bicycle-url "/users/read_laters")))
 (defun thinking-bicycle-received-shares ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/received_shares"))
+  (browse-url (concat thinking-bicycle-url "/users/received_shares")))
 (defun thinking-bicycle-my-posts ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/posts"))
+  (browse-url (concat thinking-bicycle-url "/users/posts")))
 (defun thinking-bicycle-my-posts-replies ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/users/posts_replies"))
+  (browse-url (concat thinking-bicycle-url "/users/posts_replies")))
 (defun thinking-bicycle-search ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/keywords/search"))
+  (browse-url (concat thinking-bicycle-url "/keywords/search")))
 (defun thinking-bicycle-advanced-search ()
   (interactive)
-  (browse-url "http://thinkingbicycle.com/keywords/advanced_search"))
+  (browse-url (concat thinking-bicycle-url "/keywords/advanced_search")))
 (defun thinking-bicycle-add-uri ()
   (interactive)
   (when (string= major-mode "w3m-mode")
-    (w3m-browse-url (concat "http://thinkingbicycle.com/links/bookmarklet"
-                            "?version=3"
+    (w3m-browse-url (concat thinking-bicycle-url
+                            "/links/bookmarklet"
+                            "?version=4"
                             "&uri="   w3m-current-url
                             "&title=" w3m-current-title))))
 
