@@ -121,14 +121,6 @@
 (require 'ido)
 (ido-mode t)
 
-(defun dark-background ()
-  (interactive)
-  (load-theme 'reverse t))
-(defun light-background ()
-  (interactive)
-  (disable-theme 'reverse))
-(dark-background)
-
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
         ((abaddon?)          100)
@@ -262,6 +254,16 @@
   (custom-set-variables
    '(term-default-bg-color (face-background 'default))
    '(term-default-fg-color (face-foreground 'default))))
+
+(defun dark-background ()
+  (interactive)
+  (load-theme 'reverse t)
+  (reset-term-colors))
+(defun light-background ()
+  (interactive)
+  (disable-theme 'reverse)
+  (reset-term-colors))
+(light-background)
 
 ;; Limit the buffer for shells.
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
