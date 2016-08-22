@@ -108,6 +108,34 @@
 
 (load "~/.emacs.d/utilities.el")
 
+(setq package-list '(ace-jump-mode
+                     ack-and-a-half
+                     auto-complete
+                     auto-highlight-symbol
+                     cider
+                     clojure-mode
+                     coffee-mode
+                     echo-bell
+                     haml-mode
+                     inf-ruby
+                     json-mode
+                     magit
+                     magit-gitflow
+                     mc-extras
+                     multi-term
+                     multiple-cursors
+                     neotree
+                     paredit
+                     projectile
+                     rainbow-delimiters
+                     rainbow-mode
+                     reverse-theme
+                     robe
+                     rspec-mode
+                     ruby-electric
+                     sass-mode
+                     scss-mode
+                     yaml-mode))
 (require 'package)
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
                          ("gnu" . "http://elpa.gnu.org/packages/")
@@ -117,6 +145,11 @@
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 (setq url-http-attempt-keepalives nil)
+(unless package-archive-contents
+  (package-refresh-contents))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+        (package-install package)))
 
 (require 'ido)
 (ido-mode t)
