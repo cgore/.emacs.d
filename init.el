@@ -54,6 +54,7 @@
                      neotree
                      paredit
                      projectile
+                     queue
                      rainbow-delimiters
                      rainbow-mode
                      reverse-theme
@@ -62,6 +63,7 @@
                      ruby-electric
                      sass-mode
                      scss-mode
+                     w3m
                      yaml-mode))
 (require 'package)
 (setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
@@ -706,6 +708,7 @@
      (local-set-key (kbd "M-<return>") 'newline)))
 
 (global-set-key (kbd "M-<return>") 'newline)
+(global-set-key (kbd "C-x C-j") 'eval-print-last-sexp) ; paredit squashes C-j
 
 ;;; YAML
 (require 'yaml-mode)
