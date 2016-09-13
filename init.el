@@ -53,6 +53,7 @@
                      multiple-cursors
                      neotree
                      paredit
+                     puppet-mode
                      projectile
                      queue
                      rainbow-delimiters
