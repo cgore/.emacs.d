@@ -7,7 +7,7 @@
               (when (stringp k=v)
                 (let* ((k-v (split-string k=v "="))
                        (k (first k-v))
-                       (v (second k-v)))
+                       (v (mapconcat 'identity (cdr k-v) "=")))
                   (setenv k v)))))
           (split-string (shell-command-to-string (envmgr environment))
                         "\n")))
