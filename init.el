@@ -55,6 +55,7 @@
                      paredit
                      puppet-mode
                      projectile
+                     python-mode
                      queue
                      rainbow-delimiters
                      rainbow-mode
