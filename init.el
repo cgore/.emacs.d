@@ -452,7 +452,9 @@
       erc-save-buffer-on-part t
       erc-save-queries-on-quit t
       erc-log-write-after-send t
-      erc-log-write-after-insert t)
+      erc-log-write-after-insert t
+      erc-autojoin-channels-alist '(("freenode.net"
+                                     "#clojure" "#jesus" "#lisp")))
 
 (setq erc-prompt
       (lambda ()
