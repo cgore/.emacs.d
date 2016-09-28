@@ -723,39 +723,14 @@
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
 
-
 ;; Neotree - a nice directory listing panel on the left side of your Emacs.
 (require 'neotree)
 (global-set-key (kbd "<f8>") 'neotree-toggle)
 
-(defun default-font-and-theme ()
-  (interactive)
-  (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
-                           :underline nil :slant normal :weight normal
-                           :height 120 :width normal :family "Monaco")))))
-  (dark-background))
-
-(default-font-and-theme)
-
-(defun present-to-everybody ()
-  (interactive)
-  (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
-                           :underline nil :slant normal :weight normal
-                           :height 260 :width normal :family "Monaco")))))
-  (light-background))
-
-(defun google-hangouts-sucks ()
-  (interactive)
-  (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
-                           :underline nil :slant normal :weight normal
-                           :height 220 :width normal :family "Monaco")))))
-  (light-background))
-
 (require 'echo-bell)
 (echo-bell-mode)
+
+(load "~/.emacs.d/appearance.el")
 
 (when (tcc-cgore?)
   (load "~/.emacs.d/climate.el"))
