@@ -69,7 +69,6 @@
 
 (defun default-font-and-theme ()
   (interactive)
-  (set-fira-code-font)
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
@@ -80,7 +79,6 @@
 
 (defun present-to-everybody ()
   (interactive)
-  (set-fira-code-font)
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
@@ -89,7 +87,6 @@
 
 (defun google-hangouts-sucks ()
   (interactive)
-  (set-fira-code-font)
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
