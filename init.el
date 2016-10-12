@@ -296,16 +296,6 @@
    '(term-default-bg-color (face-background 'default))
    '(term-default-fg-color (face-foreground 'default))))
 
-(defun dark-background ()
-  (interactive)
-  (load-theme 'reverse t)
-  (reset-term-colors))
-(defun light-background ()
-  (interactive)
-  (disable-theme 'reverse)
-  (reset-term-colors))
-(light-background)
-
 ;; Limit the buffer for shells.
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
 (setq comint-buffer-maximum-size 10000)

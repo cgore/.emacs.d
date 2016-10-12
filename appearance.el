@@ -32,6 +32,18 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+(defun dark-background ()
+  (interactive)
+  (load-theme 'reverse t)
+  (reset-term-colors))
+
+(defun light-background ()
+  (interactive)
+  (disable-theme 'reverse)
+  (reset-term-colors))
+
+(light-background)
+
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"
   (interactive)
