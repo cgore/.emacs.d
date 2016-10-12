@@ -32,57 +32,16 @@
 ;;;; ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (prefer-coding-system 'utf-8)
 
-(setq package-list '(ace-jump-mode
-                     ack-and-a-half
-                     auto-complete
-                     auto-highlight-symbol
-                     cider
-                     clojure-mode
-                     coffee-mode
-                     echo-bell
-                     eruby-mode
-                     haml-mode
-                     inf-ruby
-                     json-mode
-                     magit
-                     magit-gitflow
-                     markdown-mode
-                     mc-extras
-                     multi-term
-                     multiple-cursors
-                     neotree
-                     paper-theme
-                     paredit
-                     puppet-mode
-                     projectile
-                     python-mode
-                     queue
-                     rainbow-delimiters
-                     rainbow-mode
-                     reverse-theme
-                     robe
-                     rspec-mode
-                     ruby-electric
-                     sass-mode
-                     scss-mode
-                     w3m
-                     yaml-mode))
-(require 'package)
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
-(package-initialize)
-(when (not package-archive-contents) (package-refresh-contents))
-(setq url-http-attempt-keepalives nil)
-(unless package-archive-contents
-  (package-refresh-contents))
-(dolist (package package-list)
-  (unless (package-installed-p package)
-        (package-install package)))
+(load "~/.emacs.d/packages.el")
 
 (defun cygwin? ()
   (eq system-type 'cygwin))
