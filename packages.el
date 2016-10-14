@@ -42,6 +42,7 @@
                      echo-bell
                      eruby-mode
                      haml-mode
+                     inf-clojure
                      inf-ruby
                      json-mode
                      magit
