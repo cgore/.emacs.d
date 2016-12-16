@@ -37,6 +37,7 @@
                      auto-complete
                      auto-highlight-symbol
                      cider
+                     clojure-cheatsheet
                      clojure-mode
                      coffee-mode
                      echo-bell
@@ -45,6 +46,7 @@
                      inf-clojure
                      inf-ruby
                      json-mode
+                     kibit-helper
                      magit
                      magit-gitflow
                      markdown-mode
