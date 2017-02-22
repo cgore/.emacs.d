@@ -1,4 +1,4 @@
-;;;; Copyright © 2013-2016, Christopher Mark Gore,
+;;;; Copyright © 2013-2017, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
@@ -42,6 +42,7 @@
                      coffee-mode
                      echo-bell
                      eruby-mode
+                     flycheck
                      haml-mode
                      inf-clojure
                      inf-ruby
