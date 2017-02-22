@@ -43,6 +43,8 @@
                      echo-bell
                      eruby-mode
                      flycheck
+                     flycheck-clojure
+                     flycheck-pos-tip
                      haml-mode
                      inf-clojure
                      inf-ruby
