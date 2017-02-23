@@ -49,6 +49,8 @@
   (interactive)
   (when (window-system)
     (set-default-font "Fira Code"))
+  (when darwin?
+    (mac-auto-operator-composition-mode))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")

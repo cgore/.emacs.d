@@ -144,23 +144,6 @@
 
 (setenv "MANWIDTH" (number-to-string (fixed-buffer-width)))
 
-;;; SLIME setup.
-;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
-(let ((fp "/Users/cgore/quicklisp/slime-helper.el"))
-  (when (file-exists-p fp)
-    (load (expand-file-name fp))))
-  ;; Replace "sbcl" with the path to your implementation
-;;(setq inferior-lisp-program "sbcl")
-
-(cond ((darwin?) (setq inferior-lisp-program "/usr/local/bin/sbcl"))
-      ((linux?)  (setq inferior-lisp-program "/usr/bin/sbcl")))
-(when (linux?)
-  (add-to-list 'load-path "~/programming/lisp/slime/") ; My SLIME directory.
-  (require 'slime-autoloads)
-  (slime-setup))
-;(require 'slime-autoloads)
-(setq slime-contribs '(slime-fancy))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -176,7 +159,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (sly shen-elisp inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode)))
  '(safe-local-variable-values
    (quote
     ((encoding . utf-8)
@@ -456,6 +439,8 @@
           slime-mode-hook
           slime-repl-mode-hook))
 
+(setq inferior-lisp-program "/usr/bin/env sbcl --noinform --no-linedit")
+
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
 
@@ -560,6 +545,7 @@
 
 (when (tcc-cgore?)
   (load "~/.emacs.d/climate.el"))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
