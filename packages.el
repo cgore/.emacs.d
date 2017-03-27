@@ -45,6 +45,7 @@
                      flycheck
                      flycheck-clojure
                      flycheck-pos-tip
+                     go-mode
                      haml-mode
                      inf-clojure
                      inf-ruby

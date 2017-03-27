@@ -159,7 +159,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (sly shen-elisp inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode)))
+    (go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(safe-local-variable-values
    (quote
     ((encoding . utf-8)
