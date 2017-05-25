@@ -47,6 +47,7 @@
                      flycheck-pos-tip
                      go-mode
                      haml-mode
+                     highlight-indentation
                      inf-clojure
                      inf-ruby
                      json-mode
