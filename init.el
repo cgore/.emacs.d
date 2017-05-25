@@ -467,28 +467,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;; Clojure
-(dolist (p '(auto-complete
-             clojure-mode
-             cider
-             cider-test))
-  (require p))
-(global-set-key (kbd "C-c M-c") 'cider-connect)
-(add-hook 'cider-mode-hook #'eldoc-mode)
-(setq cider-repl-result-prefix ";; => ")
-(setq cider-interactive-eval-result-prefix ";; -> ")
-(setq cider-repl-history-size 10000)
-(setq cider-repl-history-file (cond ((nephesh?)   "/Users/cgore/.emacs.d/cider-repl.history")
-                                    ((tcc-cgore?) "/Users/chris.gore/.emacs.d/cider-repl.history")
-                                    (t            "/home/chris/.emacs.d/cider-repl.history")))
-(eval-after-load 'cider
-  '(progn
-     (add-hook 'clojure-mode-hook 'cider-mode)
-     (add-hook 'cider-repl-mode-hook 'paredit-mode)
-     (local-set-key (kbd "M-<return>") 'newline)))
-
-(global-set-key (kbd "M-<return>") 'newline)
-(global-set-key (kbd "C-x C-j") 'eval-print-last-sexp) ; paredit squashes C-j
+(load "~/.emacs.d/clojure-setup.el")
 
 ;;; YAML
 (require 'yaml-mode)
