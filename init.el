@@ -444,11 +444,7 @@
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
 
-;;; Python
-(autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
+(load "~/.emacs.d/python-setup.el")
 
 ;;; Maxima
 (add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
