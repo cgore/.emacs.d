@@ -1,0 +1,5 @@
+* My =~/.emacs.d/= Setup
+
+This is my setup and configuration for Emacs.  It lives in =~/.emacs.d/= and I
+use it across multiple machines and operating systems.  You might want to use
+bits and pieces of it.  Or maybe all of it.  Or not.  That's up to you.
