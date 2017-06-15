@@ -40,4 +40,4 @@
   (custom-set-variables '(py-shell-name "/usr/local/bin/python")))
 
 (require 'highlight-indentation)
-(add-hook 'python-mode-hook 'highlight-indentation)
+(add-hook 'python-mode-hook 'highlight-indentation-mode)
