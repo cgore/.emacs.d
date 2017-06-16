@@ -34,7 +34,7 @@
 
 (defun dark-background ()
   (interactive)
-  (load-theme 'sanityinc-tomorrow-night t)
+  (load-theme 'sanityinc-tomorrow-eighties t)
   (reset-term-colors))
 
 (defun light-background ()
@@ -47,7 +47,7 @@
   (load-theme 'sanityinc-tomorrow-blue t)
   (reset-term-colors))
 
-(light-background)
+(dark-background)
 
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"
