@@ -42,6 +42,11 @@
   (load-theme 'sanityinc-tomorrow-day t)
   (reset-term-colors))
 
+(defun blue-background ()
+  (interactive)
+  (load-theme 'sanityinc-tomorrow-blue t)
+  (reset-term-colors))
+
 (light-background)
 
 (defun set-fira-code-font ()
