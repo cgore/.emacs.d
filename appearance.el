@@ -34,12 +34,12 @@
 
 (defun dark-background ()
   (interactive)
-  (load-theme 'reverse t)
+  (load-theme 'sanityinc-tomorrow-night t)
   (reset-term-colors))
 
 (defun light-background ()
   (interactive)
-  (disable-theme 'reverse)
+  (load-theme 'sanityinc-tomorrow-day t)
   (reset-term-colors))
 
 (light-background)
