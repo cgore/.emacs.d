@@ -67,18 +67,19 @@
                                     "/opt/pixie")))
 
 (setq programming-mode-hooks-list
-      '(c-mode-hook
-          clojure-mode-hook
-          c++-mode-hook
-          coffee-mode-hook
-          emacs-lisp-mode-hook
-          html-mode-hook
-          javascript-mode-hook
-          lisp-mode-hook
-          org-mode-hook
-          puppet-mode-hook
-          python-mode-hook
-          ruby-mode-hook))
+      '(sh-mode-hook
+        c-mode-hook
+        clojure-mode-hook
+        c++-mode-hook
+        coffee-mode-hook
+        emacs-lisp-mode-hook
+        html-mode-hook
+        javascript-mode-hook
+        lisp-mode-hook
+        org-mode-hook
+        puppet-mode-hook
+        python-mode-hook
+        ruby-mode-hook))
 
 (global-flycheck-mode)
 
