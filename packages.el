@@ -40,6 +40,7 @@
                      clojure-cheatsheet
                      clojure-mode
                      coffee-mode
+                     conda
                      echo-bell
                      eruby-mode
                      flycheck
