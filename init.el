@@ -230,32 +230,7 @@
       projectile-file-exists-remote-cache-expire (* 10 60))
 
 
-;;; Ruby
-(require 'inf-ruby)
-(require 'robe)
-(require 'rspec-mode)
-(require 'ruby-electric)
-(require 'ruby-mode)
-(require 'yari) ; ri interface
-(require 'ruby-block)
-(ruby-block-mode t)
-(setq ruby-block-highlight-toggle 'overlay)
-(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(setq ruby-deep-arglist nil)
-(setq ruby-deep-indent-paren nil)
-(add-hook 'ruby-mode-hook 'robe-mode)
-(setq rspec-use-rake-when-possible nil)
-
-;;; Ruby on Rails
-(require 'haml-mode)
-(setq scss-compile-at-save nil)
-(require 'sass-mode)
-(require 'scss-mode)
-
 (require 'tls)
-
-(load "~/.emacs.d/init/erc.el")
 
 ;;; Org Mode
 (require 'org)
@@ -294,16 +269,6 @@
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
-
-
-;;; Git
-(add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
-(global-set-key (kbd "<f2> g") 'magit-status)
-(global-set-key (kbd "<f2> l") 'magit-log-current)
-(global-set-key (kbd "<f2> t") 'magit-log-all)
-(setq magit-last-seen-setup-instructions "1.4.0")
-(require 'magit-gitflow)
-(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 ;;; Buffer navigation.
 (global-set-key (kbd "<XF86Back>") 'previous-buffer)
@@ -415,29 +380,18 @@
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
 
+(load "~/.emacs.d/init/clojure.el")
+(load "~/.emacs.d/init/erc.el")
+(load "~/.emacs.d/init/git.el")
+(load "~/.emacs.d/init/maxima.el")
+(load "~/.emacs.d/init/mc.el")
 (load "~/.emacs.d/init/python.el")
-
-;;; Maxima
-(add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
-(autoload 'maxima-mode "maxima" "Maxima mode" t)
-(autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
-(autoload 'maxima "maxima" "Maxima interaction" t)
-(autoload 'imath-mode "imath" "Imath mode for math formula input" t)
-(setq imaxima-use-maxima-mode-flag t
-      imaxima-pt-size 12
-      imaxima-fnt-size "large"
-      imaxima-max-scale nil
-      imaxima-linearize-flag nil)
-(add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
-(global-set-key (kbd "<XF86Calculator>") 'maxima)
-
+(load "~/.emacs.d/init/ruby.el")
 
 ;;; Markdown
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-(load "~/.emacs.d/init/clojure.el")
 
 ;;; YAML
 (require 'yaml-mode)
@@ -451,23 +405,6 @@
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-'") 'ace-jump-mode)
 (global-set-key (kbd "C-M-'") 'ace-jump-mode-pop-mark)
-
-;;; Multiple Cursors
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c C-a") 'mc/edit-beginnings-of-lines)
-(global-set-key (kbd "C-c C-e") 'mc/edit-ends-of-lines)
-(global-set-key (kbd "C-c C-+") 'mc/mark-all-dwim)
-(require 'mc-extras)
-(define-key mc/keymap (kbd "C-. C-d") 'mc/remove-current-cursor)
-(define-key mc/keymap (kbd "C-. d")   'mc/remove-duplicated-cursors)
-(define-key mc/keymap (kbd "C-. =")   'mc/compare-chars)
-;;(define-key cua--rectangle-keymap (kbd "C-. C-,") 'mc/cua-rectangle-to-multiple-cursors)
-(mc/cua-rectangle-setup)
-
 
 ;; Autocomplete config
 (define-key ac-completing-map [return] nil) ; no enter (1.)

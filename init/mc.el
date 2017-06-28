@@ -33,26 +33,17 @@
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
 
-(defun cygwin? ()
-  (eq system-type 'cygwin))
-(defun darwin? ()
-  (eq system-type 'darwin))
-(defun linux? ()
-  (eq system-type 'gnu/linux))
-
-(defun abaddon? () ; Old Camber workstation
-  (string= system-name "abaddon"))
-(defun corinth? () ; Samsung RV510 laptop (2012)
-  (string= system-name "corinth"))
-(defun ezekiel? () ; California
-  (string= system-name "ezekiel"))
-(defun habakkuk? () ; home
-  (string= system-name "habakkuk"))
-(defun naaman? () ; Atlanta
-  (string= system-name "naaman"))
-(defun nephesh? () ; MacBook Pro 15" (2014)
-  (string= system-name "nephesh"))
-(defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
-  (or (string= system-name "tcc-cgore")
-      (string= system-name "tcc-cgore.corp.climate.com")))
-
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-a") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-c C-e") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-c C-+") 'mc/mark-all-dwim)
+(require 'mc-extras)
+(define-key mc/keymap (kbd "C-. C-d") 'mc/remove-current-cursor)
+(define-key mc/keymap (kbd "C-. d")   'mc/remove-duplicated-cursors)
+(define-key mc/keymap (kbd "C-. =")   'mc/compare-chars)
+;;(define-key cua--rectangle-keymap (kbd "C-. C-,") 'mc/cua-rectangle-to-multiple-cursors)
+(mc/cua-rectangle-setup)

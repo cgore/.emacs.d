@@ -33,26 +33,10 @@
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
 
-(defun cygwin? ()
-  (eq system-type 'cygwin))
-(defun darwin? ()
-  (eq system-type 'darwin))
-(defun linux? ()
-  (eq system-type 'gnu/linux))
-
-(defun abaddon? () ; Old Camber workstation
-  (string= system-name "abaddon"))
-(defun corinth? () ; Samsung RV510 laptop (2012)
-  (string= system-name "corinth"))
-(defun ezekiel? () ; California
-  (string= system-name "ezekiel"))
-(defun habakkuk? () ; home
-  (string= system-name "habakkuk"))
-(defun naaman? () ; Atlanta
-  (string= system-name "naaman"))
-(defun nephesh? () ; MacBook Pro 15" (2014)
-  (string= system-name "nephesh"))
-(defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
-  (or (string= system-name "tcc-cgore")
-      (string= system-name "tcc-cgore.corp.climate.com")))
-
+(add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
+(global-set-key (kbd "<f2> g") 'magit-status)
+(global-set-key (kbd "<f2> l") 'magit-log-current)
+(global-set-key (kbd "<f2> t") 'magit-log-all)
+(setq magit-last-seen-setup-instructions "1.4.0")
+(require 'magit-gitflow)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)

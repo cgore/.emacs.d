@@ -33,26 +33,15 @@
 ;;;; POSSIBILITY OF SUCH DAMAGE.
 
 
-(defun cygwin? ()
-  (eq system-type 'cygwin))
-(defun darwin? ()
-  (eq system-type 'darwin))
-(defun linux? ()
-  (eq system-type 'gnu/linux))
-
-(defun abaddon? () ; Old Camber workstation
-  (string= system-name "abaddon"))
-(defun corinth? () ; Samsung RV510 laptop (2012)
-  (string= system-name "corinth"))
-(defun ezekiel? () ; California
-  (string= system-name "ezekiel"))
-(defun habakkuk? () ; home
-  (string= system-name "habakkuk"))
-(defun naaman? () ; Atlanta
-  (string= system-name "naaman"))
-(defun nephesh? () ; MacBook Pro 15" (2014)
-  (string= system-name "nephesh"))
-(defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
-  (or (string= system-name "tcc-cgore")
-      (string= system-name "tcc-cgore.corp.climate.com")))
-
+(add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
+(autoload 'maxima-mode "maxima" "Maxima mode" t)
+(autoload 'imaxima "imaxima" "Frontend for maxima with Image support" t)
+(autoload 'maxima "maxima" "Maxima interaction" t)
+(autoload 'imath-mode "imath" "Imath mode for math formula input" t)
+(setq imaxima-use-maxima-mode-flag t
+      imaxima-pt-size 12
+      imaxima-fnt-size "large"
+      imaxima-max-scale nil
+      imaxima-linearize-flag nil)
+(add-to-list 'auto-mode-alist '("\\.ma[cx]" . maxima-mode))
+(global-set-key (kbd "<XF86Calculator>") 'maxima)
