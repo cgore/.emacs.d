@@ -35,9 +35,9 @@
 (prefer-coding-system 'utf-8)
 
 (package-initialize)
-(load "~/.emacs.d/packages.el")
 
-(load "~/.emacs.d/boxen.el")
+(load "~/.emacs.d/init/packages.el")
+(load "~/.emacs.d/init/boxen.el")
 
 (server-start)
 
@@ -150,6 +150,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(conda-anaconda-home "/Users/chris.gore/anaconda")
  '(custom-enabled-themes (quote (sanityinc-tomorrow-day)))
  '(custom-safe-themes
    (quote
@@ -203,7 +204,7 @@
  '(woman-fill-column 100)
  '(woman-fill-frame t))
 
-(load "~/.emacs.d/multi-term.el")
+(load "~/.emacs.d/init/multi-term.el")
 
 ;;; JavaScript and JSON
 (when (or (linux?) (darwin?))
@@ -254,7 +255,7 @@
 
 (require 'tls)
 
-(load "~/.emacs.d/erc-setup.el")
+(load "~/.emacs.d/init/erc.el")
 
 ;;; Org Mode
 (require 'org)
@@ -373,7 +374,7 @@
           python-mode-hook
           ruby-mode-hook))
 
-(load "~/.emacs.d/eshell.el")
+(load "~/.emacs.d/init/eshell.el")
 
 ;;; Line Numbers
 (unless window-system ; Only when in non-GUI
@@ -414,7 +415,7 @@
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
 
-(load "~/.emacs.d/python-setup.el")
+(load "~/.emacs.d/init/python.el")
 
 ;;; Maxima
 (add-to-list 'load-path "/usr/share/maxima/5.32.1/emacs/")
@@ -436,7 +437,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-(load "~/.emacs.d/clojure-setup.el")
+(load "~/.emacs.d/init/clojure.el")
 
 ;;; YAML
 (require 'yaml-mode)
@@ -489,7 +490,7 @@
 (load "~/.emacs.d/appearance.el")
 
 (when (tcc-cgore?)
-  (load "~/.emacs.d/climate.el"))
+  (load "~/.emacs.d/local/climate.el"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
