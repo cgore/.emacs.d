@@ -68,6 +68,7 @@
                      queue
                      rainbow-delimiters
                      rainbow-mode
+                     restclient
                      reverse-theme
                      robe
                      rspec-mode
