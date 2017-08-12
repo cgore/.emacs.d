@@ -63,3 +63,5 @@
 
 (defun eshell/git-experimental-here ()
   (eshell/git-branch-here "experimental"))
+
+(global-set-key (kbd "<f9> <f9>") 'eshell)
