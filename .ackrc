@@ -1,5 +1,5 @@
 --ignore-dir=elpa
 --ignore-dir=erc
 --ignore-dir=url
---ignore-file=projectile.cache
---ignore-file=cider-repl.history
+--ignore-file=match:/projectile\.cache/
+--ignore-file=match:/cider-repl\.history/
