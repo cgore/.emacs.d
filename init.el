@@ -132,7 +132,8 @@
       require-final-newline t
       scroll-step 1 ; keyboard scroll one line at a time
       tramp-default-method "ssh"
-      visible-bell t)
+      visible-bell t
+      ring-bell-function 'ignore)
 (setq-default indent-tabs-mode nil)
 (put 'scroll-left 'disabled nil)
 
