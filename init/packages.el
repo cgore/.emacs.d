@@ -40,6 +40,7 @@
                      clojure-cheatsheet
                      clojure-mode
                      coffee-mode
+                     color-theme-sanityinc-tomorrow
                      conda
                      echo-bell
                      eruby-mode
