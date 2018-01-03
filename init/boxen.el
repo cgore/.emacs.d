@@ -55,4 +55,5 @@
 (defun tcc-cgore? () ; Climate MacBook Pro 15" (2015)
   (or (string= system-name "tcc-cgore")
       (string= system-name "tcc-cgore.corp.climate.com")))
-
+(defun tcc-cgore-2018? () ; Climate MacBook Pro 15" (2018)
+  (string= system-name "C02VJ80DHTD6"))
