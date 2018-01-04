@@ -40,6 +40,7 @@
   "Iff this is Darwin (OSX)."
   (eq system-type 'darwin))
 (defun linux? ()
+  "Iff this is Linux."
   (eq system-type 'gnu/linux))
 
 (defun abaddon? ()
