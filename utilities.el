@@ -1,4 +1,4 @@
-;;;; Copyright © 2013-2014, Christopher Mark Gore,
+;;;; Copyright © 2013-2018, Christopher Mark Gore,
 ;;;; Soli Deo Gloria,
 ;;;; All rights reserved.
 ;;;;
