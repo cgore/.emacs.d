@@ -67,19 +67,19 @@
                                     "/opt/pixie")))
 
 (setq programming-mode-hooks-list
-      '(sh-mode-hook
-        c-mode-hook
-        clojure-mode-hook
-        c++-mode-hook
-        coffee-mode-hook
-        emacs-lisp-mode-hook
-        html-mode-hook
-        javascript-mode-hook
-        lisp-mode-hook
-        org-mode-hook
-        puppet-mode-hook
-        python-mode-hook
-        ruby-mode-hook))
+      'sh-mode-hook
+      c-mode-hook
+      clojure-mode-hook
+      c++-mode-hook
+      coffee-mode-hook
+      emacs-lisp-mode-hook
+      html-mode-hook
+      javascript-mode-hook
+      lisp-mode-hook
+      org-mode-hook
+      puppet-mode-hook
+      python-mode-hook
+      ruby-mode-hook)
 
 (global-flycheck-mode)
 
@@ -207,10 +207,7 @@
 
 (load "~/.emacs.d/init/multi-term.el")
 
-;;; JavaScript and JSON
-(when (or (linux?) (darwin?))
-  (require 'json-mode))
-(setq js-indent-level 2)
+(load "~/.emacs.d/init/javascript.el")
 
 ;; Ack!
 (require 'ack-and-a-half)
@@ -371,6 +368,7 @@
           emacs-lisp-mode-hook
           eval-expression-minibuffer-setup-hook
           ielm-mode-hook
+          json-mode-hook
           lisp-mode-hook
           lisp-interaction-mode-hook
           slime-mode-hook
