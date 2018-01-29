@@ -42,13 +42,13 @@
                      coffee-mode
                      color-theme-sanityinc-tomorrow
                      conda
-                     echo-bell
                      eruby-mode
                      flycheck
                      flycheck-clojure
                      flycheck-pos-tip
                      flymake-go
                      go-mode
+                     gorepl-mode
                      haml-mode
                      highlight-indentation
                      inf-clojure

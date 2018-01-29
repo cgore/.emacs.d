@@ -42,8 +42,12 @@
 (server-start)
 
 (when window-system
+  (setenv "GOPATH"
+          (expand-file-name "~/go"))
   (setenv "PATH"
           (concat
+           (expand-file-name "~/go/bin")
+           "/usr/local/opt/bin/go/libexec/bin"
            (expand-file-name "~/bin") ":"
            "/usr/local/bin:"
            "/usr/local/sbin:"
@@ -159,7 +163,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux echo-bell reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
    (quote
@@ -377,6 +381,7 @@
 (load "~/.emacs.d/init/clojure.el")
 (load "~/.emacs.d/init/erc.el")
 (load "~/.emacs.d/init/git.el")
+(load "~/.emacs.d/init/go.el")
 (load "~/.emacs.d/init/maxima.el")
 (load "~/.emacs.d/init/mc.el")
 (load "~/.emacs.d/init/python.el")
@@ -416,9 +421,6 @@
 (global-set-key (kbd "<f8> <f8>") 'neotree-toggle)
 (global-set-key (kbd "<f8> /") 'neotree-dir)
 (global-set-key (kbd "<f8> .") 'neotree-find)
-
-(require 'echo-bell)
-(echo-bell-mode)
 
 (load "~/.emacs.d/appearance.el")
 
