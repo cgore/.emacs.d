@@ -47,6 +47,7 @@
                      flycheck
                      flycheck-clojure
                      flycheck-pos-tip
+                     flymake-go
                      go-mode
                      haml-mode
                      highlight-indentation
