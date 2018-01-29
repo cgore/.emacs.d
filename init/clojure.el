@@ -42,9 +42,7 @@
 (setq cider-repl-result-prefix ";; => ")
 (setq cider-interactive-eval-result-prefix ";; -> ")
 (setq cider-repl-history-size 10000)
-(setq cider-repl-history-file (cond ((nephesh?)   "/Users/cgore/.emacs.d/cider-repl.history")
-                                    ((tcc-cgore?) "/Users/chris.gore/.emacs.d/cider-repl.history")
-                                    (t            "/home/chris/.emacs.d/cider-repl.history")))
+(setq cider-repl-history-file (expand-file-name "~/.emacs.d/cider-repl.history"))
 (eval-after-load 'cider
   '(progn
      (add-hook 'clojure-mode-hook 'cider-mode)
