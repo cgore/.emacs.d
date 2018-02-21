@@ -111,3 +111,11 @@
                            :underline nil :slant normal :weight normal
                            :height 220 :width normal :family "Fira Code")))))
   (light-background))
+
+(defun antman-uses-emacs ()
+  (interactive)
+  (custom-set-faces
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
+                           :height 90 :width normal :family "Fira Code")))))
+  (dark-background))
