@@ -55,6 +55,7 @@
                      inf-ruby
                      json-mode
                      kibit-helper
+                     logview
                      magit
                      magit-gitflow
                      markdown-mode
