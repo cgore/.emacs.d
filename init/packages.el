@@ -42,6 +42,7 @@
                      coffee-mode
                      color-theme-sanityinc-tomorrow
                      conda
+                     elpy
                      eruby-mode
                      flycheck
                      flycheck-clojure
