@@ -1,5 +1,5 @@
 (defun envmgr (environment)
-  (concat "/Users/chris.gore/climate/code/devops/utilities/target/python/bin/envmgr -e " environment))
+  (concat "/usr/local/bin/envmgr -e " environment))
 
 (defun climate-envmgr (environment)
   (mapcar (lambda (line)
