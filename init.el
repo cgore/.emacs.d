@@ -41,6 +41,8 @@
 
 (server-start)
 
+(setenv "PAGER" "cat")
+
 (when window-system
   (setenv "GOPATH"
           (expand-file-name "~/go"))
