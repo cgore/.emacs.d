@@ -44,6 +44,7 @@
                      conda
                      elpy
                      eruby-mode
+                     eshell-autojump
                      flycheck
                      flycheck-clojure
                      flycheck-pos-tip

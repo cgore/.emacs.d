@@ -65,3 +65,8 @@
   (eshell/git-branch-here "experimental"))
 
 (global-set-key (kbd "<f9> <f9>") 'eshell)
+
+(eval-after-load 'eshell
+  '(require 'eshell-autojump nil t))
+
+(setq eshell-last-dir-ring-size 500)
