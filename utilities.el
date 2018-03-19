@@ -60,3 +60,12 @@
                         (* mult
                            (get-number-at-point)))
                        mult)))))
+
+(defun mark-entire-word ()
+  "Mark the entire word (with superword mode!) under point."
+  (interactive)
+  (superword-mode 1)
+  (backward-word)
+  (mark-word)
+  ;(kill-ring-save (region-beginning) (region-end))
+  (superword-mode -1))
