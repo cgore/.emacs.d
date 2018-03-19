@@ -12,6 +12,7 @@ tramp
 erc/log/
 third-party/emacs-soap-client.hg
 /url/cookies
+eshell/autojump
 eshell/history
 eshell/lastdir
 elpa/
