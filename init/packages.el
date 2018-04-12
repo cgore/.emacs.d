@@ -39,6 +39,7 @@
                      cider
                      clojure-cheatsheet
                      clojure-mode
+                     clj-refactor
                      coffee-mode
                      color-theme-sanityinc-tomorrow
                      conda

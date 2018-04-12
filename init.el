@@ -117,11 +117,7 @@
   (setq default-frame-alist `((width  . ,(fixed-buffer-width))
                               (height . 40))))
 
-(setq-default c-basic-offset 4
-              c-default-style "linux"
-              fill-column 80) ; 80-wide for M-q.
-
-(setq tab-width 2)
+(load "~/.emacs.d/init/c.el")
 
 (setq compilation-scroll-output t
       default-directory "~"
@@ -166,7 +162,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (clj-refactor uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck clojure-cheatsheet kibit-helper inf-clojure ac-cider paper-theme eruby-mode auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
    (quote
