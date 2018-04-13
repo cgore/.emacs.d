@@ -47,8 +47,6 @@
   (load-theme 'sanityinc-tomorrow-blue t)
   (reset-term-colors))
 
-(dark-background)
-
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"
   (interactive)
