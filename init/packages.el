@@ -77,6 +77,7 @@
                      rainbow-mode
                      restclient
                      reverse-theme
+                     rjsx-mode
                      robe
                      rspec-mode
                      ruby-electric
