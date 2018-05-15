@@ -45,7 +45,6 @@
                      color-theme-sanityinc-tomorrow
                      conda
                      elpy
-                     eruby-mode
                      eshell-autojump
                      flycheck
                      flycheck-clojure
