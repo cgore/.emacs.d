@@ -36,8 +36,8 @@
 
 (package-initialize)
 
-(load "~/.emacs.d/init/packages.el")
-(load "~/.emacs.d/init/boxen.el")
+(load "~/.emacs.d/packages.el")
+(load "~/.emacs.d/boxen.el")
 
 (server-start)
 
@@ -117,7 +117,7 @@
   (setq default-frame-alist `((width  . ,(fixed-buffer-width))
                               (height . 40))))
 
-(load "~/.emacs.d/init/c.el")
+(load "~/.emacs.d/c.el")
 
 (setq compilation-scroll-output t
       default-directory "~"
@@ -203,9 +203,9 @@
  '(woman-fill-column 100)
  '(woman-fill-frame t))
 
-(load "~/.emacs.d/init/multi-term.el")
+(load "~/.emacs.d/multi-term.el")
 
-(load "~/.emacs.d/init/javascript.el")
+(load "~/.emacs.d/javascript.el")
 
 ;; Ack!
 (require 'ack-and-a-half)
@@ -335,7 +335,7 @@
           python-mode-hook
           ruby-mode-hook))
 
-(load "~/.emacs.d/init/eshell.el")
+(load "~/.emacs.d/eshell.el")
 
 ;;; Line Numbers
 (unless window-system ; Only when in non-GUI
@@ -377,14 +377,14 @@
 ;;; Pixie
 (add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
 
-(load "~/.emacs.d/init/clojure.el")
-(load "~/.emacs.d/init/erc.el")
-(load "~/.emacs.d/init/git.el")
-(load "~/.emacs.d/init/go.el")
-(load "~/.emacs.d/init/maxima.el")
-(load "~/.emacs.d/init/mc.el")
-(load "~/.emacs.d/init/python.el")
-(load "~/.emacs.d/init/ruby.el")
+(load "~/.emacs.d/clojure.el")
+(load "~/.emacs.d/erc.el")
+(load "~/.emacs.d/git.el")
+(load "~/.emacs.d/go.el")
+(load "~/.emacs.d/maxima.el")
+(load "~/.emacs.d/mc.el")
+(load "~/.emacs.d/python.el")
+(load "~/.emacs.d/ruby.el")
 
 ;;; Markdown
 (require 'markdown-mode)
