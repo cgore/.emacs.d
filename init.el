@@ -315,15 +315,10 @@
   (save-excursion
     (shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)))
 
-;; Neotree - a nice directory listing panel on the left side of your Emacs.
-(require 'neotree)
-(global-set-key (kbd "<f8> <f8>") 'neotree-toggle)
-(global-set-key (kbd "<f8> /") 'neotree-dir)
-(global-set-key (kbd "<f8> .") 'neotree-find)
-
 (load "~/.emacs.d/appearance.el")
 
 (load "~/.emacs.d/windows.el")
+(load "~/.emacs.d/neotree.el")
 
 (when (tcc-cgore?)
   (load "~/.emacs.d/local/climate.el"))
