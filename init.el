@@ -278,9 +278,7 @@
 
 (setq inferior-lisp-program "/usr/bin/env sbcl --noinform --no-linedit")
 
-;;; Pixie
-(add-hook 'pixie-mode-hook #'inf-clojure-minor-mode)
-
+(load "~/.emacs.d/pixie.el")
 (load "~/.emacs.d/clojure.el")
 (load "~/.emacs.d/erc.el")
 (load "~/.emacs.d/git.el")
