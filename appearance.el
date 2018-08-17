@@ -1,3 +1,7 @@
+;;; Line Numbers
+(unless window-system ; Only when in non-GUI
+  (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
+
 (defun dark-background ()
   (interactive)
   (load-theme 'sanityinc-tomorrow-eighties t)
