@@ -287,12 +287,7 @@
 (load "~/.emacs.d/mc.el")
 (load "~/.emacs.d/python.el")
 (load "~/.emacs.d/ruby.el")
-
-;;; Markdown
-(require 'markdown-mode)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
+(load "~/.emacs.d/markdown.el")
 (load "~/.emacs.d/coffeescript.el")
 (load "~/.emacs.d/yaml.el")
 
