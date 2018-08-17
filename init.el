@@ -295,9 +295,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;; YAML
-(require 'yaml-mode)
-(add-hook 'yaml-mode-hook 'linum-mode)
+(load "~/.emacs.d/yaml.el")
 
 ;;; CoffeeScript
 (require 'coffee-mode)
