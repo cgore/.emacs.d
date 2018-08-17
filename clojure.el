@@ -27,3 +27,5 @@
 ;;     (cljr-add-keybindings-with-prefix "C-c C-m"))
 
 ;; (add-hook 'clojure-mode-hook #'clj-refactor-mode-hook)
+
+(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
