@@ -293,11 +293,8 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(load "~/.emacs.d/coffeescript.el")
 (load "~/.emacs.d/yaml.el")
-
-;;; CoffeeScript
-(require 'coffee-mode)
-(setq coffee-tab-width 2)
 
 ;;; Ace Jump Mode
 (require 'ace-jump-mode)
