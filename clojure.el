@@ -1,3 +1,9 @@
+(when (linux?)
+  ;; For some reason the Debian-modified leiningen has OpenJDK java as their
+  ;; default, unless you set this environment variable.  I probably want to use
+  ;; Oracle's Java most of the time.
+  (setenv "JAVA_CMD" "/usr/bin/java"))
+
 (dolist (p '(auto-complete
              clojure-mode
              cider
