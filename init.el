@@ -1,7 +1,5 @@
 (prefer-coding-system 'utf-8)
 
-(package-initialize)
-
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/boxen.el")
 

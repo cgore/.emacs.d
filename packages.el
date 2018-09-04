@@ -1,3 +1,10 @@
+(setq package-archives
+      '(("ELPA" . "http://tromey.com/elpa/")
+        ("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("melpa-stable" . "http://stable.melpa.org/packages/")
+        ("marmalade" . "http://marmalade-repo.org/packages/")))
+(require 'package)
 (setq package-list '(ace-jump-mode
                      ack-and-a-half
                      auto-complete
@@ -50,14 +57,9 @@
                      scss-mode
                      w3m
                      yaml-mode))
-(require 'package)
-(setq package-archives '(("ELPA" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
-(when (not package-archive-contents) (package-refresh-contents))
+(when (not package-archive-contents)
+  (package-refresh-contents))
 (setq url-http-attempt-keepalives nil)
 (unless package-archive-contents
   (package-refresh-contents))
