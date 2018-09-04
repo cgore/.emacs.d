@@ -1,6 +1,7 @@
 ;;; JavaScript and JSON
-(when (or (linux?) (darwin?))
-  (require 'json-mode))
+(require 'js2-mode)
+(require 'js2-refactor)
+(require 'xref-js2)
 (require 'rjsx-mode)
 (setq js-indent-level 2 ; js-mode
       javascript-indent-level 2 ; javascript-mode
