@@ -10,34 +10,21 @@
 (setenv "PAGER" "cat")
 
 (when window-system
-  (setenv "GOPATH"
-          (expand-file-name "~/go"))
   (setenv "PATH"
           (concat
-           (expand-file-name "~/go/bin")
-           "/usr/local/opt/bin/go/libexec/bin"
            (expand-file-name "~/bin") ":"
            "/usr/local/bin:"
            "/usr/local/sbin:"
            (expand-file-name "~/.rvm/bin") ":"
            (expand-file-name "~/.rvm/sbin") ":"
-           "/usr/texbin:"
-           "/Library/TeX/texbin:"
            "/usr/bin:"
            "/usr/sbin:"
            "/bin:"
            "/sbin:"
-           "/opt/pixie:"
-           "/opt/sbin:"
-           (expand-file-name "~/climate/bin") ":"
            (getenv "PATH"))))
 
 (setq exec-path (append exec-path '("/usr/local/bin"
-                                    "/usr/local/sbin"
-                                    "/usr/texbin"
-                                    (expand-file-name "~/.rvm/bin")
-                                    (expand-file-name "~/.rvm/sbin")
-                                    "/opt/pixie")))
+                                    "/usr/local/sbin")))
 
 (setq programming-mode-hooks-list
       '(sh-mode-hook
