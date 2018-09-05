@@ -17,7 +17,9 @@
                 "/bin"
                 "/sbin")
               exec-path))
+
 (when (gr-cgore?)
+  (load "~/.emacs.d/secrets/gr.el")
   (setq exec-path
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")))))
 
