@@ -285,9 +285,6 @@
 (load "~/.emacs.d/windows.el")
 (load "~/.emacs.d/neotree.el")
 
-(when (tcc-cgore?)
-  (load "~/.emacs.d/local/climate.el"))
-
 (require 'restclient) ; https://github.com/pashky/restclient.el
 
 (when window-system
