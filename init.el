@@ -34,7 +34,8 @@
         org-mode-hook
         puppet-mode-hook
         python-mode-hook
-        ruby-mode-hook))
+        ruby-mode-hook
+        rjsx-mode-hook))
 
 (global-flycheck-mode)
 
