@@ -37,3 +37,8 @@
   "Any TCC box."
   (or (tcc-cgore-2015?)
       (tcc-cgore-2018?)))
+(defun gr-cgore-2018? ()
+  "Guaranteed Rate Macbook Pro 15\" 2018"
+  (string= (system-name) "GR-032503mbp.local"))
+(defun gr-cgore? ()
+  (gr-cgore-2018?))
