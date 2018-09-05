@@ -62,6 +62,14 @@
 
 (default-font-and-theme)
 
+(defun slightly-bigger-font ()
+  (interactive)
+  (custom-set-faces
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
+                           :height 170 :width normal :family "Fira Code")))))
+  (dark-background))
+
 (defun present-to-everybody ()
   (interactive)
   (custom-set-faces
