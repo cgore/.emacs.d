@@ -210,6 +210,7 @@
           (add-hook mode-hook 'whitespace-mode))
         '(c-mode-hook
           c++-mode-hook
+          clojure-mode-hook
           emacs-lisp-mode-hook
           lisp-mode-hook
           python-mode-hook
