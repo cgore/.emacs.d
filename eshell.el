@@ -36,3 +36,11 @@
   '(require 'eshell-autojump nil t))
 
 (setq eshell-last-dir-ring-size 500)
+
+(setq eshell-prompt-function
+      (lambda ()
+        (concat
+         (propertize (format-time-string "%-m/%d/%Y %a %-I:%M:%S %p " (current-time))
+                     'face `(:foreground "#aaaaff"))
+         (abbreviate-file-name (eshell/pwd))
+	       (if (= (user-uid) 0) " # " " $ "))))
