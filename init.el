@@ -16,6 +16,9 @@
                           "/usr/sbin"
                           "/bin"
                           "/sbin")))
+(when (gr-cgore?)
+  (setq exec-path
+        (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")))))
 
 (setq programming-mode-hooks-list
       '(sh-mode-hook
