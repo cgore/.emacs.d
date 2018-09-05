@@ -8,14 +8,15 @@
 (setenv "PAGER" "cat")
 
 (setq exec-path
-      (append exec-path `(,(expand-file-name "~/bin")
-                          ,(expand-file-name "~/n/bin")
-                          "/usr/local/bin"
-                          "/usr/local/sbin"
-                          "/usr/bin"
-                          "/usr/sbin"
-                          "/bin"
-                          "/sbin")))
+      (append `(,(expand-file-name "~/bin")
+                ,(expand-file-name "~/n/bin")
+                "/usr/local/bin"
+                "/usr/local/sbin"
+                "/usr/bin"
+                "/usr/sbin"
+                "/bin"
+                "/sbin")
+              exec-path))
 (when (gr-cgore?)
   (setq exec-path
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")))))
