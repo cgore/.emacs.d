@@ -23,7 +23,9 @@
 (require 'nodejs-repl)
 (add-hook 'js-mode-hook
           (lambda ()
+            (define-key js-mode-map (kbd "C-c M-j") 'nodejs-repl)
             (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
             (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+            (define-key js-mode-map (kbd "C-c C-k") 'nodejs-repl-send-buffer)
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
