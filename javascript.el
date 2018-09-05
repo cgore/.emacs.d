@@ -17,3 +17,13 @@
 (add-to-list 'auto-mode-alist '("\\.geojson$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+
+;; NodeJS stuff
+
+(require 'nodejs-repl)
+(add-hook 'js-mode-hook
+          (lambda ()
+            (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-expression)
+            (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+            (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+            (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
