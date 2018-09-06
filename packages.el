@@ -27,6 +27,7 @@
                      gorepl-mode
                      haml-mode
                      highlight-indentation
+                     indium
                      inf-clojure
                      inf-ruby
                      js2-refactor
@@ -41,6 +42,7 @@
                      multiple-cursors
                      neotree
                      nodejs-repl
+                     ob-restclient
                      paper-theme
                      paredit
                      puppet-mode

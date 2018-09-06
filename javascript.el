@@ -15,7 +15,7 @@
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
 (add-to-list 'auto-mode-alist '("\\.geojson$" . json-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
 
 ;; NodeJS stuff
