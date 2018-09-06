@@ -29,6 +29,7 @@
                      highlight-indentation
                      inf-clojure
                      inf-ruby
+                     js2-refactor
                      json-mode
                      kibit-helper
                      logview
@@ -39,6 +40,7 @@
                      multi-term
                      multiple-cursors
                      neotree
+                     nodejs-repl
                      paper-theme
                      paredit
                      puppet-mode
@@ -55,6 +57,7 @@
                      ruby-electric
                      sass-mode
                      scss-mode
+                     xref-js2
                      w3m
                      yaml-mode))
 (package-initialize)
