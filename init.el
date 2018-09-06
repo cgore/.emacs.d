@@ -214,15 +214,6 @@
 (require 'whitespace)
 (setq whitespace-style '(face empty tabs trailing))
 (global-whitespace-mode 0)
-(mapcar (lambda (mode-hook)
-          (add-hook mode-hook 'whitespace-mode))
-        '(c-mode-hook
-          c++-mode-hook
-          clojure-mode-hook
-          emacs-lisp-mode-hook
-          lisp-mode-hook
-          python-mode-hook
-          ruby-mode-hook))
 
 (load "~/.emacs.d/eshell.el")
 
@@ -237,12 +228,15 @@
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
-            (add-hook mode-hook 'linum-mode)
-            (add-hook mode-hook 'auto-complete-mode)
-            (add-hook mode-hook 'rainbow-mode)
-            (add-hook mode-hook 'rainbow-delimiters-mode)
-            (add-hook mode-hook 'auto-highlight-symbol-mode)
-            (add-hook 'html-mode-hook 'flyspell-prog-mode))
+            (mapcar #'(lambda (hook)
+                       (add-hook mode-hook hook))
+                    '(linum-mode
+                      auto-complete-mode
+                      rainbow-mode
+                      rainbow-delimiters-mode
+                      auto-highlight-symbol-mode
+                      flyspell-prog-mode
+                      whitespace-mode)))
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
