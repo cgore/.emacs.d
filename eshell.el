@@ -42,5 +42,6 @@
         (concat
          (propertize (format-time-string "%-m/%d/%Y %a %-I:%M:%S %p " (current-time))
                      'face `(:foreground "#aaaaff"))
-         (abbreviate-file-name (eshell/pwd))
+         (propertize (abbreviate-file-name (eshell/pwd))
+                     'face `(:foreground "#aaaa44"))
 	       (if (= (user-uid) 0) " # " " $ "))))
