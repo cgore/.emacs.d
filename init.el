@@ -222,6 +222,8 @@
 
 (load "~/.emacs.d/eshell.el")
 
+(load "~/.emacs.d/folding.el")
+
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
             (add-hook mode-hook 'flyspell-mode))
@@ -241,7 +243,8 @@
                       rainbow-delimiters-mode
                       auto-highlight-symbol-mode
                       flyspell-prog-mode
-                      whitespace-mode)))
+                      whitespace-mode
+                      yafolding-mode)))
         programming-mode-hooks-list)
 
 (mapcar #'(lambda (mode-hook)
