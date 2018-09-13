@@ -62,6 +62,7 @@
                      scss-mode
                      xref-js2
                      w3m
+                     yafolding
                      yaml-mode))
 (package-initialize)
 (when (not package-archive-contents)

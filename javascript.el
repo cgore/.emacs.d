@@ -18,6 +18,18 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
 
+;; Folding in JSON files
+
+(defvar yafolding-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "<C-S-return>") #'yafolding-hide-parent-element)
+    (define-key map (kbd "<C-M-return>") #'yafolding-toggle-all)
+    (define-key map (kbd "<C-return>") #'yafolding-toggle-element)
+    map))
+
+(add-hook 'json-mode-hook
+          (lambda () (yafolding-mode)))
+
 ;; NodeJS stuff
 
 (require 'nodejs-repl)
