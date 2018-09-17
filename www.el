@@ -23,6 +23,3 @@
   (let ((browse-url-browser-function 'browse-url-chrome))
     (browse-url-at-point)))
 (global-set-key (kbd "<f6> c") 'browse-url-at-point-chrome)
-
-(global-set-key (kbd "<f6> g")
-                (icurry 'browse-url-chrome "http://www.google.com"))
