@@ -17,6 +17,7 @@
                      coffee-mode
                      color-theme-sanityinc-tomorrow
                      conda
+                     csharp-mode
                      cyberpunk-theme
                      elpy
                      eshell-autojump

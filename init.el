@@ -23,23 +23,6 @@
   (setq exec-path
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")))))
 
-(setq programming-mode-hooks-list
-      '(sh-mode-hook
-        c-mode-hook
-        clojure-mode-hook
-        c++-mode-hook
-        coffee-mode-hook
-        emacs-lisp-mode-hook
-        html-mode-hook
-        javascript-mode-hook
-        json-mode-hook
-        lisp-mode-hook
-        org-mode-hook
-        puppet-mode-hook
-        python-mode-hook
-        ruby-mode-hook
-        rjsx-mode-hook))
-
 (global-flycheck-mode)
 
 (let ((third-party "~/.emacs.d/third-party/"))
@@ -221,8 +204,37 @@
 (global-whitespace-mode 0)
 
 (load "~/.emacs.d/eshell.el")
-
 (load "~/.emacs.d/folding.el")
+(load "~/.emacs.d/pixie.el")
+(load "~/.emacs.d/clojure.el")
+(load "~/.emacs.d/erc.el")
+(load "~/.emacs.d/git.el")
+(load "~/.emacs.d/go.el")
+(load "~/.emacs.d/maxima.el")
+(load "~/.emacs.d/mc.el")
+(load "~/.emacs.d/python.el")
+(load "~/.emacs.d/ruby.el")
+(load "~/.emacs.d/markdown.el")
+(load "~/.emacs.d/coffeescript.el")
+(load "~/.emacs.d/yaml.el")
+
+(setq programming-mode-hooks-list
+      '(sh-mode-hook
+        c-mode-hook
+        c++-mode-hook
+        csharp-mode-hook
+        clojure-mode-hook
+        coffee-mode-hook
+        emacs-lisp-mode-hook
+        html-mode-hook
+        javascript-mode-hook
+        json-mode-hook
+        lisp-mode-hook
+        org-mode-hook
+        puppet-mode-hook
+        python-mode-hook
+        ruby-mode-hook
+        rjsx-mode-hook))
 
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
@@ -260,19 +272,6 @@
           slime-repl-mode-hook))
 
 (setq inferior-lisp-program "/usr/bin/env sbcl --noinform --no-linedit")
-
-(load "~/.emacs.d/pixie.el")
-(load "~/.emacs.d/clojure.el")
-(load "~/.emacs.d/erc.el")
-(load "~/.emacs.d/git.el")
-(load "~/.emacs.d/go.el")
-(load "~/.emacs.d/maxima.el")
-(load "~/.emacs.d/mc.el")
-(load "~/.emacs.d/python.el")
-(load "~/.emacs.d/ruby.el")
-(load "~/.emacs.d/markdown.el")
-(load "~/.emacs.d/coffeescript.el")
-(load "~/.emacs.d/yaml.el")
 
 ;;; Ace Jump Mode
 (require 'ace-jump-mode)
