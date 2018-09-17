@@ -45,6 +45,7 @@
                      neotree
                      nodejs-repl
                      ob-restclient
+                     omnisharp
                      paper-theme
                      paredit
                      puppet-mode
