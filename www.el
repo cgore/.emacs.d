@@ -15,5 +15,14 @@
   (let ((browse-url-browser-function 'browse-url-firefox))
     (browse-url-at-point)))
 (global-set-key (kbd "<f6> f") 'browse-url-at-point-firefox)
+
+(when (darwin?)
+  (setq browse-url-chrome-program "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"))
+(defun browse-url-at-point-chrome ()
+  (interactive)
+  (let ((browse-url-browser-function 'browse-url-chrome))
+    (browse-url-at-point)))
+(global-set-key (kbd "<f6> c") 'browse-url-at-point-chrome)
+
 (global-set-key (kbd "<f6> g")
-                (icurry 'browse-url-firefox "http://www.google.com"))
+                (icurry 'browse-url-chrome "http://www.google.com"))
