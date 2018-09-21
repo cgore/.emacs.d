@@ -7,6 +7,7 @@ alias gf git fetch $*
 alias gfa git fetch --all $*
 alias gp git pull $*
 alias gP git push $*
+alias gO git push origin -u $*
 alias gC git commit -m $*
 alias gpr git pull --rebase $*
 alias g? git status $*
@@ -15,3 +16,5 @@ alias g- git diff $*
 alias g-h git diff HEAD $*
 alias g+ git add $*
 alias gM git merge --no-ff $*
+alias gb? git branch|grep \*|cut -c 3-
+alias gPP gO gb?
