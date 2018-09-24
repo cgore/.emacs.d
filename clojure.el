@@ -25,6 +25,7 @@
 (global-set-key (kbd "C-x C-j") 'eval-print-last-sexp) ; paredit squashes C-j
 
 ;; <https://github.com/clojure-emacs/clj-refactor.el>
+;; List of available refactorings: <https://github.com/clojure-emacs/clj-refactor.el/wiki>
 (require 'clj-refactor)
 (defun clj-refactor-mode-hook ()
     (clj-refactor-mode 1)
