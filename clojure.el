@@ -24,14 +24,15 @@
 (global-set-key (kbd "M-<return>") 'newline)
 (global-set-key (kbd "C-x C-j") 'eval-print-last-sexp) ; paredit squashes C-j
 
-;; (require 'clj-refactor)
+;; <https://github.com/clojure-emacs/clj-refactor.el>
+(require 'clj-refactor)
+(defun clj-refactor-mode-hook ()
+    (clj-refactor-mode 1)
+    (yas-minor-mode 1) ; for adding require/use/import statements
+    ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+    (cljr-add-keybindings-with-prefix "C-c C-m"))
+(setq cljr-warn-on-eval nil)
+(add-hook 'clojure-mode-hook #'clj-refactor-mode-hook)
 
-;; (defun clj-refactor-mode-hook ()
-;;     (clj-refactor-mode 1)
-;;     (yas-minor-mode 1) ; for adding require/use/import statements
-;;     ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-;;     (cljr-add-keybindings-with-prefix "C-c C-m"))
-
-;; (add-hook 'clojure-mode-hook #'clj-refactor-mode-hook)
 
 (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
