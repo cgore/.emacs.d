@@ -10,6 +10,8 @@
 (setq exec-path
       (append `(,(expand-file-name "~/bin")
                 ,(expand-file-name "~/n/bin")
+                "/usr/local/share/dotnet"
+                ,(expand-file-name "~/.dotnet/tools")
                 "/usr/local/bin"
                 "/usr/local/sbin"
                 "/usr/bin"

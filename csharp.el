@@ -32,3 +32,10 @@
   (local-set-key (kbd "C-c C-c") 'recompile))
 
 (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t)
+
+(when (darwin?)
+  ;; You'll need to do:
+  ;;   $ brew install omnisharp/omnisharp-roslyn/omnisharp-mono
+  ;; before you can use this.
+  ;; You'll also probably want to install VS Code and the .NET core SDK.
+  (setq omnisharp-server-executable-path "/usr/local/bin/omnisharp"))
