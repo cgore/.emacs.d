@@ -9,6 +9,14 @@
              cider
              cider-test))
   (require p))
+
+(define-prefix-command 'sexp-movements-map)
+(global-set-key (kbd "<f5>") 'sexp-movements-map)
+(define-key sexp-movements-map (kbd "<left>") 'backward-sexp)
+(define-key sexp-movements-map (kbd "<right>") 'forward-sexp)
+(define-key sexp-movements-map (kbd "<up>") 'backward-up-list)
+(define-key sexp-movements-map (kbd "<down>") 'up-list)
+
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (setq cider-repl-result-prefix ";; => ")
