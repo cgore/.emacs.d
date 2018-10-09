@@ -7,6 +7,7 @@
 (require 'package)
 (setq package-list '(ace-jump-mode
                      ack-and-a-half
+                     aggressive-indent
                      auto-complete
                      auto-highlight-symbol
                      base16-theme

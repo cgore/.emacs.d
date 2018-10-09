@@ -38,4 +38,6 @@
   ;;   $ brew install omnisharp/omnisharp-roslyn/omnisharp-mono
   ;; before you can use this.
   ;; You'll also probably want to install VS Code and the .NET core SDK.
+  ;; You'll also need to M-x omnisharp-install-server
+  ;; Then do M-x omnisharp-start-omnisharp-server
   (setq omnisharp-server-executable-path "/usr/local/bin/omnisharp"))
