@@ -1,5 +1,7 @@
+--ignore-dir=.cache
 --ignore-dir=elpa
 --ignore-dir=erc
+--ignore-dir=third-party
 --ignore-dir=url
 --ignore-file=match:/projectile\.cache/
 --ignore-file=match:/cider-repl\.history/
