@@ -1,20 +1,24 @@
-alias l ls -lh $*
-alias rspec rspec -c $*
+alias jira cd /Users/cgore/gr/tickets/$1
+alias RA- cd /Users/cgore/gr/tickets/RA-$1
+alias grcode cd /Users/cgore/gr/code/$1
+alias underdog cd /Users/cgore/gr/code/underdog
 
-alias d dired $1
-
-alias gf git fetch $*
-alias gfa git fetch --all $*
-alias gp git pull $*
-alias gP git push $*
-alias gO git push origin -u $*
-alias gC git commit -m $*
-alias gpr git pull --rebase $*
-alias g? git status $*
-alias glog git log $*
-alias g- git diff $*
-alias g-h git diff HEAD $*
-alias g+ git add $*
-alias gM git merge --no-ff $*
-alias gb? git branch|grep \*|cut -c 3-
+alias markright open -a /Applications/MarkRight.app $*
 alias gPP gO gb?
+alias gb? git branch|grep \*|cut -c 3-
+alias gM git merge --no-ff $*
+alias g+ git add $*
+alias g-h git diff HEAD $*
+alias g- git diff $*
+alias glog git log $*
+alias g? git status $*
+alias gpr git pull --rebase $*
+alias gC git commit -m $*
+alias gO git push origin -u $*
+alias gP git push $*
+alias gp git pull $*
+alias gfa git fetch --all $*
+alias gf git fetch $*
+alias d dired $1
+alias rspec rspec -c $*
+alias l ls -lh $*
