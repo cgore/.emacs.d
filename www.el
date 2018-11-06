@@ -10,6 +10,9 @@
       w3m-terminal-coding-system 'utf-8
       w3m-use-cookies t)
 
+(when (darwin?)
+  (setq browse-url-firefox-program "/usr/bin/open")
+  (setq browse-url-firefox-arguments '("-a" "Firefox")))
 (defun browse-url-at-point-firefox ()
   (interactive)
   (let ((browse-url-browser-function 'browse-url-firefox))
