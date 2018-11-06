@@ -1,6 +1,9 @@
 alias jira cd /Users/cgore/gr/tickets/$1
 alias RA- cd /Users/cgore/gr/tickets/RA-$1
 alias grcode cd /Users/cgore/gr/code/$1
+alias lip-service cd /Users/cgore/gr/code/lip-service
+alias ns-toolkit cd /Users/cgore/gr/code/ns-toolkit
+alias sulley cd /Users/cgore/gr/code/sulley
 alias underdog cd /Users/cgore/gr/code/underdog
 
 alias markright open -a /Applications/MarkRight.app $*
@@ -14,6 +17,7 @@ alias glog git log $*
 alias g? git status $*
 alias gpr git pull --rebase $*
 alias gC git commit -m $*
+alias gpo git push origin $*
 alias gO git push origin -u $*
 alias gP git push $*
 alias gp git pull $*
