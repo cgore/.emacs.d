@@ -50,7 +50,7 @@
       (set-char-table-range composition-function-table (car char-regexp)
                             `([,(cdr char-regexp) 0 font-shape-gstring])))))
 
-;;(set-fira-code-font)
+(set-fira-code-font)
 
 (defun default-font-and-theme ()
   (interactive)
