@@ -3,6 +3,7 @@ alias RA- cd /Users/cgore/gr/tickets/RA-$1
 alias grcode cd /Users/cgore/gr/code/$1
 alias lip-service cd /Users/cgore/gr/code/lip-service
 alias ns-toolkit cd /Users/cgore/gr/code/ns-toolkit
+alias red-arrow cd /Users/cgore/gr/code/red-arrow
 alias sulley cd /Users/cgore/gr/code/sulley
 alias underdog cd /Users/cgore/gr/code/underdog
 
