@@ -10,7 +10,7 @@
 
 (defun eshell/jira (ticket)
   "Go to the directory for notes on the specific jira TICKET."
-  (let ((ticket-directory (concat "/Users/cgore/gr/tickets/" ticket)))
+  (let ((ticket-directory (concat "/Users/cgore/gr/tickets/" (upcase ticket))))
     (when (not (file-exists-p ticket-directory))
       (make-directory ticket-directory))
     (cd ticket-directory)))
