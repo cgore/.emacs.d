@@ -9,7 +9,7 @@
   (setenv "LIPS_ENV" "production"))
 
 (defun eshell/jira (ticket)
-  "Go to the directory for notes on the specific jira ticket."
+  "Go to the directory for notes on the specific jira TICKET."
   (let ((ticket-directory (concat "/Users/cgore/gr/tickets/" ticket)))
     (when (not (file-exists-p ticket-directory))
       (make-directory ticket-directory))
