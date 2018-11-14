@@ -28,6 +28,9 @@
 
 (global-set-key (kbd "<f9> ->") "→")
 (global-set-key (kbd "<f9> <-") "←")
+(global-set-key (kbd "<f9> -<") "←")
+(global-set-key (kbd "<f9> -->") "⟶")
+(global-set-key (kbd "<f9> --<") "⟵")
 (global-set-key (kbd "<f9> =>") "⇒")
 (global-set-key (kbd "<f9> <=") "⇐")
 (global-set-key (kbd "<f9> inf") "∞")
