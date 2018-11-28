@@ -25,6 +25,9 @@
       (shell-command (concat "git clone git@github.com:Guaranteed-Rate/" repo ".git")))
     (cd repo-directory)))
 
+(defun eshell/call-me-maybe ()
+  (eshell/grcode "call-me-maybe"))
+
 (defun eshell/field-report ()
   (eshell/grcode "field-report"))
 
