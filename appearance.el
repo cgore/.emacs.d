@@ -86,6 +86,10 @@
                            :height 220 :width normal :family "Fira Code")))))
   (light-background))
 
+(defun google-meet-sucks ()
+  (interactive)
+  (google-hangouts-sucks))
+
 (defun antman-uses-emacs ()
   (interactive)
   (custom-set-faces
