@@ -12,7 +12,6 @@
                      auto-highlight-symbol
                      base16-theme
                      cider
-                     clojure-cheatsheet
                      clojure-mode
                      clj-refactor
                      coffee-mode
