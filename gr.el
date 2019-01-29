@@ -42,8 +42,14 @@
 (defun eshell/red-arrow ()
   (eshell/grcode "red-arrow"))
 
+(defun eshell/rockford ()
+  (eshell/grcode "rockford"))
+
 (defun eshell/sulley ()
   (eshell/grcode "sulley"))
 
 (defun eshell/underdog ()
   (eshell/grcode "underdog"))
+
+(defun eshell/verification-api ()
+  (eshell/grcode "verification-api"))
