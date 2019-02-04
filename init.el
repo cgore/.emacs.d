@@ -9,6 +9,7 @@
 (setenv "N_PREFIX" (expand-file-name "~/n"))
 (setq exec-path
       (append `(,(expand-file-name "~/bin")
+                ,(expand-file-name "~/.cargo/bin")
                 ,(expand-file-name "~/n/bin")
                 "/usr/local/share/dotnet"
                 ,(expand-file-name "~/.dotnet/tools")
@@ -99,7 +100,7 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser clj-refactor uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (rust-mode flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser clj-refactor uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode cider auto-complete cloc restclient conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol magit-gitflow erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yasnippet yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
    (quote

@@ -60,6 +60,7 @@
                      robe
                      rspec-mode
                      ruby-electric
+                     rust-mode
                      sass-mode
                      scss-mode
                      xref-js2
