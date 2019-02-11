@@ -10,7 +10,6 @@
 (setq exec-path
       (append `(,(expand-file-name "~/bin")
                 ,(expand-file-name "~/.cargo/bin")
-                ,(expand-file-name "~/n/bin")
                 "/usr/local/share/dotnet"
                 ,(expand-file-name "~/.dotnet/tools")
                 "/usr/local/bin"
@@ -25,7 +24,8 @@
   (load "~/.emacs.d/gr.el")
   (load "~/.emacs.d/secrets/gr.el")
   (setq exec-path
-        (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")))))
+        (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")
+                            ,(expand-file-name "~/n/bin")))))
 
 (global-flycheck-mode)
 
