@@ -27,6 +27,7 @@ ido.last
 url
 request
 network-security.data
+server
 
 .cache
 *.extmap
