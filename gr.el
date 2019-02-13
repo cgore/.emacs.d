@@ -30,6 +30,9 @@
 (defun eshell/call-me-maybe ()
   (eshell/grcode "call-me-maybe"))
 
+(defun eshell/do-si-do ()
+  (eshell/grcode "do-si-do"))
+
 (defun eshell/field-report ()
   (eshell/grcode "field-report"))
 
