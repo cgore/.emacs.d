@@ -78,6 +78,14 @@
                            :height 300 :width normal :family "Fira Code")))))
   (light-background))
 
+(defun msdos2k ()
+  (interactive)
+  (custom-set-faces
+   '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
+                           :underline nil :slant normal :weight normal
+                           :height 440 :width normal :family "Fira Code")))))
+  (dark-background))
+
 (defun google-hangouts-sucks ()
   (interactive)
   (custom-set-faces
