@@ -32,27 +32,3 @@
 
 (defun eshell/do-si-do ()
   (eshell/grcode "do-si-do"))
-
-(defun eshell/field-report ()
-  (eshell/grcode "field-report"))
-
-(defun eshell/lip-service ()
-  (eshell/grcode "lip-service"))
-
-(defun eshell/ns-toolkit ()
-  (eshell/grcode "ns-toolkit"))
-
-(defun eshell/red-arrow ()
-  (eshell/grcode "red-arrow"))
-
-(defun eshell/rockford ()
-  (eshell/grcode "rockford"))
-
-(defun eshell/sulley ()
-  (eshell/grcode "sulley"))
-
-(defun eshell/underdog ()
-  (eshell/grcode "underdog"))
-
-(defun eshell/verification-api ()
-  (eshell/grcode "verification-api"))
