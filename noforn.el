@@ -1,3 +1,5 @@
+;; You can toggle back and forth with normal by C-\
+
 ;;; Odd letters and glyphs.
 (defun french-input ()
   (interactive)
