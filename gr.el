@@ -1,15 +1,3 @@
-(defun gri-dev ()
-  (interactive)
-  (setenv "POLARIS_ENV" "dev")
-  (setenv "LIPS_ENV" "dev")
-  (setenv "RA_ENV" "dev"))
-
-(defun gri-production ()
-  (interactive)
-  (setenv "POLARIS_ENV" "production")
-  (setenv "LIPS_ENV" "production")
-  (setenv "RA_ENV" "dev"))
-
 (defun eshell/jira (ticket)
   "Go to the directory for notes on the specific jira TICKET."
   (let ((ticket-directory (concat "/Users/cgore/gr/tickets/" (upcase ticket))))
