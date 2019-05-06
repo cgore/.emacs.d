@@ -28,6 +28,7 @@ url
 request
 network-security.data
 server
+transient
 
 .cache
 *.extmap
