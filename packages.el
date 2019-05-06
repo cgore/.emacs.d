@@ -37,7 +37,6 @@
                      kibit-helper
                      logview
                      magit
-                     magit-gitflow
                      markdown-mode
                      mc-extras
                      multi-term
