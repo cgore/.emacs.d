@@ -56,6 +56,8 @@
   (setq default-frame-alist `((width  . ,(fixed-buffer-width))
                               (height . 40))))
 
+(load "~/.emacs.d/hideshow.el")
+
 (load "~/.emacs.d/c.el")
 
 (setq compilation-scroll-output t
