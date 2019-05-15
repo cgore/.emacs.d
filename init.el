@@ -318,6 +318,14 @@
           (concat (string-join exec-path ":")
                   ":" (getenv "PATH"))))
 
+(global-unset-key (kbd "C-t"))
+(defvar ctrl-t-map (make-sparse-keymap))
+(global-set-key (kbd "C-t") ctrl-t-map)
+(global-set-key (kbd "C-t s") 'copy-to-register)
+(global-set-key (kbd "C-t i") 'insert-register)
+(global-set-key (kbd "C-t >") 'append-to-register)
+(global-set-key (kbd "C-t <") 'prepend-to-register)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
