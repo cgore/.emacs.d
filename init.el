@@ -179,7 +179,6 @@
 
 
 (load "~/.emacs.d/www.el")
-(load "~/.emacs.d/thinking-bicycle.el")
 
 ;;; TeX and LaTeX
 (add-to-list 'auto-mode-alist '("\\.latex$" . latex-mode))
