@@ -4,7 +4,7 @@
 
 (defun dark-background ()
   (interactive)
-  (load-theme 'sanityinc-tomorrow-eighties t)
+  (load-theme 'sanityinc-tomorrow-night t)
   (reset-term-colors))
 
 (defun light-background ()
