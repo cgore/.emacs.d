@@ -19,8 +19,8 @@
 
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 (add-hook 'cider-mode-hook #'eldoc-mode)
-(setq cider-repl-result-prefix ";; => ")
-(setq cider-interactive-eval-result-prefix ";; -> ")
+(setq cider-repl-result-prefix ";; ⇒ ")
+(setq cider-interactive-eval-result-prefix ";; ⟶ ")
 (setq cider-repl-history-size 10000)
 (setq cider-repl-history-file (expand-file-name "~/.emacs.d/cider-repl.history"))
 (add-hook 'clojure-mode-hook 'cider-mode)
