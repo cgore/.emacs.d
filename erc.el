@@ -1,5 +1,7 @@
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
+      erc-fill-column 100
+      erc-autojoin-timing 'ident
       erc-nick "cgore"
       erc-user-full-name "Christopher Mark Gore"
       erc-email-userid "cgore@cgore.com"
@@ -14,6 +16,13 @@
       erc-autojoin-channels-alist '(("freenode.net"
                                      "#clojure" "#jesus" "#lisp")))
 
+;; Set your erc-nickserv-passwords in this file.  Example:
+;;(setq erc-nickserv-passwords
+;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
+(setq ercpass-el (expand-file-name "~/.emacs.d/secrets/ercpass.el"))
+(when (file-exists-p ercpass-el)
+  (load ercpass-el))
+
 (setq erc-prompt
       (lambda ()
         (erc-propertize (if (and (boundp 'erc-default-recipients)
@@ -26,10 +35,3 @@
 (setq erc-prompt-for-nickserv-password nil)
 (add-to-list 'erc-modules 'log)
 (erc-update-modules)
-
-;; Set your erc-nickserv-passwords in this file.  Example:
-;;(setq erc-nickserv-passwords
-;;      `((freenode (("whoYouAre" . "yourSecretPassword")))))
-(setq ercpass-el "~/.emacs.d/ercpass.el")
-(when (file-exists-p ercpass-el)
-  (load "~/.emacs.d/ercpass.el"))
