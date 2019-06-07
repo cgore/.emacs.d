@@ -17,6 +17,9 @@
   (load-theme 'sanityinc-tomorrow-blue t)
   (reset-term-colors))
 
+(defn default-theme ()
+  (blue-background))
+
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"
   (interactive)
@@ -58,7 +61,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 140 :width normal :family "Fira Code")))))
-  (dark-background))
+  (default-background))
 
 (default-font-and-theme)
 
@@ -68,7 +71,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 170 :width normal :family "Fira Code")))))
-  (dark-background))
+  (default-background))
 
 (defun present-to-everybody ()
   (interactive)
@@ -84,7 +87,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 440 :width normal :family "Fira Code")))))
-  (dark-background))
+  (default-background))
 
 (defun google-hangouts-sucks ()
   (interactive)
@@ -104,4 +107,4 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 90 :width normal :family "Fira Code")))))
-  (dark-background))
+  (default-background))
