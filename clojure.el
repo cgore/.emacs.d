@@ -19,6 +19,7 @@
 
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 (add-hook 'cider-mode-hook #'eldoc-mode)
+(setq cider-repl-display-help-banner nil)
 (setq cider-repl-result-prefix ";; ⇒ ")
 (setq cider-interactive-eval-result-prefix ";; ⟶ ")
 (setq cider-repl-history-size 10000)
