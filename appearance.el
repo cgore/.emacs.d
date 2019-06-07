@@ -17,7 +17,7 @@
   (load-theme 'sanityinc-tomorrow-blue t)
   (reset-term-colors))
 
-(defn default-theme ()
+(defun default-theme ()
   (blue-background))
 
 (defun set-fira-code-font ()
