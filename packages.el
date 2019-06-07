@@ -62,6 +62,7 @@
                      rust-mode
                      sass-mode
                      scss-mode
+                     string-inflection
                      xref-js2
                      w3m
                      yafolding

@@ -100,7 +100,7 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (plantuml-mode rust-mode flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode auto-complete cloc conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
+    (string-inflection plantuml-mode rust-mode flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode auto-complete cloc conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ack-and-a-half ace-jump-mode ac-slime)))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
    (quote
@@ -307,6 +307,7 @@
 
 (load "~/.emacs.d/windows.el")
 (load "~/.emacs.d/neotree.el")
+(load "~/.emacs.d/string-inflection.el")
 
 (require 'restclient) ; https://github.com/pashky/restclient.el
 
@@ -328,5 +329,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Fira Code")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Fira Code"))))
+ '(whitespace-tab ((t (:foreground "#636363")))))
 (put 'erase-buffer 'disabled nil)
