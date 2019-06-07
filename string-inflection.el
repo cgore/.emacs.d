@@ -1,3 +1,5 @@
+;; Cf. https://github.com/akicho8/string-inflection
+;;
 ;; This gives you the ability to cycle through different styles of variables
 ;; sort of like camel-snake-kebab for Clojure, switching between CamelCase,
 ;; snake_case, kebab-case, etc., just by pressing `C-c C-u`.
