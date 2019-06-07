@@ -61,7 +61,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 140 :width normal :family "Fira Code")))))
-  (default-background))
+  (default-theme))
 
 (default-font-and-theme)
 
@@ -71,7 +71,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 170 :width normal :family "Fira Code")))))
-  (default-background))
+  (default-theme))
 
 (defun present-to-everybody ()
   (interactive)
@@ -87,7 +87,7 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 440 :width normal :family "Fira Code")))))
-  (default-background))
+  (default-theme))
 
 (defun google-hangouts-sucks ()
   (interactive)
@@ -107,4 +107,4 @@
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
                            :height 90 :width normal :family "Fira Code")))))
-  (default-background))
+  (default-theme))
