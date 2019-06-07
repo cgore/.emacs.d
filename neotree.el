@@ -3,3 +3,5 @@
 (global-set-key (kbd "<f8> <f8>") 'neotree-toggle)
 (global-set-key (kbd "<f8> /") 'neotree-dir)
 (global-set-key (kbd "<f8> .") 'neotree-find)
+(setq neo-window-width 40)
+(setq neo-autorefresh t)
