@@ -17,8 +17,13 @@
   (load-theme 'sanityinc-tomorrow-blue t)
   (reset-term-colors))
 
+(defun green-background ()
+  (interactive)
+  (load-theme 'base16-greenscreen t)
+  (reset-term-colors))
+
 (defun default-theme ()
-  (blue-background))
+  (dark-background))
 
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"
