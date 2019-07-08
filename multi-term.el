@@ -97,3 +97,9 @@
         (multi-term-buffer-name (concat "ri " query))
         (multi-term-program-switches query))
     (multi-term)))
+
+(defun cljs-planck ()
+  (interactive)
+  (let ((multi-term-program "planck")
+        (multi-term-buffer-name "planck"))
+    (multi-term)))
