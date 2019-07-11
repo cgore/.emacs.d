@@ -5,6 +5,10 @@
       (make-directory ticket-directory))
     (cd ticket-directory)))
 
+
+(defun eshell/bdv (ticket-number)
+  (eshell/jira (format "BDV-%s" ticket-number)))
+
 (defun eshell/grcode (repo)
   "Go to the directory for a Guaranteed Rate REPO."
   (let* ((code-directory "/Users/cgore/gr/code/")
