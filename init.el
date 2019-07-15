@@ -324,6 +324,8 @@
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")
                             ,(expand-file-name "~/n/bin")))))
 
+(load "~/.emacs.d/aws.el")
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

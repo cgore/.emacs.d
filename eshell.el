@@ -44,4 +44,4 @@
                      'face `(:foreground "#aaaaff"))
          (propertize (abbreviate-file-name (eshell/pwd))
                      'face `(:foreground "#aaaa44"))
-	       (if (= (user-uid) 0) " # " " $ "))))
+         (if (= (user-uid) 0) " # " " $ "))))
