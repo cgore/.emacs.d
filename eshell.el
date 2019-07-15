@@ -21,10 +21,6 @@
             (shell-command (apply 'format command)))
           commands))
 
-(defun eshell/gprm ()
-  (shell-command "git checkout master")
-  (shell-command "git pull --rebase"))
-
 (defun eshell/git-branch-here (branch)
   (format-commands `("git push origin :%s" ,branch)
                    `("git branch -d %s" ,branch)

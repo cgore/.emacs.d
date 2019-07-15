@@ -8,3 +8,8 @@
 (add-hook 'shell-mode-hook  'with-editor-export-editor)
 (add-hook 'term-exec-hook   'with-editor-export-editor)
 (add-hook 'eshell-mode-hook 'with-editor-export-editor)
+
+(defun git-pull-rebase-master ()
+  (interactive)
+  (shell-command "git checkout master")
+  (shell-command "git pull --rebase"))
