@@ -23,6 +23,7 @@
 (global-set-key (kbd "<f9> B")     "฿")
 (global-set-key (kbd "<f9> E")     "€")
 (global-set-key (kbd "<f9> L")     "£")
+(global-set-key (kbd "<f9> l")     "λ")
 
 (global-set-key (kbd "<f9> C")     "©")
 (global-set-key (kbd "<f9> R")     "®")
