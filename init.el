@@ -318,7 +318,7 @@
 (global-set-key (kbd "C-t >") 'append-to-register)
 (global-set-key (kbd "C-t <") 'prepend-to-register)
 
-(global-set-key (kbd "<f9> c") 'calc)
+(global-set-key (kbd "<f6> c") 'calc)
 
 (when (gr-cgore?)
   (load "~/.emacs.d/gr.el")

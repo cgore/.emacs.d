@@ -21,7 +21,6 @@
   (custom-set-variables
    '(term-bind-key-alist '(("C-c C-c" . term-interrupt-subjob)
                            ("C-p" . previous-line)
-                           ("C-n" . next-line)
                            ("C-s" . isearch-forward)
                            ("C-r" . isearch-backward)
                            ("C-m" . term-send-raw)
@@ -46,6 +45,8 @@
   (let ((multi-term-program "bash")
         (multi-term-buffer-name "bash"))
     (multi-term)))
+
+(global-set-key (kbd "<f6> b") 'bash)
 
 (defun python ()
   (interactive)

@@ -30,7 +30,7 @@
 (defun eshell/git-experimental-here ()
   (eshell/git-branch-here "experimental"))
 
-(global-set-key (kbd "<f9> <f9>") 'eshell)
+(global-set-key (kbd "<f6> <f6>") 'eshell)
 
 (eval-after-load 'eshell
   '(require 'eshell-autojump nil t))
