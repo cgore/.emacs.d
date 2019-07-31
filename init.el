@@ -310,16 +310,6 @@
           (concat (string-join exec-path ":")
                   ":" (getenv "PATH"))))
 
-(global-unset-key (kbd "C-t"))
-(defvar ctrl-t-map (make-sparse-keymap))
-(global-set-key (kbd "C-t") ctrl-t-map)
-(global-set-key (kbd "C-t s") 'copy-to-register)
-(global-set-key (kbd "C-t i") 'insert-register)
-(global-set-key (kbd "C-t >") 'append-to-register)
-(global-set-key (kbd "C-t <") 'prepend-to-register)
-
-(global-set-key (kbd "<f6> c") 'calc)
-
 (when (gr-cgore?)
   (load "~/.emacs.d/gr.el")
   (load "~/.emacs.d/secrets/gr.el")
@@ -328,6 +318,8 @@
                             ,(expand-file-name "~/n/bin")))))
 
 (load "~/.emacs.d/aws.el")
+
+(load "~/.emacs.d/keys.el")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
