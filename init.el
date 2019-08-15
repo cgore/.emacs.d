@@ -204,6 +204,7 @@
 (load "~/.emacs.d/folding.el")
 (load "~/.emacs.d/pixie.el")
 (load "~/.emacs.d/clojure.el")
+;; (load "~/.emacs.d/clojurescript.el")
 (load "~/.emacs.d/erc.el")
 (load "~/.emacs.d/git.el")
 (load "~/.emacs.d/go.el")
