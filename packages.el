@@ -65,6 +65,7 @@
                      string-inflection
                      xref-js2
                      w3m
+                     which-key
                      yafolding
                      yaml-mode))
 (package-initialize)

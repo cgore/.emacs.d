@@ -7,3 +7,9 @@
 (global-set-key (kbd "C-t i") 'insert-register)
 (global-set-key (kbd "C-t >") 'append-to-register)
 (global-set-key (kbd "C-t <") 'prepend-to-register)
+
+
+;;; https://github.com/justbur/emacs-which-key
+(require 'which-key)
+(which-key-mode)
+(which-key-setup-minibuffer)
