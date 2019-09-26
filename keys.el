@@ -19,3 +19,4 @@
 ;;; Optional: bottom window or right window
 ;; (which-key-setup-side-window-right)
 (which-key-setup-side-window-bottom)
+(global-set-key (kbd "<f7> k") 'which-key-show-top-level)
