@@ -12,4 +12,10 @@
 ;;; https://github.com/justbur/emacs-which-key
 (require 'which-key)
 (which-key-mode)
-(which-key-setup-minibuffer)
+
+;;; Default: minibuffer
+;;; I don't know how to use paging with the minibuffer variant.
+;; (which-key-setup-minibuffer)
+;;; Optional: bottom window or right window
+;; (which-key-setup-side-window-right)
+(which-key-setup-side-window-bottom)
