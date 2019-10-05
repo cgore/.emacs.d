@@ -1,6 +1,6 @@
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
-      erc-fill-column 100
+      erc-fill-column 110
       erc-autojoin-timing 'ident
       erc-nick "cgore"
       erc-user-full-name "Christopher Mark Gore"
