@@ -7,6 +7,9 @@
 (defun linux? ()
   "Iff this is Linux."
   (eq system-type 'gnu/linux))
+(defun windows? ()
+  "Iff this is windows-nt, basically raw Windows."
+  (eq system-type 'windows-nt))
 
 (defun abaddon? ()
   "This was my old Camber workstation."
