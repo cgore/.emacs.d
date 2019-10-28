@@ -8,6 +8,11 @@
 (global-set-key (kbd "C-t >") 'append-to-register)
 (global-set-key (kbd "C-t <") 'prepend-to-register)
 
+;; The Windows Apps key - shows up as C-p for some reason on mac.
+(when (darwin?)
+  (global-set-key (kbd "C-p") 'execute-extended-command))
+(when (cygwin?)
+  (global-set-key (kbd "<apps>") 'execute-extended-command))
 
 ;;; https://github.com/justbur/emacs-which-key
 (require 'which-key)
