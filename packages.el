@@ -63,6 +63,8 @@
                      sass-mode
                      scss-mode
                      string-inflection
+                     terraform-doc
+                     terraform-mode
                      xref-js2
                      w3m
                      which-key
