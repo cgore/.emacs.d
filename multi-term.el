@@ -45,7 +45,6 @@
   (let ((multi-term-program "bash")
         (multi-term-buffer-name "bash"))
     (multi-term)))
-
 (global-set-key (kbd "<f6> b") 'bash)
 
 (defun python ()
@@ -67,7 +66,14 @@
         (multi-term-program-switches "-a")
         (multi-term-buffer-name "tig"))
     (multi-term)))
-(global-set-key (kbd "<f2> t") 'tig)
+
+(defun terraform-console ()
+  (interactive)
+  (let ((multi-term-program "terraform")
+        (multi-term-program-switches "console")
+        (multi-term-buffer-name "terraform console"))
+    (multi-term)))
+(global-set-key (kbd "<f6> t") 'terraform-console)
 
 (defun zsh ()
   (interactive)
