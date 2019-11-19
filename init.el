@@ -305,17 +305,17 @@
 
 (require 'restclient) ; https://github.com/pashky/restclient.el
 
-(when window-system
-  (setenv "PATH"
-          (concat (string-join exec-path ":")
-                  ":" (getenv "PATH"))))
-
 (when (gr-cgore?)
   (load "~/.emacs.d/gr.el")
   (load "~/.emacs.d/secrets/gr.el")
   (setq exec-path
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")
                             ,(expand-file-name "~/n/bin")))))
+
+(when window-system
+  (setenv "PATH"
+          (concat (string-join exec-path ":")
+                  ":" (getenv "PATH"))))
 
 (load "~/.emacs.d/aws.el")
 
