@@ -29,6 +29,7 @@
                      gorepl-mode
                      haml-mode
                      highlight-indentation
+                     ht
                      indium
                      inf-clojure
                      inf-ruby
