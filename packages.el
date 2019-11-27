@@ -19,6 +19,8 @@
                      conda
                      csharp-mode
                      cyberpunk-theme
+                     dash
+                     dash-functional
                      elpy
                      eshell-autojump
                      flycheck
@@ -61,6 +63,7 @@
                      rspec-mode
                      ruby-electric
                      rust-mode
+                     s
                      sass-mode
                      scss-mode
                      string-inflection
