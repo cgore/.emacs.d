@@ -38,6 +38,7 @@
                      js2-refactor
                      json-mode
                      kibit-helper
+                     kubernetes ; https://github.com/chrisbarrett/kubernetes-el
                      logview
                      magit
                      markdown-mode
