@@ -40,9 +40,17 @@
   "Any TCC box."
   (or (tcc-cgore-2015?)
       (tcc-cgore-2018?)))
+
+(require 's) ; https://github.com/magnars/s.el
+(defun gr-macbook-pro? ()
+  "True if this is a Guaranteed Rate Macbook Pro."
+  (interactive)
+  (s-match "^GR-[A-Z0-9]+mbp"
+           (system-name)))
 (defun gr-cgore-2018? ()
   "Guaranteed Rate Macbook Pro 15\" 2018"
-  (or (string= (system-name) "GR-032503mbp")
-      (string= (system-name) "GR-032503mbp.local")))
+  (interactive)
+  (s-match "^GR-032503mbp"
+           (system-name)))
 (defun gr-cgore? ()
   (gr-cgore-2018?))
