@@ -226,6 +226,7 @@
         emacs-lisp-mode-hook
         html-mode-hook
         javascript-mode-hook
+        js2-mode-hook
         json-mode-hook
         lisp-mode-hook
         org-mode-hook
@@ -330,3 +331,8 @@
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :family "Fira Code"))))
  '(whitespace-tab ((t (:foreground "#636363")))))
 (put 'erase-buffer 'disabled nil)
+
+
+(defun nuke-env (variable)
+  (interactive)
+  )
