@@ -2,6 +2,8 @@
 (unless window-system ; Only when in non-GUI
   (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
 
+(beacon-mode 1)
+
 (defun dark-background ()
   (interactive)
   (load-theme 'sanityinc-tomorrow-night t)
@@ -23,7 +25,7 @@
   (reset-term-colors))
 
 (defun default-theme ()
-  (dark-background))
+  (blue-background))
 
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>"

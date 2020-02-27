@@ -8,9 +8,12 @@
 (setq package-list '(ace-jump-mode
                      ack-and-a-half
                      aggressive-indent
+                     all-the-icons
+                     all-the-icons-dired
                      auto-complete
                      auto-highlight-symbol
                      base16-theme
+                     beacon
                      cider
                      clojure-mode
                      clj-refactor

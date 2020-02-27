@@ -5,3 +5,4 @@
 (global-set-key (kbd "<f8> .") 'neotree-find)
 (setq neo-window-width 40)
 (setq neo-autorefresh t)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
