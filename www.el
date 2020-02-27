@@ -25,3 +25,4 @@
   (interactive)
   (let ((browse-url-browser-function 'browse-url-chrome))
     (browse-url-at-point)))
+(global-set-key (kbd "<f6> c") 'browse-url-at-point-chrome)
