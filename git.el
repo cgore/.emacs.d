@@ -11,5 +11,6 @@
 
 (defun git-pull-rebase-master ()
   (interactive)
+  (shell-command "git stash")
   (shell-command "git checkout master")
   (shell-command "git pull --rebase"))
