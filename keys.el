@@ -1,4 +1,4 @@
-(global-set-key (kbd "<f6> c") 'calc)
+(global-set-key (kbd "<f6> +") 'calc)
 
 (global-unset-key (kbd "C-t"))
 (defvar ctrl-t-map (make-sparse-keymap))
