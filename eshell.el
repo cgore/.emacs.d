@@ -1,3 +1,11 @@
+;; https://www.gnu.org/software/emacs/manual/html_mono/eshell.html
+;;
+;; https://www.emacswiki.org/emacs/CategoryEshell
+;;
+;; http://www.howardism.org/Technical/Emacs/eshell-fun.html
+;;
+;; https://masteringemacs.org/article/complete-guide-mastering-eshell
+
 (require 'eshell)
 (setq eshell-path-env (concat "/usr/local/bin" ":"
                               eshell-path-env))
