@@ -28,7 +28,14 @@
   (blue-background))
 
 (defun set-fira-code-font ()
-  "Cf. <https://github.com/tonsky/FiraCode>"
+  "Cf. <https://github.com/tonsky/FiraCode>
+
+OSX:
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+
+"
   (interactive)
   (when (window-system)
     (set-default-font "Fira Code"))
