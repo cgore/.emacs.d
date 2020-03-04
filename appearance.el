@@ -25,7 +25,7 @@
   (reset-term-colors))
 
 (defun default-theme ()
-  (blue-background))
+  (dark-background))
 
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>
