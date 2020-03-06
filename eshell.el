@@ -23,6 +23,10 @@
     ;; argument causes later arguments to be looked for in that directory,
     ;; not the starting directory
     (mapc #'find-file (mapcar #'expand-file-name (eshell-flatten-list (reverse args))))))
+(defun eshell/vi (&rest args)
+  (apply 'eshell/emacs args))
+(defun eshell/vim (&rest args)
+  (apply 'eshell/emacs args))
 
 (defun format-commands (&rest commands)
   (mapcar (lambda (command)

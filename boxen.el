@@ -56,5 +56,6 @@
   (s-match "^GR-ZNRC2MD6Nmbp" (system-name)))
 
 (defun gr-cgore? ()
+  "This is any of my Guaranteed Rate computers."
   (or (gr-cgore-2020?)
       (gr-cgore-2018?)))
