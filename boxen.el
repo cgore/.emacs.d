@@ -45,12 +45,16 @@
 (defun gr-macbook-pro? ()
   "True if this is a Guaranteed Rate Macbook Pro."
   (interactive)
-  (s-match "^GR-[A-Z0-9]+mbp"
-           (system-name)))
+  (s-match "^GR-[A-Z0-9]+mbp" (system-name)))
 (defun gr-cgore-2018? ()
-  "Guaranteed Rate Macbook Pro 15\" 2018"
+  "Guaranteed Rate Macbook Pro 15\" 2018."
   (interactive)
-  (s-match "^GR-032503mbp"
-           (system-name)))
+  (s-match "^GR-032503mbp" (system-name)))
+(defun gr-cgore-2020? ()
+  "Guaranteed Rate Macbook Pro 16\" 2020."
+  (interactive)
+  (s-match "^GR-ZNRC2MD6Nmbp" (system-name)))
+
 (defun gr-cgore? ()
-  (gr-cgore-2018?))
+  (or (gr-cgore-2020?)
+      (gr-cgore-2018?)))
