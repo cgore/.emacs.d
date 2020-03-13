@@ -312,7 +312,8 @@
   (load "~/.emacs.d/secrets/gr.el")
   (setq exec-path
         (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")
-                            ,(expand-file-name "~/n/bin")))))
+                            ,(expand-file-name "~/n/bin")
+                            "/usr/local/opt/mongodb-community@3.6/bin"))))
 
 (when window-system
   (setenv "PATH"
