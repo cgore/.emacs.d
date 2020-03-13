@@ -1,6 +1,12 @@
+;; https://github.com/jrblevin/markdown-mode
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; https://pandoc.org/
+;; OSX:
+;; $ brew install pandoc
+(setq markdown-command "pandoc")
 
 (defun new-notes ()
   (interactive)
