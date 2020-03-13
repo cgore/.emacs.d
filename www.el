@@ -1,3 +1,7 @@
+;; W3M
+;; OSX:
+;; $ brew install w3m
+
 (setq browse-url-browser-function 'w3m-browse-url)
 
 (global-set-key (kbd "<f6> w") 'browse-url-at-point)
