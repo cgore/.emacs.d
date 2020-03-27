@@ -24,6 +24,7 @@
                      cyberpunk-theme
                      dash
                      dash-functional
+                     doom-themes
                      elpy
                      eshell-autojump
                      flycheck

@@ -4,9 +4,27 @@
 
 (beacon-mode 1)
 
+(defun reset-linum-heights ()
+  (interactive)
+  ;; If you use nlinum or linum in org-mode, the larger headline sizes in some
+  ;; themes could bleed into the line numbers.  Fix this by setting :height
+  ;; explicitly for your line number plugins, after you've loaded the
+  ;; theme. e.g.
+  (let ((height (face-attribute 'default :height)))
+    ;; for all linum/nlinum users
+    (set-face-attribute 'linum nil :height height)
+    ;; only for `linum-relative' users:
+    ;;(set-face-attribute 'linum-relative-current-face nil :height height)
+    ;; only for `nlinum-relative' users:
+    ;;(set-face-attribute 'nlinum-relative-current-face nil :height height)
+    ))
+
 (defun dark-background ()
   (interactive)
   (load-theme 'sanityinc-tomorrow-night t)
+  ;; (load-theme 'doom-laserwave t)
+  ;; (load-theme 'doom-outrun-electric t)
+  (reset-linum-heights)
   (reset-term-colors))
 
 (defun light-background ()
