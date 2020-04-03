@@ -74,6 +74,7 @@
                      string-inflection
                      terraform-doc
                      terraform-mode
+                     uuidgen
                      xref-js2
                      w3m
                      which-key

@@ -24,7 +24,7 @@
   (load-theme 'sanityinc-tomorrow-night t)
   ;; (load-theme 'doom-laserwave t)
   ;; (load-theme 'doom-outrun-electric t)
-  (reset-linum-heights)
+  ;; (reset-linum-heights)
   (reset-term-colors))
 
 (defun light-background ()
