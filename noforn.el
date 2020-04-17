@@ -29,6 +29,12 @@
 (global-set-key (kbd "<f9> R")     "®")
 (global-set-key (kbd "<f9> TM")    "™")
 
+
+(global-set-key (kbd "<f9> []")    "☐")
+(global-set-key (kbd "<f9> [v]")   "☑")
+(global-set-key (kbd "<f9> [x]")   "☒")
+(global-set-key (kbd "<f9> v")     "✓")
+(global-set-key (kbd "<f9> o")     "○")
 (global-set-key (kbd "<f9> ->")    "→")
 (global-set-key (kbd "<f9> <-")    "←")
 (global-set-key (kbd "<f9> -<")    "←")
