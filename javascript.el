@@ -54,7 +54,9 @@
 (require 'xref-js2)
 (define-key js2-mode-map (kbd "M-.") nil)
 (add-hook 'js2-mode-hook (lambda ()
-  (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+(add-hook 'rjsx-mode-hook (lambda ()
+                           (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
 ;; https://github.com/felipeochoa/rjsx-mode
 (require 'rjsx-mode)
