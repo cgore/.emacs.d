@@ -1,4 +1,4 @@
-;;; JavaScript and JSON
+;; JavaScript and JSON
 
 ;; https://github.com/mooz/js2-mode
 ;; http://elpa.gnu.org/packages/js2-mode.html
@@ -56,6 +56,9 @@
 (add-hook 'js2-mode-hook (lambda ()
   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
+;; https://github.com/felipeochoa/rjsx-mode
+(require 'rjsx-mode)
+
 (setq js-indent-level 2 ; js-mode
       javascript-indent-level 2 ; javascript-mode
       web-mode-markup-indent-offset 2
@@ -68,9 +71,11 @@
 ;; (setq web-mode-content-types-alist
 ;;       '(("jsx" . "\\.js[x]?\\'")))
 (add-to-list 'auto-mode-alist '("\\.geojson$" . json-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . rjsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . rjsx-mode))
 
 ;; NodeJS stuff
 
@@ -83,8 +88,3 @@
             (define-key js-mode-map (kbd "C-c C-k") 'nodejs-repl-send-buffer)
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
-(defun nvm-which ()
-  (let* ((shell (concat (getenv "SHELL") " -l -c 'nvm which'"))
-         (output (shell-command-to-string shell)))
-    (cadr (split-string output "[\n]+" t))))
-(setq nodejs-repl-command #'nvm-which)
