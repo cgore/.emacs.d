@@ -80,7 +80,13 @@
   (let ((multi-term-program "zsh")
         (multi-term-buffer-name "zsh"))
     (multi-term)))
+(defun zsh-named (buffer-name)
+  (interactive "sZ Shell buffer named: ")
+  (let ((multi-term-program "zsh")
+        (multi-term-buffer-name buffer-name))
+    (multi-term)))
 (global-set-key (kbd "<f2> z") 'zsh)
+(global-set-key (kbd "<f2> Z") 'zsh-named)
 
 (defun su ()
   (interactive)
