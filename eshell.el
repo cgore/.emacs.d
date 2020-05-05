@@ -57,3 +57,11 @@
          (propertize (abbreviate-file-name (eshell/pwd))
                      'face `(:foreground "#aaaa44"))
          (if (= (user-uid) 0) " # " " $ "))))
+
+(defun eshell-named (buffer-name)
+  (interactive "sEShell buffer named: ")
+  (let ((eshell-buffer-name (concat "*" buffer-name "*")))
+    (eshell)))
+
+(global-set-key (kbd "<f6> e") 'eshell)
+(global-set-key (kbd "<f6> E") 'eshell-named)
