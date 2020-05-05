@@ -85,8 +85,8 @@
   (let ((multi-term-program "zsh")
         (multi-term-buffer-name buffer-name))
     (multi-term)))
-(global-set-key (kbd "<f2> z") 'zsh)
-(global-set-key (kbd "<f2> Z") 'zsh-named)
+(global-set-key (kbd "<f6> z") 'zsh)
+(global-set-key (kbd "<f6> Z") 'zsh-named)
 
 (defun su ()
   (interactive)
