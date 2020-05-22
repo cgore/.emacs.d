@@ -53,11 +53,7 @@
 ;;     M-, Pop back to where M-. was last invoked
 (require 'xref-js2)
 (define-key js2-mode-map (kbd "M-.") nil)
-(define-key js2-mode-map
-  ;; This is normally on M-? but this is easier to type and I never use the
-  ;; abbreviation stuff anyway, so I'll make the unshifted version work too.
-  (kbd "M-/")
-  'xref-find-references)
+
 (let (hook (lambda ()
              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
   (add-hook 'js2-mode-hook  hook)
