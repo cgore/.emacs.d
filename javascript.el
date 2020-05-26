@@ -54,8 +54,8 @@
 (require 'xref-js2)
 (define-key js2-mode-map (kbd "M-.") nil)
 
-(let (hook (lambda ()
-             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+(let ((hook (lambda ()
+              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t))))
   (add-hook 'js2-mode-hook  hook)
   (add-hook 'rjsx-mode-hook hook))
 
