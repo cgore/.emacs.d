@@ -39,6 +39,8 @@
                      indium
                      inf-clojure
                      inf-ruby
+                     jq-format
+                     jq-mode
                      js2-refactor
                      json-mode
                      kibit-helper
