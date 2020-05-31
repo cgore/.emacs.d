@@ -41,7 +41,6 @@
   (brew-install "python-yq")
   (brew-install "leiningen")
 
-  ;; Our for-real prod instances are mostly running OpenJDK, not Oracle's Java.
   ;; sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
   ;; echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc
   ;; export CPPFLAGS="-I/usr/local/opt/openjdk/include"
