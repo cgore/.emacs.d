@@ -274,10 +274,10 @@
           json-mode-hook
           lisp-mode-hook
           lisp-interaction-mode-hook
-          slime-mode-hook
-          slime-repl-mode-hook))
+          ;;slime-mode-hook
+          ;;slime-repl-mode-hook
+          ))
 
-(setq inferior-lisp-program "/usr/bin/env sbcl --noinform --no-linedit")
 
 ;;; Ace Jump Mode
 (require 'ace-jump-mode)

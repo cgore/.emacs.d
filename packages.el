@@ -73,6 +73,7 @@
                      s
                      sass-mode
                      scss-mode
+                     sly
                      string-inflection
                      terraform-doc
                      terraform-mode
