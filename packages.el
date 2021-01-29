@@ -6,8 +6,7 @@
         ("marmalade" . "http://marmalade-repo.org/packages/")))
 (require 'package)
 (setq package-list '(ace-jump-mode
-                     ack-and-a-half
-                     aggressive-indent
+		     aggressive-indent
                      all-the-icons
                      all-the-icons-dired
                      auto-complete
