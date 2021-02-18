@@ -71,6 +71,7 @@
                      rust-mode
                      s
                      sass-mode
+                     solidity-mode
                      scss-mode
                      sly
                      string-inflection

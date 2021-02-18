@@ -102,7 +102,7 @@
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (jq-format jq-mode ewal-doom-themes doom-themes beacon all-the-icons-dired wsd-mode kubernetes popup-complete dash dash-docs dash-functional ht terraform-mode terraform-doc kotlin-mode which-key green-is-the-new-black-theme string-inflection plantuml-mode rust-mode flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode auto-complete cloc conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ace-jump-mode ac-slime)))
+    (all-the-icons solidity-mode jq-format jq-mode ewal-doom-themes doom-themes beacon all-the-icons-dired wsd-mode kubernetes popup-complete dash dash-docs dash-functional ht terraform-mode terraform-doc kotlin-mode which-key green-is-the-new-black-theme string-inflection plantuml-mode rust-mode flymd aggressive-indent omnisharp yafolding csharp-mode cyberpunk-theme indium ob-restclient nodejs-repl xref-js2 js2-refactor rjsx-mode base16-theme geiser uuidgen eshell-autojump elpy logview gorepl-mode flymake-go minimap color-theme-solarized color-theme-sanityinc-solarized queue multiple-cursors inf-ruby clojure-mode auto-complete cloc conda color-theme-sanityinc-tomorrow leuven-theme highlight-indentation ensime go-mode shen-lisp sly flycheck-pos-tip flycheck-clojure flycheck kibit-helper inf-clojure ac-cider paper-theme auto-highlight-symbol erlang w3m markdown-preview-mode puppet-mode python-mode ein sass-mode rainbow-mode emamux reverse-theme yaml-mode tabulated-list starter-kit-eshell soothe-theme solarized-theme smex slime-annot seti-theme scss-mode s ruby-electric rspec-mode robe rainbow-identifiers rainbow-delimiters rainbow-blocks projectile pixie-mode php-mode paredit package+ neotree multi-term mc-extras markdown-mode magit json-mode ipython ido-ubiquitous idle-highlight-mode helm-w3m haml-mode fuzzy find-file-in-project espresso-theme elisp-slime-nav django-theme dirtree dired-rainbow color-theme coffee-mode clojure-test-mode afternoon-theme ace-jump-mode ac-slime)))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
    (quote
@@ -231,6 +231,7 @@
         clojure-mode-hook
         coffee-mode-hook
         emacs-lisp-mode-hook
+        go-mode-hook
         html-mode-hook
         javascript-mode-hook
         js2-mode-hook
@@ -240,7 +241,8 @@
         puppet-mode-hook
         python-mode-hook
         ruby-mode-hook
-        rjsx-mode-hook))
+        rjsx-mode-hook
+        solidity-mode-hook))
 
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
