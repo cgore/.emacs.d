@@ -236,6 +236,7 @@
         javascript-mode-hook
         js2-mode-hook
         json-mode-hook
+        kotlin-mode-hook
         lisp-mode-hook
         org-mode-hook
         puppet-mode-hook

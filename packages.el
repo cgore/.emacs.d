@@ -43,6 +43,7 @@
                      js2-refactor
                      json-mode
                      kibit-helper
+                     kotlin-mode
                      kubernetes ; https://github.com/chrisbarrett/kubernetes-el
                      logview
                      magit
