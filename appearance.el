@@ -96,7 +96,7 @@ sudo apt-get install fonts-firacode
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
-                           :height 140 :width normal :family "Fira Code")))))
+                           :height 130 :width normal :family "Fira Code")))))
   (default-theme))
 
 (default-font-and-theme)
@@ -106,7 +106,7 @@ sudo apt-get install fonts-firacode
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
-                           :height 170 :width normal :family "Fira Code")))))
+                           :height 100 :width normal :family "Fira Code")))))
   (default-theme))
 
 (defun slightly-smaller-font ()
@@ -150,5 +150,5 @@ sudo apt-get install fonts-firacode
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
-                           :height 90 :width normal :family "Fira Code")))))
+                           :height 80 :width normal :family "Fira Code")))))
   (default-theme))
