@@ -1,9 +1,10 @@
 (setq package-archives
-      '(("ELPA" . "http://tromey.com/elpa/")
-        ("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")))
+      '(;;("ELPA"         . "http://tromey.com/elpa/")
+        ("gnu"          . "https://elpa.gnu.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ;;("marmalade"    . "http://marmalade-repo.org/packages/")
+        ))
 (require 'package)
 (setq package-list '(ace-jump-mode
 		     aggressive-indent
