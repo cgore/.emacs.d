@@ -222,6 +222,7 @@
 (load "~/.emacs.d/markdown.el")
 (load "~/.emacs.d/coffeescript.el")
 (load "~/.emacs.d/yaml.el")
+(load "~/.emacs.d/typescript.el")
 
 (setq programming-mode-hooks-list
       '(sh-mode-hook
@@ -243,7 +244,8 @@
         python-mode-hook
         ruby-mode-hook
         rjsx-mode-hook
-        solidity-mode-hook))
+        solidity-mode-hook
+        typescript-mode-hook))
 
 ;;; Spell Checking
 (mapcar #'(lambda (mode-hook)
