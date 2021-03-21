@@ -79,6 +79,8 @@
                      string-inflection
                      terraform-doc
                      terraform-mode
+                     tide
+                     typescript-mode
                      uuidgen
                      xref-js2
                      w3m
