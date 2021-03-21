@@ -75,7 +75,7 @@
                      sass-mode
                      solidity-mode
                      scss-mode
-                     sly
+                     ;;sly
                      string-inflection
                      terraform-doc
                      terraform-mode
