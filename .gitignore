@@ -32,3 +32,4 @@ transient
 
 .cache
 *.extmap
+session.*
