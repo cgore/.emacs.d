@@ -1,4 +1,5 @@
 (setq inferior-lisp-program "sbcl")
+(add-hook 'lisp-mode #'aggressive-indent-mode)
 
 ;; (setq inferior-lisp-program "/usr/bin/env sbcl --noinform --no-linedit")
 
