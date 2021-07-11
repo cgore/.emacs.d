@@ -347,3 +347,5 @@
   )
 
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+(setq default-buffer-file-coding-system 'utf-8-unix)
