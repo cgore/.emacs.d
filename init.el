@@ -239,6 +239,7 @@
         puppet-mode-hook
         python-mode-hook
         ruby-mode-hook
+        rust-mode-hook
         rjsx-mode-hook
         solidity-mode-hook
         typescript-mode-hook))
