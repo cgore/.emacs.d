@@ -11,13 +11,11 @@
 ;; /usr/local/opt/gettext/bin:
 
 (setenv "PAGER" "cat")
-;;(setenv "N_PREFIX" (expand-file-name "~/n"))
 (setenv "NVM_DIR" (expand-file-name "~/.nvm"))
 (setq exec-path
       (append `(,(expand-file-name "~/bin")
                 "/usr/local/opt/openjdk/bin"
                 ,(expand-file-name "~/.cargo/bin")
-                ;; ,(expand-file-name "~/n/bin")
                 ,(expand-file-name "~/.nvm/versions/node/v10.13.0/bin/node")
                 "/usr/local/share/dotnet"
                 ,(expand-file-name "~/.dotnet/tools")
