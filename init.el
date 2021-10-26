@@ -142,9 +142,8 @@
  '(woman-fill-frame t))
 
 (load "~/.emacs.d/multi-term.el")
-
 (load "~/.emacs.d/javascript.el")
-
+(load "~/.emacs.d/java.el")
 (load "~/.emacs.d/ack.el")
 
 ;;; Projectile
