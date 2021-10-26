@@ -104,7 +104,9 @@
    '(tide typescript-mode slime ac-cider ac-slime ace-jump-mode ack-and-a-half afternoon-theme aggressive-indent all-the-icons all-the-icons-dired auto-complete auto-highlight-symbol base16-theme beacon cloc clojure-mode clojure-test-mode coffee-mode color-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow color-theme-solarized conda csharp-mode cyberpunk-theme dash dash-docs dash-functional dired-rainbow dirtree django-theme doom-themes ein elisp-slime-nav elpy emamux ensime erlang eshell-autojump espresso-theme ewal-doom-themes fennel-mode find-file-in-project flycheck flycheck-clojure flycheck-pos-tip flymake-go flymd fuzzy geiser go-mode gorepl-mode green-is-the-new-black-theme haml-mode helm-w3m highlight-indentation ht idle-highlight-mode ido-ubiquitous indium inf-clojure inf-ruby ipython jq-format jq-mode js2-refactor json-mode kibit-helper kotlin-mode kubernetes leuven-theme logview lua-mode magit markdown-mode markdown-preview-mode mc-extras minimap multi-term multiple-cursors neotree nodejs-repl ob-restclient omnisharp package+ paper-theme paredit php-mode pixie-mode plantuml-mode popup-complete projectile puppet-mode python-mode queue rainbow-blocks rainbow-delimiters rainbow-identifiers rainbow-mode reverse-theme rjsx-mode robe rspec-mode ruby-electric rust-mode s sass-mode scss-mode seti-theme shen-lisp slime-annot smex solarized-theme solidity-mode soothe-theme starter-kit-eshell string-inflection tabulated-list terraform-doc terraform-mode uuidgen w3m which-key wsd-mode xref-js2 yafolding yaml-mode))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
-   '((encoding . utf-8)
+   '((eval with-eval-after-load 'cider
+           (setq cider-default-cljs-repl 'figwheel))
+     (encoding . utf-8)
      (whitespace-line-column . 80)
      (lexical-binding . t)))
  '(save-place t nil (saveplace))
@@ -218,11 +220,13 @@
 (load "~/.emacs.d/ruby.el")
 (load "~/.emacs.d/markdown.el")
 (load "~/.emacs.d/coffeescript.el")
+(load "~/.emacs.d/salesforce.el")
 (load "~/.emacs.d/yaml.el")
 (load "~/.emacs.d/typescript.el")
 
 (setq programming-mode-hooks-list
-      '(sh-mode-hook
+      '(apex-mode-hook
+        sh-mode-hook
         c-mode-hook
         c++-mode-hook
         csharp-mode-hook
