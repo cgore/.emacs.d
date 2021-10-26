@@ -91,3 +91,17 @@
             (define-key js-mode-map (kbd "C-c C-k") 'nodejs-repl-send-buffer)
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+
+
+
+(defun set-node-nvm-version (version-string)
+  (setenv "NVM_DIR" (expand-file-name "~/.nvm"))
+  (let* ((node-path (concat (getenv "NVM_DIR") "/versions/node/" version-string))
+         (nvm-bin (concat node-path "/bin")))
+    (setenv "NVM_INC" (concat node-path "/include/node"))
+    (setenv "NVM_BIN" nvm-bin)
+    (setq exec-path
+          (append (list nvm-bin)
+                  exec-path))))
+
+(set-node-nvm-version "v17.0.1")
