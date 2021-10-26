@@ -2,9 +2,6 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-(when (tcc-cgore?)
-  (custom-set-variables '(py-shell-name "/usr/local/bin/python")))
-
 (require 'highlight-indentation)
 (add-hook 'python-mode-hook 'highlight-indentation-mode)
 

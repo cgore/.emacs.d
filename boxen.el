@@ -29,33 +29,10 @@
 (defun nephesh? ()
   "This is my personal MacBook Pro 15\" from 2014, formerly my Outpace laptop."
   (string= (system-name) "nephesh"))
-(defun tcc-cgore-2015? ()
-  "This was my old Climate MacBook Pro 15\" from 2015, now dead."
-  (or (string= (system-name) "tcc-cgore")
-      (string= (system-name) "tcc-cgore.corp.climate.com")))
-(defun tcc-cgore-2018? ()
-  "This is my Climate MacBook Pro 15\" from 2018."
-  (string= (system-name) "C02VJ80DHTD6"))
-(defun tcc-cgore? ()
-  "Any TCC box."
-  (or (tcc-cgore-2015?)
-      (tcc-cgore-2018?)))
 
 (require 's) ; https://github.com/magnars/s.el
-(defun gr-macbook-pro? ()
-  "True if this is a Guaranteed Rate Macbook Pro."
-  (interactive)
-  (s-match "^GR-[A-Z0-9]+mbp" (system-name)))
-(defun gr-cgore-2018? ()
-  "Guaranteed Rate Macbook Pro 15\" 2018."
-  (interactive)
-  (s-match "^GR-032503mbp" (system-name)))
-(defun gr-cgore-2020? ()
-  "Guaranteed Rate Macbook Pro 16\" 2020."
-  (interactive)
-  (s-match "^GR-ZNRC2MD6Nmbp" (system-name)))
 
-(defun gr-cgore? ()
-  "This is any of my Guaranteed Rate computers."
-  (or (gr-cgore-2020?)
-      (gr-cgore-2018?)))
+(defun dividend-finance-cgore? ()
+  "My Dividend Finance macbook."
+  (interactive)
+  (s-match "^L-SFO-211020-02" (system-name)))

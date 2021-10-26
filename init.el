@@ -321,14 +321,6 @@
 
 (require 'restclient) ; https://github.com/pashky/restclient.el
 
-(when (gr-cgore?)
-  (load "~/.emacs.d/gr.el")
-  (load "~/.emacs.d/secrets/gr.el")
-  (setq exec-path
-        (append exec-path `(,(expand-file-name "~/gr/code/kubeclj")
-                            ,(expand-file-name "~/n/bin")
-                            "/usr/local/opt/mongodb-community@3.6/bin"))))
-
 (when window-system
   (setenv "PATH"
           (concat (string-join exec-path ":")
