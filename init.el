@@ -5,7 +5,6 @@
 
 (server-start)
 
-;; /usr/local/opt/openjdk/bin:
 ;; /Users/cgore/.nvm/versions/node/v10.13.0/bin:
 ;; /usr/local/opt/ncurses/bin:
 ;; /usr/local/opt/gettext/bin:
@@ -14,7 +13,6 @@
 (setenv "NVM_DIR" (expand-file-name "~/.nvm"))
 (setq exec-path
       (append `(,(expand-file-name "~/bin")
-                "/usr/local/opt/openjdk/bin"
                 ,(expand-file-name "~/.cargo/bin")
                 ,(expand-file-name "~/.nvm/versions/node/v10.13.0/bin/node")
                 "/usr/local/share/dotnet"
