@@ -60,6 +60,12 @@
         (multi-term-buffer-name "sbcl"))
     (multi-term)))
 
+(defun psql ()
+  (interactive)
+  (let ((multi-term-program "psql")
+        (multi-term-buffer-name "psql"))
+    (multi-term)))
+
 (defun tig ()
   (interactive)
   (let ((multi-term-program "tig")
