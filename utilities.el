@@ -34,3 +34,11 @@
   (mark-word)
   ;(kill-ring-save (region-beginning) (region-end))
   (superword-mode -1))
+
+(defun cleanup-environment-variables ()
+  "Completely remove any environment variables that no longer have a value."
+  (interactive)
+  (setq process-environment
+        (-filter (lambda (env-def)
+                   (string-match "=" env-def))
+                 process-environment)))
