@@ -104,4 +104,4 @@
           (append (list nvm-bin)
                   exec-path))))
 
-(set-node-nvm-version "v17.0.1")
+(cond ((dividend-finance-cgore?) (set-node-nvm-version "v17.0.1")))
