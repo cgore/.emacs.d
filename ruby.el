@@ -17,3 +17,11 @@
 (require 'sass-mode)
 (require 'scss-mode)
 (setq scss-compile-at-save nil)
+
+(when (darwin?)
+  ;; Switch to the brew ruby from `brew install ruby`
+  (setq exec-path
+        (append (list "/usr/local/opt/ruby/bin")
+                exec-path))
+  (add-to-ldflags   "-L/usr/local/opt/ruby/lib")
+  (add-to-cppflags  "-I/usr/local/opt/ruby/include"))

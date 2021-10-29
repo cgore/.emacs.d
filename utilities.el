@@ -42,3 +42,11 @@
         (-filter (lambda (env-def)
                    (string-match "=" env-def))
                  process-environment)))
+
+(defun add-to-ldflags (flag)
+  "Adds another flag to the LDFLAGS environment variable."
+  (setenv "LDFLAGS" (s-trim (s-join " " (list (getenv "LDFLAGS") flag)))))
+
+(defun add-to-cppflags (flag)
+  "Adds another flag to the CPPFLAGS environment variable."
+  (setenv "CPPFLAGS" (s-trim (s-join " " (list (getenv "CPPFLAGS") flag)))))
