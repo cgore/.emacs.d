@@ -33,3 +33,4 @@ flycheck_*
 .cache
 *.extmap
 session.*
+bookmarks
