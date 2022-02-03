@@ -17,6 +17,10 @@
 (define-key sexp-movements-map (kbd "<up>") 'backward-up-list)
 (define-key sexp-movements-map (kbd "<down>") 'up-list)
 
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
+
+(require 'flycheck-clj-kondo)
+
 (global-set-key (kbd "C-c M-c") 'cider-connect)
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (setq cider-repl-display-help-banner nil)
