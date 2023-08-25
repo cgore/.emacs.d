@@ -42,6 +42,11 @@
   (load-theme 'base16-greenscreen t)
   (reset-term-colors))
 
+(defun organic-green-theme ()
+  (interactive)
+  (load-theme 'organic-green t)
+  (reset-term-colors))
+
 (defun default-theme ()
   (dark-background))
 
