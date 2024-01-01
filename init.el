@@ -148,19 +148,19 @@
 (require 'tls)
 
 ;;; Org Mode
-(require 'org)
-(require 'org-install)
-(require 'org)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c b") 'org-iswitchb)
-(setq org-log-done t)
-(add-hook 'org-mode-hook 'org-indent-mode)
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((restclient . t)))
+;; (require 'org)
+;; (require 'org-install)
+;; (require 'org)
+;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; (global-set-key (kbd "C-c l") 'org-store-link)
+;; (global-set-key (kbd "C-c c") 'org-capture)
+;; (global-set-key (kbd "C-c a") 'org-agenda)
+;; (global-set-key (kbd "C-c b") 'org-iswitchb)
+;; (setq org-log-done t)
+;; (add-hook 'org-mode-hook 'org-indent-mode)
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((restclient . t)))
 
 
 (load "~/.emacs.d/www.el")
