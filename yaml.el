@@ -1,2 +1,2 @@
 (require 'yaml-mode)
-(add-hook 'yaml-mode-hook 'linum-mode)
+(add-hook 'yaml-mode-hook 'display-line-numbers-mode)

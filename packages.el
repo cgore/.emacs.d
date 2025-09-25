@@ -1,19 +1,14 @@
 (setq package-archives
-      '(;;("ELPA"         . "http://tromey.com/elpa/")
-        ("gnu"          . "https://elpa.gnu.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
-        ;;("marmalade"    . "http://marmalade-repo.org/packages/")
-        ))
+      '(("gnu"          . "https://elpa.gnu.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/")))
 (require 'package)
 (setq package-list '(ace-jump-mode
-		     aggressive-indent
+		                 aggressive-indent
                      all-the-icons
                      all-the-icons-dired
                      auto-complete
                      auto-highlight-symbol
                      base16-theme
-                     beacon
                      cider
                      clojure-mode
                      clj-refactor
@@ -27,13 +22,6 @@
                      doom-themes
                      elpy
                      eshell-autojump
-                     flycheck
-                     flycheck-clojure
-                     flycheck-pos-tip
-                     flymake-go
-                     go-mode
-                     gorepl-mode
-                     haml-mode
                      highlight-indentation
                      ht
                      indium
@@ -44,8 +32,6 @@
                      js2-refactor
                      json-mode
                      kibit-helper
-                     kotlin-mode
-                     kubernetes ; https://github.com/chrisbarrett/kubernetes-el
                      logview
                      magit
                      markdown-mode
@@ -62,8 +48,6 @@
                      projectile
                      python-mode
                      queue
-                     rainbow-delimiters
-                     rainbow-mode
                      restclient
                      reverse-theme
                      rjsx-mode
@@ -75,7 +59,6 @@
                      sass-mode
                      solidity-mode
                      scss-mode
-                     ;;sly
                      string-inflection
                      terraform-doc
                      terraform-mode

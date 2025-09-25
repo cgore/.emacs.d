@@ -2,8 +2,6 @@
 (unless window-system ; Only when in non-GUI
   (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
 
-(beacon-mode 1)
-
 (defun reset-linum-heights ()
   (interactive)
   ;; If you use nlinum or linum in org-mode, the larger headline sizes in some
@@ -48,7 +46,7 @@
   (reset-term-colors))
 
 (defun default-theme ()
-  (dark-background))
+  (light-background))
 
 (defun set-fira-code-font ()
   "Cf. <https://github.com/tonsky/FiraCode>
@@ -101,7 +99,7 @@ sudo apt-get install fonts-firacode
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
-                           :height 140 :width normal :family "Fira Code")))))
+                           :height 160 :width normal :family "Fira Code")))))
   (default-theme))
 
 (default-font-and-theme)
@@ -111,7 +109,7 @@ sudo apt-get install fonts-firacode
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil
                            :underline nil :slant normal :weight normal
-                           :height 160 :width normal :family "Fira Code")))))
+                           :height 180 :width normal :family "Fira Code")))))
   (default-theme))
 
 (defun slightly-smaller-font ()

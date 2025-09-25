@@ -1,4 +1,4 @@
-(require 'inf-ruby)
+9(require 'inf-ruby)
 (require 'robe)
 (require 'rspec-mode)
 (require 'ruby-electric)
@@ -14,14 +14,12 @@
 (add-hook 'ruby-mode-hook 'robe-mode)
 (setq rspec-use-rake-when-possible nil)
 (require 'haml-mode)
-(require 'sass-mode)
-(require 'scss-mode)
 (setq scss-compile-at-save nil)
 
 (when (darwin?)
   ;; Switch to the brew ruby from `brew install ruby`
   (setq exec-path
-        (append (list "/usr/local/opt/ruby/bin")
+        (append (list "/opt/homebrew/opt/ruby/bin")
                 exec-path))
-  (add-to-ldflags   "-L/usr/local/opt/ruby/lib")
-  (add-to-cppflags  "-I/usr/local/opt/ruby/include"))
+  (add-to-ldflags   "-L/opt/homebrew/opt/ruby/lib")
+  (add-to-cppflags  "-I/opt/homebrew/opt/ruby/include"))

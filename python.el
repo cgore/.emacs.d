@@ -15,5 +15,12 @@
 ;; if you want auto-activation (see below for details), include:
 ;;(conda-env-autoactivate-mode t)
 
-(custom-set-variables
- '(conda-anaconda-home "/Users/chris.gore/anaconda"))
+;; (custom-set-variables
+;;  '(conda-anaconda-home "/Users/chris.gore/anaconda"))
+
+(require 'ruff-format)
+(add-hook 'python-mode-hook 'ruff-format-on-save-mode)
+(require 'flymake-ruff)
+(add-hook 'python-mode-hook #'flymake-ruff-load)
+(add-hook 'python-base-mode-hook 'flymake-mode)
+(setq python-flymake-command '("ruff" "--quiet" "--stdin-filename" "-"))

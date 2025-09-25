@@ -30,3 +30,22 @@
   (let ((browse-url-browser-function 'browse-url-chrome))
     (browse-url-at-point)))
 (global-set-key (kbd "<f6> c") 'browse-url-at-point-chrome)
+
+
+(defun browse-url-safari (url &optional _new-window)
+  "Open URL in Safari on macOS.
+The optional NEW-WINDOW argument is ignored."
+  (interactive (browse-url-interactive-arg "URL: "))
+  (setq url (browse-url-encode-url url))
+  (let ((process-environment (browse-url-process-environment)))
+    (start-process (concat "safari " url) nil
+                   "open" "-a" "Safari" url)))
+(function-put 'browse-url-safari 'browse-url-browser-kind 'external)
+
+(when (darwin?)
+  (setq browse-url-safari-program "/Applications/Safari.app/Contents/MacOS/Safari"))
+(defun browse-url-at-point-safari ()
+  (interactive)
+  (let ((browse-url-browser-function 'browse-url-safari))
+    (browse-url-at-point)))
+(global-set-key (kbd "<f6> s") 'browse-url-at-point-safari)

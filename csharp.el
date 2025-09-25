@@ -5,7 +5,6 @@
  'company
  '(add-to-list 'company-backends 'company-omnisharp))
 (add-hook 'csharp-mode-hook #'company-mode)
-(add-hook 'csharp-mode-hook #'flycheck-mode)
 
 (eval-after-load
   'company
@@ -14,7 +13,6 @@
 (defun my-csharp-mode-setup ()
   (omnisharp-mode)
   (company-mode)
-  (flycheck-mode)
 
   (setq indent-tabs-mode nil)
   (setq c-syntactic-indentation t)
