@@ -1,7 +1,15 @@
-(setq package-archives
-      '(("gnu"          . "https://elpa.gnu.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")))
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")    t)
+(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/") t)
+
+;; (setq package-archives
+;;       '(;;("ELPA"         . "http://tromey.com/elpa/")
+;;         ("gnu"          . "https://elpa.gnu.org/packages/")
+;;         ("melpa"        . "https://melpa.org/packages/")
+;;         ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+;;         ;;("marmalade"    . "http://marmalade-repo.org/packages/")
+;;         ))
+
 (setq package-list '(ace-jump-mode
 		                 aggressive-indent
                      all-the-icons
@@ -79,3 +87,20 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
         (package-install package)))
+
+
+;; (defvar bootstrap-version)
+;; (let ((bootstrap-file
+;;        (expand-file-name
+;;         "straight/repos/straight.el/bootstrap.el"
+;;         (or (bound-and-true-p straight-base-dir)
+;;             user-emacs-directory)))
+;;       (bootstrap-version 7))
+;;   (unless (file-exists-p bootstrap-file)
+;;     (with-current-buffer
+;;         (url-retrieve-synchronously
+;;          "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+;;          'silent 'inhibit-cookies)
+;;       (goto-char (point-max))
+;;       (eval-print-last-sexp)))
+;;   (load bootstrap-file nil 'nomessage))

@@ -35,6 +35,8 @@
 
 (load "~/.emacs.d/utilities.el")
 
+(load "~/.emacs.d/gptel-init.el")
+
 (require 'ido)
 (ido-mode t)
 
@@ -88,7 +90,6 @@
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(custom-safe-themes
    '("6bdc4e5f585bb4a500ea38f563ecf126570b9ab3be0598bdf607034bb07a8875"
-     "8efa3d21b3fa1ac084798fae4e89848ec26ae5c724b9417caf4922f4b2e31c2a"
      "730a87ed3dc2bf318f3ea3626ce21fb054cd3a1471dcd59c81a4071df02cb601"
      "e074be1c799b509f52870ee596a5977b519f6d269455b84ed998666cf6fc802a"
      "6231254e74298a1cf8a5fee7ca64352943de4b495e615c449e9bb27e2ccae709"
@@ -147,35 +148,40 @@
  '(inhibit-startup-screen t)
  '(magit-log-arguments '("--graph" "--color" "--decorate" "-n256"))
  '(package-selected-packages
-   '(ac-cider ac-slime ack-and-a-half afternoon-theme ag aggressive-indent
-              all-the-icons all-the-icons-dired auto-complete base16-theme cloc
-              clojure-mode clojure-test-mode coffee-mode color-theme
-              color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow
-              color-theme-solarized conda csharp-mode cyberpunk-theme dash
-              dash-docs dash-functional dired-rainbow dirtree django-theme
-              doom-themes ein ejc-sql elisp-slime-nav elpy emamux ensime erlang
-              eshell-autojump espresso-theme ewal-doom-themes fennel-mode
-              find-file-in-project flymake-ruff fuzzy geiser
-              green-is-the-new-black-theme haml-mode helm-w3m
-              highlight-indentation ht idle-highlight-mode ido-ubiquitous indium
-              inf-clojure inf-ruby ipython jq-format jq-mode js2-refactor
-              json-mode kibit-helper kotlin-mode kubernetes leuven-theme logview
-              lua-mode magit markdown-mode markdown-preview-mode mc-extras
-              minimap multi-term multiple-cursors neotree nodejs-repl
-              ob-restclient omnisharp organic-green-theme package+ paper-theme
-              paredit php-mode pixie-mode plantuml-mode popup-complete
-              projectile puppet-mode python-mode queue restclient reverse-theme
-              rjsx-mode robe rspec-mode ruby-electric ruff-format rust-mode s
-              sass-mode scss-mode seti-theme shen-lisp slime slime-annot smex
-              soft-morning-theme solarized-theme solidity-mode soothe-theme
-              starter-kit-eshell string-inflection tabulated-list terraform-doc
-              terraform-mode tide typescript-mode uuidgen w3m wgrep-ack
-              which-key wsd-mode xref-js2 yafolding yaml-mode))
+   '(gptel-autocomplete gptel ag tide typescript-mode slime ac-cider ac-slime
+     ace-jump-mode ack-and-a-half afternoon-theme aggressive-indent
+     all-the-icons all-the-icons-dired auto-complete auto-highlight-symbol
+     base16-theme beacon cloc clojure-mode clojure-test-mode coffee-mode
+     color-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow
+     color-theme-solarized conda csharp-mode cyberpunk-theme dash dash-docs
+     dash-functional dired-rainbow dirtree django-theme doom-themes ein
+     elisp-slime-nav elpy emamux ensime erlang eshell-autojump espresso-theme
+     ewal-doom-themes fennel-mode find-file-in-project flycheck flycheck-clojure
+     flycheck-pos-tip flymake-go flymd fuzzy geiser go-mode gorepl-mode
+     green-is-the-new-black-theme haml-mode helm-w3m highlight-indentation ht
+     idle-highlight-mode ido-ubiquitous indium inf-clojure inf-ruby ipython
+     jq-format jq-mode js2-refactor json-mode kibit-helper kotlin-mode
+     kubernetes leuven-theme logview lua-mode magit markdown-mode
+     markdown-preview-mode mc-extras minimap multi-term multiple-cursors neotree
+     nodejs-repl ob-restclient omnisharp package+ paper-theme paredit php-mode
+     pixie-mode plantuml-mode popup-complete projectile puppet-mode python-mode
+     queue rainbow-blocks rainbow-delimiters rainbow-identifiers rainbow-mode
+     reverse-theme rjsx-mode robe rspec-mode ruby-electric rust-mode s sass-mode
+     scss-mode seti-theme shen-lisp slime-annot smex solarized-theme
+     solidity-mode soothe-theme starter-kit-eshell string-inflection
+     tabulated-list terraform-doc terraform-mode uuidgen w3m which-key wsd-mode
+     xref-js2 yafolding yaml-mode))
+ '(package-vc-selected-packages
+   '((gptel-autocomplete :vc-backend Git :url "https://github.com/JDNdeveloper/gptel-autocomplete.git")))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
-   '((url-max-redirections . 0)
+   '((Syntax . ANSI-Common-Lisp)
+     (Base . 10)
+     (encoding . utf-8)
+     (whitespace-line-column . 80)
+     (lexical-binding . t)
      (eval with-eval-after-load 'cider (setq cider-default-cljs-repl 'figwheel))
-     (encoding . utf-8) (whitespace-line-column . 80) (lexical-binding . t)))
+     (url-max-redirections . 0)))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -196,9 +202,11 @@
  '(term-default-fg-color (face-foreground 'default))
  '(tool-bar-mode nil)
  '(uniquify-buffer-name-style 'forward nil (uniquify))
+ '(warning-suppress-types '((comp) (comp)))
  '(woman-bold-headings t)
  '(woman-fill-column 100)
  '(woman-fill-frame t))
+
 
 (load "~/.emacs.d/multi-term.el")
 (load "~/.emacs.d/javascript.el")
@@ -311,9 +319,11 @@
             (mapcar #'(lambda (hook)
                        (add-hook mode-hook hook))
                     '(display-line-numbers-mode
-                      ;; auto-complete-mode
-                      ;; auto-highlight-symbol-mode
-                      ;; flyspell-prog-mode
+                      auto-complete-mode
+                      rainbow-mode
+                      rainbow-delimiters-mode
+                      auto-highlight-symbol-mode
+                      flyspell-prog-mode
                       whitespace-mode
                       yafolding-mode)))
         programming-mode-hooks-list)

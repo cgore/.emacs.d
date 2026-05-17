@@ -2,19 +2,20 @@
 (unless window-system ; Only when in non-GUI
   (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
 
-(defun reset-linum-heights ()
+(beacon-mode 1)
+
+(defun reset-line-number-heights ()
+  "Reset line number face heights to match the default face.
+Useful for themes where large Org headlines bleed into the line numbers."
   (interactive)
-  ;; If you use nlinum or linum in org-mode, the larger headline sizes in some
-  ;; themes could bleed into the line numbers.  Fix this by setting :height
-  ;; explicitly for your line number plugins, after you've loaded the
-  ;; theme. e.g.
   (let ((height (face-attribute 'default :height)))
-    ;; for all linum/nlinum users
-    (set-face-attribute 'linum nil :height height)
-    ;; only for `linum-relative' users:
-    ;;(set-face-attribute 'linum-relative-current-face nil :height height)
-    ;; only for `nlinum-relative' users:
-    ;;(set-face-attribute 'nlinum-relative-current-face nil :height height)
+    ;; Main line number face
+    (set-face-attribute 'line-number nil :height height)
+    ;; Current line (the highlighted one)
+    (set-face-attribute 'line-number-current-line nil :height height)
+    ;; Optional: relative line number faces (if you use relative numbering)
+    ;; (set-face-attribute 'line-number-major-tick nil :height height)
+    ;; (set-face-attribute 'line-number-minor-tick nil :height height)
     ))
 
 (defun dark-background ()
@@ -22,7 +23,6 @@
   (load-theme 'sanityinc-tomorrow-night t)
   ;; (load-theme 'doom-laserwave t)
   ;; (load-theme 'doom-outrun-electric t)
-  ;; (reset-linum-heights)
   (reset-term-colors))
 
 (defun light-background ()
