@@ -276,7 +276,6 @@
 (load "~/.emacs.d/ruby.el")
 (load "~/.emacs.d/markdown.el")
 ;;(load "~/.emacs.d/coffeescript.el")
-(load "~/.emacs.d/salesforce.el")
 (load "~/.emacs.d/yaml.el")
 (load "~/.emacs.d/typescript.el")
 
