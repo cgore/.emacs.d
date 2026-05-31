@@ -40,6 +40,8 @@
 (require 'ido)
 (ido-mode t)
 
+(require 'term)
+
 (defun fixed-buffer-width ()
   (cond ((not window-system) 78)
         ((abaddon?)          100)
