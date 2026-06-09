@@ -2,8 +2,6 @@
 (unless window-system ; Only when in non-GUI
   (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
 
-(beacon-mode 1)
-
 (defun reset-line-number-heights ()
   "Reset line number face heights to match the default face.
 Useful for themes where large Org headlines bleed into the line numbers."
