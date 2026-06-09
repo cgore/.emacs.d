@@ -10,6 +10,8 @@
 ;;         ;;("marmalade"    . "http://marmalade-repo.org/packages/")
 ;;         ))
 
+(setq package-install-upgrade-built-in t)
+
 (setq package-list '(ace-jump-mode
 		                 aggressive-indent
                      all-the-icons
