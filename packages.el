@@ -70,6 +70,7 @@
                      sass-mode
                      solidity-mode
                      scss-mode
+                     slime
                      string-inflection
                      terraform-doc
                      terraform-mode
