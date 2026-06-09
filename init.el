@@ -153,7 +153,7 @@
    '(gptel-autocomplete gptel ag tide typescript-mode slime ac-cider ac-slime
      ace-jump-mode ack-and-a-half afternoon-theme aggressive-indent
      all-the-icons all-the-icons-dired auto-complete auto-highlight-symbol
-     base16-theme beacon cloc clojure-mode clojure-test-mode coffee-mode
+     base16-theme cloc clojure-mode clojure-test-mode coffee-mode
      color-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow
      color-theme-solarized conda csharp-mode cyberpunk-theme dash dash-docs
      dash-functional dired-rainbow dirtree django-theme doom-themes ein
