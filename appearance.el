@@ -61,7 +61,7 @@ sudo apt-get install fonts-firacode
 "
   (interactive)
   (when (window-system)
-    (set-default-font "Fira Code"))
+    (set-frame-font "Fira Code" nil t))
   (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                  (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                  (36 . ".\\(?:>\\)")
@@ -90,7 +90,7 @@ sudo apt-get install fonts-firacode
       (set-char-table-range composition-function-table (car char-regexp)
                             `([,(cdr char-regexp) 0 font-shape-gstring])))))
 
-;;(set-fira-code-font)
+(set-fira-code-font)
 
 (defun default-font-and-theme ()
   (interactive)
