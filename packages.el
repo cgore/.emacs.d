@@ -7,6 +7,7 @@
 (setq package-install-upgrade-built-in t)
 
 (setq package-list '(ace-jump-mode
+                     ag
 		                 aggressive-indent
                      all-the-icons
                      all-the-icons-dired
