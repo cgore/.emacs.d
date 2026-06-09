@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (defun cygwin? ()
   "Iff this is Cygwin, basically Unix in Windows."
   (eq system-type 'cygwin))

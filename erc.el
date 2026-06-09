@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;;; ERC: Emacs IRC
 (setq erc-log-channels-directory "~/.emacs.d/erc/log/"
       erc-fill-column 110

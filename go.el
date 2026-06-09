@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; $ brew install go
 ;; $ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 ;; $ export GOPATH=$HOME/go

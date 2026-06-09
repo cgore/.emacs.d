@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (require 'multi-term)
 (setq multi-term-program "zsh")
 (defun term-send-escape ()

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;;; TODO - I'm not sure why I've bothered using both yafolding and hideshow, I
 ;;; should probably just pick one and get rid of the other.
 

@@ -1,5 +1,31 @@
+;;; -*- lexical-binding: t; -*-
+
+;; === AGGRESSIVE GNUS FACE CYCLE FIX (before any theme loads) ===
+(dolist (face '(gnus-group-news-1 gnus-group-news-2 gnus-group-news-3
+                 gnus-group-news-4 gnus-group-news-5 gnus-group-news-6
+                 gnus-group-mail-1 gnus-group-mail-2 gnus-group-mail-3
+                 gnus-group-mail-1-empty gnus-group-mail-2-empty
+                 gnus-group-mail-3-empty gnus-group-news-5-empty
+                 gnus-group-news-6-empty gnus-group-news-low-empty))
+  (put face 'face-override-spec nil)
+  (face-spec-reset-face face))
+
+(with-eval-after-load 'gnus
+  (dolist (face '(gnus-group-news-1 gnus-group-news-2 gnus-group-news-3
+                   gnus-group-news-4 gnus-group-news-5 gnus-group-news-6
+                   gnus-group-mail-1 gnus-group-mail-2 gnus-group-mail-3
+                   gnus-group-mail-1-empty gnus-group-mail-2-empty
+                   gnus-group-mail-3-empty gnus-group-news-5-empty
+                   gnus-group-news-6-empty gnus-group-news-low-empty))
+    (put face 'face-override-spec nil)
+    (face-spec-reset-face face)))
+
+;; Remove Cider's interfering advice
+(advice-remove 'enable-theme 'cider--docview-adapt-to-theme)
+(advice-remove 'enable-theme 'cider--stacktrace-adapt-to-theme)
+
 ;;; Line Numbers
-(unless window-system ; Only when in non-GUI
+(unless window-system                 ; Only when in non-GUI
   (setq linum-format "%4d  ")) ; Add spacing to the right of line numbers
 
 (defun reset-line-number-heights ()
@@ -19,8 +45,6 @@ Useful for themes where large Org headlines bleed into the line numbers."
 (defun dark-background ()
   (interactive)
   (load-theme 'sanityinc-tomorrow-night t)
-  ;; (load-theme 'doom-laserwave t)
-  ;; (load-theme 'doom-outrun-electric t)
   (reset-term-colors))
 
 (defun light-background ()

@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;;(require 'ack-and-a-half)
 ;; Create shorter aliases
 ;;(defalias 'ack 'ack-and-a-half)

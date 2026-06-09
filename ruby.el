@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; === Core Ruby support ===
 (require 'ruby-mode)  ; built-in, or prefer ruby-ts-mode if available
 

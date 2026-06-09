@@ -1,3 +1,7 @@
+;;; -*- lexical-binding: t; -*-
+
+(setq warning-suppress-log-types '((files)))
+
 (prefer-coding-system 'utf-8)
 
 (require 'flymake)
@@ -156,9 +160,9 @@
      base16-theme cloc clojure-mode clojure-test-mode coffee-mode
      color-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow
      color-theme-solarized conda csharp-mode cyberpunk-theme dash dash-docs
-     dash-functional dired-rainbow dirtree django-theme doom-themes ein
+     dash-functional dired-rainbow dirtree django-theme ein
      elisp-slime-nav elpy emamux ensime erlang eshell-autojump espresso-theme
-     ewal-doom-themes fennel-mode find-file-in-project flycheck flycheck-clojure
+     fennel-mode find-file-in-project flycheck flycheck-clojure
      flycheck-pos-tip flymake-go flymd fuzzy geiser go-mode gorepl-mode
      green-is-the-new-black-theme haml-mode helm-w3m highlight-indentation ht
      idle-highlight-mode ido-ubiquitous indium inf-clojure inf-ruby ipython

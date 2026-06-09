@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; W3M
 ;; OSX:
 ;; $ brew install w3m

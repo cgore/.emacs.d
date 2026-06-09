@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (when (linux?)
   ;; For some reason the Debian-modified leiningen has OpenJDK java as their
   ;; default, unless you set this environment variable.  I probably want to use

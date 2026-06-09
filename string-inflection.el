@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; Cf. https://github.com/akicho8/string-inflection
 ;;
 ;; This gives you the ability to cycle through different styles of variables

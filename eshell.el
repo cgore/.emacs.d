@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; https://www.gnu.org/software/emacs/manual/html_mono/eshell.html
 ;;
 ;; https://www.emacswiki.org/emacs/CategoryEshell

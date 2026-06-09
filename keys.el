@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (global-set-key (kbd "<f6> +") 'calc)
 
 (global-unset-key (kbd "C-t"))

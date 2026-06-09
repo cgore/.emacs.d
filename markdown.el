@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; https://github.com/jrblevin/markdown-mode
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

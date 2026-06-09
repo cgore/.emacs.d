@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (add-to-list 'auto-mode-alist '("\\.gitconfig" . conf-mode))
 (global-set-key (kbd "<f2> <f2>") 'magit-status)
 (global-set-key (kbd "<f2> g")    'magit-status)

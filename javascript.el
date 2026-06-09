@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 ;; JavaScript and JSON
 
 ;; https://github.com/mooz/js2-mode

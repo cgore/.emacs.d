@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (defsubst icurry (function &rest arguments)
   (lexical-let ((function function)
                 (arguments arguments))

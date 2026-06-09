@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (defun s3-ls (s3-uri)
   "List S3 bucket entries.
 S3-URI are formatted lie like: s3://some-bucket/some/prefix"

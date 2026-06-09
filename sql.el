@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (require 'ejc-sql)
 (require 'ejc-autocomplete)
 (add-hook 'ejc-sql-minor-mode-hook
