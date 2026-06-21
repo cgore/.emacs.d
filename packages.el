@@ -51,6 +51,8 @@
                      puppet-mode
                      projectile
                      python-mode
+                     quelpa
+                     quelpa-use-package
                      queue
                      restclient
                      reverse-theme

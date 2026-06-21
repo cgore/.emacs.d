@@ -154,38 +154,36 @@
  '(inhibit-startup-screen t)
  '(magit-log-arguments '("--graph" "--color" "--decorate" "-n256"))
  '(package-selected-packages
-   '(gptel-autocomplete gptel ag tide typescript-mode slime ac-cider ac-slime
-     ace-jump-mode ack-and-a-half afternoon-theme aggressive-indent
-     all-the-icons all-the-icons-dired auto-complete auto-highlight-symbol
-     base16-theme cloc clojure-mode clojure-test-mode coffee-mode
-     color-theme color-theme-sanityinc-solarized color-theme-sanityinc-tomorrow
-     color-theme-solarized conda csharp-mode cyberpunk-theme dash dash-docs
-     dash-functional dired-rainbow dirtree django-theme ein
-     elisp-slime-nav elpy emamux ensime erlang eshell-autojump espresso-theme
-     fennel-mode find-file-in-project flycheck flycheck-clojure
-     flycheck-pos-tip flymake-go flymd fuzzy geiser go-mode gorepl-mode
-     green-is-the-new-black-theme haml-mode helm-w3m highlight-indentation ht
-     idle-highlight-mode ido-ubiquitous indium inf-clojure inf-ruby ipython
-     jq-format jq-mode js2-refactor json-mode kibit-helper kotlin-mode
-     kubernetes leuven-theme logview lua-mode magit markdown-mode
-     markdown-preview-mode mc-extras minimap multi-term multiple-cursors neotree
-     nodejs-repl ob-restclient omnisharp package+ paper-theme paredit php-mode
-     pixie-mode plantuml-mode popup-complete projectile puppet-mode python-mode
-     queue rainbow-blocks rainbow-delimiters rainbow-identifiers rainbow-mode
+   '(ac-cider ac-slime ace-jump-mode ack-and-a-half afternoon-theme ag
+     aggressive-indent all-the-icons all-the-icons-dired auto-complete
+     auto-highlight-symbol base16-theme cloc clojure-mode clojure-test-mode
+     coffee-mode color-theme color-theme-sanityinc-solarized
+     color-theme-sanityinc-tomorrow color-theme-solarized conda csharp-mode
+     cyberpunk-theme dash dash-docs dash-functional dired-rainbow dirtree
+     django-theme ein elisp-slime-nav elpy emamux ensime erlang eshell-autojump
+     espresso-theme fennel-mode find-file-in-project flycheck flycheck-clojure
+     flycheck-pos-tip flymake-go flymd fuzzy geiser go-mode gorepl-mode gptel
+     gptel-autocomplete green-is-the-new-black-theme haml-mode helm-w3m
+     highlight-indentation ht idle-highlight-mode ido-ubiquitous indium
+     inf-clojure inf-ruby ipython jq-format jq-mode js2-refactor json-mode
+     kibit-helper kotlin-mode kubernetes leuven-theme logview lua-mode magit
+     markdown-mode markdown-preview-mode mc-extras minimap multi-term
+     multiple-cursors neotree nodejs-repl ob-restclient omnisharp package+
+     paper-theme paredit php-mode pixie-mode plantuml-mode popup-complete
+     projectile puppet-mode python-mode quelpa quelpa-use-package queue
+     rainbow-blocks rainbow-delimiters rainbow-identifiers rainbow-mode
      reverse-theme rjsx-mode robe rspec-mode ruby-electric rust-mode s sass-mode
-     scss-mode seti-theme shen-lisp slime-annot smex solarized-theme
+     scss-mode seti-theme shen-lisp slime slime-annot smex solarized-theme
      solidity-mode soothe-theme starter-kit-eshell string-inflection
-     tabulated-list terraform-doc terraform-mode uuidgen w3m which-key wsd-mode
-     xref-js2 yafolding yaml-mode))
+     tabulated-list terraform-doc terraform-mode tide typescript-mode uuidgen
+     w3m which-key wsd-mode xref-js2 yafolding yaml-mode))
  '(package-vc-selected-packages
-   '((gptel-autocomplete :vc-backend Git :url "https://github.com/JDNdeveloper/gptel-autocomplete.git")))
+   '((gptel-autocomplete :vc-backend Git :url
+      "https://github.com/JDNdeveloper/gptel-autocomplete.git")))
  '(py-shell-name "/usr/local/bin/python")
  '(safe-local-variable-values
-   '((Syntax . ANSI-Common-Lisp)
-     (Base . 10)
-     (encoding . utf-8)
-     (whitespace-line-column . 80)
-     (lexical-binding . t)
+   '((Syntax . ANSI-Common-Lisp) (Base . 10) (encoding . utf-8)
+     (whitespace-line-column . 80) (lexical-binding . t)
      (eval with-eval-after-load 'cider (setq cider-default-cljs-repl 'figwheel))
      (url-max-redirections . 0)))
  '(save-place t nil (saveplace))
@@ -400,7 +398,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :family "Fira Code"))))
  '(whitespace-tab ((t (:foreground "#636363")))))
 (put 'erase-buffer 'disabled nil)
 
