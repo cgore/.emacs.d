@@ -1,7 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 
 (require 'projectile)
-(projectile-global-mode)
+;;(projectile-global-mode)
+(projectile-mode 1)
 (setq projectile-enable-caching t
       projectile-switch-project-action 'projectile-dired
       projectile-use-git-grep t

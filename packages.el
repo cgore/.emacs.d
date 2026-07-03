@@ -26,6 +26,10 @@
                      dash-functional
                      elpy
                      eshell-autojump
+                     flycheck-clj-kondo
+                     flycheck-clojure
+                     flymake-ruff
+                     haml-mode
                      highlight-indentation
                      ht
                      indium
@@ -60,6 +64,7 @@
                      robe
                      rspec-mode
                      ruby-electric
+                     ruff-format
                      rust-mode
                      s
                      sass-mode
