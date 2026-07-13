@@ -167,16 +167,16 @@
      highlight-indentation ht idle-highlight-mode ido-ubiquitous indium
      inf-clojure inf-ruby ipython jq-format jq-mode js2-refactor json-mode
      kibit-helper kotlin-mode kubernetes leuven-theme logview lua-mode magit
-     markdown-mode markdown-preview-mode mc-extras minimap multi-term
+     markdown-mode markdown-preview-mode mc-extras mcp minimap multi-term
      multiple-cursors neotree nodejs-repl ob-restclient omnisharp package+
      paper-theme paredit php-mode pixie-mode plantuml-mode popup-complete
      projectile puppet-mode python-mode quelpa quelpa-use-package queue
      rainbow-blocks rainbow-delimiters rainbow-identifiers rainbow-mode
-     reverse-theme rjsx-mode robe rspec-mode ruby-electric rust-mode s sass-mode
-     scss-mode seti-theme shen-lisp slime slime-annot smex solarized-theme
-     solidity-mode soothe-theme starter-kit-eshell string-inflection
-     tabulated-list terraform-doc terraform-mode tide typescript-mode uuidgen
-     w3m which-key wsd-mode xref-js2 yafolding yaml-mode))
+     reverse-theme ripgrep rjsx-mode robe rspec-mode ruby-electric rust-mode s
+     sass-mode scss-mode seti-theme shen-lisp slime slime-annot smex
+     solarized-theme solidity-mode soothe-theme starter-kit-eshell
+     string-inflection tabulated-list terraform-doc terraform-mode tide
+     typescript-mode uuidgen w3m which-key wsd-mode xref-js2 yafolding yaml-mode))
  '(package-vc-selected-packages
    '((gptel-autocomplete :vc-backend Git :url
       "https://github.com/JDNdeveloper/gptel-autocomplete.git")))
