@@ -1,6 +1,14 @@
 ;;; -*- lexical-binding: t; -*-
 
 (require 'package)
+
+;; macOS bsdtar stores extended attributes as AppleDouble "._" members, and
+;; every git checkout picks up a com.apple.provenance xattr.  Emacs' tar-mode
+;; sees those raw members, so `package-tar-file-info' takes "._foo-VERSION/" for
+;; the package directory and quelpa dies on the resulting nil package-desc.
+(when (eq system-type 'darwin)
+  (setenv "COPYFILE_DISABLE" "1"))
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")    t)
 (add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/") t)
 
@@ -29,6 +37,7 @@
                      flycheck-clj-kondo
                      flycheck-clojure
                      flymake-ruff
+                     gptel
                      haml-mode
                      highlight-indentation
                      ht
