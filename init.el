@@ -2,7 +2,7 @@
 
 (setq warning-suppress-log-types '((files)))
 
-(prefer-coding-system 'utf-8)
+(prefer-coding-system 'utf-8-unix)
 
 (require 'flymake)
 (setq flymake-allowed-file-name-masks '("\\.c\\'" "\\.h\\'" "\\.cpp\\'"))
@@ -408,6 +408,7 @@
 
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
+(setq-default buffer-file-coding-system 'utf-8-unix)
 (setq default-buffer-file-coding-system 'utf-8-unix)
 
 (when (dividend-finance-cgore?)
