@@ -40,6 +40,7 @@
 (load "~/.emacs.d/utilities.el")
 
 (load "~/.emacs.d/gptel-init.el")
+(load "~/.emacs.d/harmless.el")
 
 (require 'ido)
 (ido-mode t)
