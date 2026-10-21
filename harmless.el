@@ -9,12 +9,10 @@
 (require 'harmless)
 
 (setq harmless-providers (list (harmless-make-xai "xAI")
-                               (harmless-make-xai "xAI work")
                                (harmless-make-anthropic "Anthropic")
-                               (harmless-make-anthropic "Anthropic work")
                                (harmless-make-openai))
       harmless-default-provider-name "xAI"
-      harmless-default-model "grok-4.6"
+      harmless-default-model "grok-4.7"
       harmless-default-reasoning-effort "xhigh")
 
 ;; Browser login: M-x harmless-login, then pick the connection.
