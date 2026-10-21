@@ -1,7 +1,11 @@
 ;;; -*- lexical-binding: t; -*-
 
 ;; Local checkout of Harmless (Emacs-native AI harness).
-(add-to-list 'load-path (expand-file-name "~/programming/emacs/harmless/lisp"))
+;; On Windows, ~ is %APPDATA%, so ~/programming is not D:/Programming.
+(dolist (dir (list (expand-file-name "~/programming/emacs/harmless/lisp")
+                   "d:/Programming/Emacs/harmless/lisp"))
+  (when (file-directory-p dir)
+    (add-to-list 'load-path dir)))
 (require 'harmless)
 
 (setq harmless-providers (list (harmless-make-xai "xAI")
